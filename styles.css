@@ -1,0 +1,829 @@
+/* ================================================================
+   SALT — styles.css
+   An editorial hospitality house in Saint Vincent & the Grenadines.
+
+   Structure of this file:
+   1. CSS variables (master palette, experience accents, type, spacing)
+   2. Reset & base
+   3. Typography
+   4. Layout helpers
+   5. Header & navigation
+   6. Hero
+   7. Section commons + reveal animation
+   8. Philosophy
+   9. The SALT World
+   10. Signature Experiences (+ accent system)
+   11. Hospitality Partners
+   12. Passport
+   13. Journal
+   14. Founder's note
+   15. Contact
+   16. Footer
+   17. Image placeholder system
+   18. Responsive breakpoints
+   19. Reduced motion
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. CSS VARIABLES
+   To restyle SALT, change values here. Every colour used in the
+   site is defined once below — nothing is hard-coded elsewhere.
+   ---------------------------------------------------------------- */
+:root {
+  /* Master palette — neutral, editorial, works across all experiences */
+  --salt-white:        #FAF8F4;
+  --warm-ivory:        #F4EDE2;
+  --parchment:         #EFE4D0;
+  --sand:              #D9C7A8;
+  --driftwood-taupe:   #A9927D;
+  --soft-stone-grey:   #8C8579;
+  --basalt-charcoal:   #2B2924;
+  --deep-ink:          #1C1B18;
+  --sea-grey-blue:     #5B717A;
+  --tobacco-olive:     #6B6650;
+  --aged-brass:        #A98D5D;
+
+  /* Experience accent colours — used sparingly, one per experience card */
+  --air-cloud-grey:    #C7CDD1;
+  --air-navy:          #2A3C4D;
+  --air-silver:        #B8BEC2;
+
+  --sorrel-red:        #7A2E2A;
+  --sorrel-wine:       #5C2331;
+  --sorrel-terracotta: #B5663F;
+
+  --afterdark-midnight:#131C2E;
+  --afterdark-moonstone:#A9B7C6;
+  --afterdark-bronze:  #7A6A4F;
+
+  --studio-ochre:      #C08A32;
+  --studio-clay:       #A8663F;
+  --studio-botanical:  #4B5D3A;
+
+  --private-ivory:     #F4EDE2;
+  --private-ink:       #1C1B18;
+  --private-brass:     #A98D5D;
+
+  /* Typography */
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --max-width-narrow: 760px;
+  --border-hairline: 1px solid rgba(28, 27, 24, 0.12);
+
+  /* Motion */
+  --transition-standard: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--salt-white);
+  color: var(--basalt-charcoal);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Accessible skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--deep-ink);
+  color: var(--salt-white);
+  padding: 0.75rem 1.25rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: var(--space-sm);
+  top: var(--space-sm);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sea-grey-blue);
+  outline-offset: 3px;
+}
+
+/* ----------------------------------------------------------------
+   3. TYPOGRAPHY
+   ---------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 var(--space-sm);
+  color: var(--deep-ink);
+}
+
+h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
+
+p { margin: 0 0 var(--space-sm); }
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft-stone-grey);
+  margin-bottom: var(--space-sm);
+}
+
+.section-title { max-width: 40rem; }
+
+.section-intro {
+  max-width: 42rem;
+  color: var(--basalt-charcoal);
+  font-size: 1.05rem;
+}
+
+.pull-line {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  color: var(--tobacco-olive);
+  text-align: center;
+  max-width: 34rem;
+  margin: var(--space-lg) auto 0;
+}
+
+.note-flag {
+  font-size: 0.85rem;
+  color: var(--soft-stone-grey);
+  font-style: italic;
+}
+
+/* ----------------------------------------------------------------
+   4. LAYOUT HELPERS
+   ---------------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container.narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+  border-top: var(--border-hairline);
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  transition: background-color var(--transition-standard), color var(--transition-standard);
+}
+
+.cta-light {
+  color: var(--salt-white);
+  border-color: rgba(250, 248, 244, 0.7);
+}
+.cta-light:hover {
+  background-color: var(--salt-white);
+  color: var(--deep-ink);
+}
+
+.cta-dark {
+  color: var(--deep-ink);
+  border-color: var(--deep-ink);
+  margin-top: var(--space-sm);
+}
+.cta-dark:hover {
+  background-color: var(--deep-ink);
+  color: var(--salt-white);
+}
+
+/* ----------------------------------------------------------------
+   5. HEADER & NAVIGATION
+   ---------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background-color: rgba(250, 248, 244, 0.92);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: var(--border-hairline);
+  transition: background-color var(--transition-standard);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--deep-ink);
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.primary-nav a {
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--basalt-charcoal);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.primary-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--aged-brass);
+  transition: right var(--transition-standard);
+}
+
+.primary-nav a:hover::after,
+.primary-nav a:focus-visible::after {
+  right: 0;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+
+.menu-toggle-line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--deep-ink);
+  transition: transform var(--transition-standard), opacity var(--transition-standard);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-nav {
+  border-top: var(--border-hairline);
+  background-color: var(--salt-white);
+}
+
+.mobile-nav ul {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 0.9rem 0;
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  border-bottom: var(--border-hairline);
+}
+
+/* ----------------------------------------------------------------
+   6. HERO
+   ---------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(28,27,24,0.15) 0%, rgba(28,27,24,0.55) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--salt-white);
+  padding: 0 var(--space-md) var(--space-xl);
+  max-width: 46rem;
+}
+
+.hero-content .eyebrow {
+  color: rgba(250, 248, 244, 0.8);
+}
+
+.hero-title {
+  color: var(--salt-white);
+  letter-spacing: 0.06em;
+}
+
+.hero-tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  max-width: 32rem;
+}
+
+.hero-subline {
+  font-size: 0.95rem;
+  color: rgba(250, 248, 244, 0.85);
+  margin-bottom: var(--space-md);
+}
+
+/* ----------------------------------------------------------------
+   7. SECTION COMMONS + REVEAL ANIMATION
+   ---------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------------
+   8. PHILOSOPHY
+   ---------------------------------------------------------------- */
+.philosophy {
+  background-color: var(--warm-ivory);
+  text-align: center;
+}
+
+.philosophy .statement {
+  margin: 0 auto var(--space-lg);
+  max-width: 42rem;
+  border: none;
+  padding: 0;
+}
+
+.philosophy .statement p {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+  line-height: 1.3;
+  color: var(--deep-ink);
+  margin: 0;
+}
+
+.philosophy-copy {
+  max-width: 38rem;
+  margin: 0 auto;
+  text-align: left;
+  color: var(--basalt-charcoal);
+}
+
+/* ----------------------------------------------------------------
+   9. THE SALT WORLD
+   ---------------------------------------------------------------- */
+.world-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.world-text p { color: var(--basalt-charcoal); }
+
+/* ----------------------------------------------------------------
+   10. SIGNATURE EXPERIENCES + ACCENT SYSTEM
+   ---------------------------------------------------------------- */
+.experiences {
+  background-color: var(--salt-white);
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  border-top: var(--border-hairline);
+  padding-top: var(--space-lg);
+}
+
+.experience-card:nth-child(even) .experience-media {
+  order: 2;
+}
+
+.experience-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong, var(--soft-stone-grey));
+  margin-bottom: var(--space-xs);
+}
+
+.experience-copy h3 {
+  border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.experience-note {
+  font-size: 0.9rem;
+  color: var(--soft-stone-grey);
+  font-style: italic;
+}
+
+/* Accent colour assignments — one accent per experience, applied narrowly */
+.accent-air        { --accent-strong: var(--air-navy); }
+.accent-sorrel     { --accent-strong: var(--sorrel-red); }
+.accent-afterdark  { --accent-strong: var(--afterdark-midnight); }
+.accent-studio     { --accent-strong: var(--studio-ochre); }
+.accent-private     { --accent-strong: var(--private-brass); }
+
+/* ----------------------------------------------------------------
+   11. HOSPITALITY PARTNERS
+   ---------------------------------------------------------------- */
+.partners {
+  background-color: var(--basalt-charcoal);
+  color: var(--warm-ivory);
+}
+
+.partners h2, .partners h3 { color: var(--salt-white); }
+.partners .eyebrow { color: var(--sand); }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.partners-subhead {
+  margin-top: var(--space-md);
+  font-size: 1rem;
+}
+
+.partners-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+  font-size: 0.95rem;
+}
+
+.partners .cta-dark {
+  color: var(--warm-ivory);
+  border-color: var(--aged-brass);
+}
+.partners .cta-dark:hover {
+  background-color: var(--aged-brass);
+  color: var(--deep-ink);
+}
+
+/* ----------------------------------------------------------------
+   12. PASSPORT
+   ---------------------------------------------------------------- */
+.passport {
+  background-color: var(--parchment);
+}
+
+.passport-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.passport-list li {
+  padding: 0.4rem 0;
+  color: var(--basalt-charcoal);
+  font-size: 0.95rem;
+}
+
+.passport-list li::before {
+  content: "— ";
+  color: var(--aged-brass);
+}
+
+/* ----------------------------------------------------------------
+   13. JOURNAL
+   ---------------------------------------------------------------- */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.journal-card .image-placeholder {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-sm);
+}
+
+.journal-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-stone-grey);
+}
+
+.journal-card p:last-child {
+  font-size: 0.95rem;
+  color: var(--basalt-charcoal);
+}
+
+/* ----------------------------------------------------------------
+   14. FOUNDER'S NOTE
+   ---------------------------------------------------------------- */
+.founder {
+  background-color: var(--sea-grey-blue);
+  color: var(--salt-white);
+}
+
+.founder .eyebrow { color: rgba(250, 248, 244, 0.75); }
+
+.founder-copy p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+/* ----------------------------------------------------------------
+   15. CONTACT
+   ---------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: var(--space-md);
+  border: var(--border-hairline);
+  transition: border-color var(--transition-standard), background-color var(--transition-standard);
+}
+
+.contact-card:hover, .contact-card:focus-visible {
+  border-color: var(--aged-brass);
+  background-color: var(--warm-ivory);
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft-stone-grey);
+}
+
+.contact-value {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--deep-ink);
+}
+
+.social-line {
+  margin-top: var(--space-md);
+  font-size: 0.9rem;
+  color: var(--soft-stone-grey);
+}
+
+/* ----------------------------------------------------------------
+   16. FOOTER
+   ---------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--deep-ink);
+  color: var(--warm-ivory);
+  padding: var(--space-lg) 0 var(--space-md);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+}
+
+.footer-brand p { margin: 0 0 0.3rem; color: rgba(244, 237, 226, 0.75); }
+
+.footer-wordmark {
+  font-size: 1.4rem;
+  color: var(--salt-white);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.12em;
+}
+
+.footer-nav ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-nav a { font-size: 0.9rem; color: rgba(244, 237, 226, 0.85); }
+.footer-nav a:hover { color: var(--aged-brass); }
+
+.footer-contact a {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--salt-white);
+}
+.footer-contact p { color: rgba(244, 237, 226, 0.7); font-size: 0.9rem; }
+
+.footer-base {
+  padding-top: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  font-size: 0.8rem;
+  color: rgba(244, 237, 226, 0.6);
+}
+
+/* ----------------------------------------------------------------
+   17. IMAGE PLACEHOLDER SYSTEM
+   Elegant stand-ins for photography that has not yet been produced.
+   Each placeholder shows the exact filename to insert. Replace by
+   swapping the surrounding <div class="image-placeholder"> for an
+   <img src="..." alt="..."> element using the same path.
+   ---------------------------------------------------------------- */
+.image-placeholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, rgba(169,146,125,0.18) 0%, rgba(139,133,121,0.12) 50%, rgba(28,27,24,0.08) 100%),
+    repeating-linear-gradient(45deg, rgba(28,27,24,0.035) 0, rgba(28,27,24,0.035) 1px, transparent 1px, transparent 14px);
+  border: 1px solid rgba(28, 27, 24, 0.14);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: transform var(--transition-standard);
+}
+
+.experience-media .image-placeholder,
+.hero-media,
+.world-media .image-placeholder,
+.partners-media .image-placeholder {
+  aspect-ratio: 3 / 4;
+}
+
+.hero-media { aspect-ratio: auto; }
+
+.image-placeholder.tall { aspect-ratio: 3 / 4; }
+
+.image-placeholder:hover {
+  transform: scale(1.015);
+}
+
+.placeholder-label {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--basalt-charcoal);
+  background-color: rgba(250, 248, 244, 0.82);
+  border-top: 1px solid rgba(28, 27, 24, 0.1);
+  word-break: break-all;
+}
+
+.hero-media .placeholder-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+}
+
+/* ----------------------------------------------------------------
+   18. RESPONSIVE BREAKPOINTS
+   ---------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .world-grid,
+  .partners-grid,
+  .passport-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .world-media, .passport-media { order: -1; }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+  .experience-card:nth-child(even) .experience-media { order: 0; }
+
+  .journal-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .primary-nav { display: none; }
+  .menu-toggle { display: flex; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .journal-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .section { padding: var(--space-lg) 0; }
+
+  html { scroll-padding-top: 64px; }
+}
+
+@media (max-width: 480px) {
+  .header-inner { padding: 0.9rem var(--space-sm); }
+  .container { padding: 0 var(--space-sm); }
+  .hero-content { padding: 0 var(--space-sm) var(--space-lg); }
+}
+
+/* ----------------------------------------------------------------
+   19. REDUCED MOTION
+   ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .image-placeholder,
+  .cta,
+  .primary-nav a::after,
+  .menu-toggle-line {
+    transition: none;
+  }
+
+  .image-placeholder:hover {
+    transform: none;
+  }
+}
