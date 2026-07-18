@@ -70,6 +70,13 @@
   /* SALT Air uses --turquoise, SALT Studio uses --lime-green,
      SALT Private uses --aged-brass — all defined above. */
 
+  /* Body-text colour variants — the master site now varies reading-copy
+     colour by section (basalt, chocolate or deep blue) instead of one flat
+     ink everywhere. Still dark enough for comfortable reading contrast on
+     limestone; the variation itself is the point, not the darkness. */
+  --deep-blue: #14304A;
+  --chocolate: #3B2415;
+
   /* Typography — a single editorial serif (Bodoni Moda) carries the whole
      site: wordmark, headlines, navigation and body copy. No secondary
      sans-serif is used. Bodoni Moda is a variable font with an optical-size
@@ -178,6 +185,18 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; }
+
+/* Section titles keep their ink fill for reading contrast, but carry a
+   thin turquoise outline — SALT's signature colour, without the legibility
+   cost of setting the whole headline in a lighter hue (turquoise on
+   limestone falls well short of AA contrast as solid text; as a hairline
+   stroke it reads as a deliberate colour accent instead). The SALT
+   wordmark (h1) and experience-card titles (h3, styled further down) keep
+   their own treatment. */
+h2 {
+  color: var(--deep-ink);
+  -webkit-text-stroke: 0.5px var(--turquoise);
+}
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
 
@@ -448,10 +467,17 @@ p { margin: 0 0 var(--space-sm); }
 
 .philosophy .statement p {
   font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(1.7rem, 4.2vw, 2.6rem);
-  line-height: 1.3;
-  color: var(--deep-ink);
+  font-weight: 500;
+  /* Capping the optical-size axis keeps the letterforms from getting too
+     hairline-thin at this size — Bodoni Moda would otherwise auto-select
+     a very high, very high-contrast optical size here, which is dramatic
+     but hard to read across a full sentence. This keeps the character
+     while staying legible. */
+  font-variation-settings: 'opsz' 28;
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height: 1.4;
+  color: var(--basalt-charcoal);
+  -webkit-text-stroke: 0.4px var(--turquoise);
   margin: 0;
 }
 
@@ -459,7 +485,7 @@ p { margin: 0 0 var(--space-sm); }
   max-width: 38rem;
   margin: 0 auto;
   text-align: left;
-  color: var(--basalt-charcoal);
+  color: var(--chocolate);
 }
 
 /* ----------------------------------------------------------------
@@ -472,7 +498,7 @@ p { margin: 0 0 var(--space-sm); }
   align-items: center;
 }
 
-.world-text p { color: var(--basalt-charcoal); }
+.world-text p { color: var(--deep-blue); }
 
 /* ----------------------------------------------------------------
    10. SIGNATURE EXPERIENCES + ACCENT SYSTEM
@@ -510,6 +536,12 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .experience-copy h3 {
+  /* Ink fill for contrast, thin accent-coloured outline and underline —
+     several of the experience accents (mango gold, lime green) fall short
+     of AA contrast as solid text on this light background, so the colour
+     shows as a hairline stroke and a rule instead of the fill itself. */
+  color: var(--deep-ink);
+  -webkit-text-stroke: 0.5px var(--accent-strong, var(--aged-brass));
   border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
   display: inline-block;
   padding-bottom: 0.2rem;
@@ -520,6 +552,18 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--soft-stone-grey);
   font-style: italic;
 }
+
+.experience-more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--deep-ink);
+  border-bottom: 1px solid var(--accent-strong, var(--aged-brass));
+  padding-bottom: 2px;
+  transition: color var(--transition-standard);
+}
+.experience-more:hover { color: var(--accent-strong, var(--aged-brass)); }
 
 /* Accent colour assignments — one colour per experience, drawn from the
    library declared in :root. To retune any single experience, just change
@@ -538,7 +582,8 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--warm-ivory);
 }
 
-.partners h2, .partners h3 { color: var(--salt-white); }
+.partners h2 { color: var(--turquoise); }
+.partners h3 { color: var(--salt-white); }
 .partners .eyebrow { color: var(--sand); }
 
 .partners-grid {
@@ -891,3 +936,204 @@ p { margin: 0 0 var(--space-sm); }
     transform: none;
   }
 }
+
+/* ----------------------------------------------------------------
+   20. EXPERIENCE PAGE COMPONENTS
+   Shared building blocks for the five in-depth experience pages
+   (salt-air.html, salt-sorrel.html, salt-afterdark.html,
+   salt-studio.html, salt-private.html). Each page wraps its <body> in
+   one .accent-* class (already defined above) so every component below
+   automatically picks up that experience's own colour via
+   var(--accent-strong) — nothing else needs to change page to page.
+   The master site's header, hero, footer and typography rules are
+   reused as-is; only these additional patterns are new.
+   ---------------------------------------------------------------- */
+
+/* Breadcrumb back-link, sits just under the fixed header */
+.exp-breadcrumb {
+  padding: 6.5rem 0 0;
+}
+.exp-breadcrumb a {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--soft-stone-grey);
+  border-bottom: 1px solid rgba(28, 27, 24, 0.2);
+  padding-bottom: 2px;
+}
+.exp-breadcrumb a:hover { color: var(--accent-strong, var(--basalt-charcoal)); }
+
+/* Full-bleed coloured statement between sections */
+.quote-interlude {
+  padding: clamp(4rem, 10vh, 7rem) var(--space-md);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quote-interlude p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1.3;
+  max-width: 42rem;
+  margin: 0;
+}
+.quote-interlude.on-accent {
+  background-color: var(--accent-strong);
+  /* Ink reads fine against the two brightest accents (turquoise, lime) and
+     against mango gold / brass, but sorrel wine is dark enough that it
+     needs light text instead — overridden below, scoped per accent, so
+     each experience page automatically gets a readable pairing. */
+  color: var(--deep-ink);
+}
+.accent-sorrel .quote-interlude.on-accent {
+  color: var(--warm-ivory);
+}
+.quote-interlude.on-dark {
+  background-color: var(--basalt-charcoal);
+  color: var(--warm-ivory);
+}
+.quote-interlude.on-dark p { color: var(--warm-ivory); -webkit-text-stroke: 0.4px var(--accent-strong); }
+
+/* Numbered format list — "three ways to experience", collaboration
+   formats, and similar short enumerated lists */
+.format-list {
+  max-width: 46rem;
+  margin: var(--space-lg) auto 0;
+}
+.format-list li {
+  display: flex;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: var(--border-hairline);
+}
+.format-list .n {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent-strong, var(--aged-brass));
+  flex: 0 0 auto;
+}
+.format-list .t { font-size: 0.98rem; color: var(--basalt-charcoal); }
+
+/* Acts — alternating illustration / copy spreads describing the flow of
+   an experience from start to finish */
+.acts { display: flex; flex-direction: column; gap: 2px; }
+.act {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 56vh;
+  align-items: stretch;
+}
+.act:nth-child(even) { direction: rtl; }
+.act:nth-child(even) > * { direction: ltr; }
+.act .scene-panel { aspect-ratio: auto; min-height: 320px; border-radius: 0; border: none; }
+.act-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background-color: var(--basalt-charcoal);
+  color: var(--warm-ivory);
+}
+.act-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--accent-strong);
+  margin-bottom: 0.6rem;
+}
+.act-copy h3 { color: var(--warm-ivory); font-size: 1.4rem; margin-bottom: 0.6rem; }
+.act-copy p { color: rgba(244, 237, 226, 0.82); max-width: 26rem; }
+.act-copy .act-note {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(244, 237, 226, 0.55);
+}
+
+@media (max-width: 820px) {
+  .act { grid-template-columns: 1fr; min-height: auto; }
+  .act .scene-panel { min-height: 260px; }
+}
+
+/* Guest journey / partner journey timeline (reused verbatim styling from
+   the master .timeline pattern used elsewhere would collide with this
+   page's own accent, so it's redeclared here scoped to experience pages) */
+.exp-timeline { position: relative; padding-left: 2.2rem; max-width: 40rem; }
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px; top: 6px; bottom: 6px;
+  width: 1px;
+  background-color: var(--accent-strong, var(--aged-brass));
+  opacity: 0.4;
+}
+.exp-timeline .t-item { position: relative; padding-bottom: 1.8rem; }
+.exp-timeline .t-item:last-child { padding-bottom: 0; }
+.exp-timeline .t-item::before {
+  content: "";
+  position: absolute;
+  left: -2.2rem; top: 0.3rem;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-strong, var(--aged-brass));
+}
+.exp-timeline h4 { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.exp-timeline p { font-size: 0.9rem; color: var(--soft-stone-grey); max-width: 30rem; }
+
+/* Dark "for hospitality partners" section reused across every experience
+   page. Heading colour defaults to that page's own accent, except on the
+   Salt & Sorrel page, where the wine accent is too dark to read as solid
+   text against this near-black background — it shows as a hairline stroke
+   on ivory instead, the same safety pattern used for headings elsewhere. */
+.exp-partnership {
+  background-color: var(--basalt-charcoal);
+  color: var(--warm-ivory);
+}
+.exp-partnership .eyebrow { color: var(--sand); }
+.exp-partnership h2 { color: var(--accent-strong); }
+.accent-sorrel .exp-partnership h2 {
+  color: var(--warm-ivory);
+  -webkit-text-stroke: 0.5px var(--sorrel-wine);
+}
+.exp-partnership .section-intro { color: rgba(244, 237, 226, 0.85); }
+
+/* Two-column "what SALT provides / what a partner provides" */
+.provide-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+.provide-cols h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong, var(--aged-brass));
+  margin-bottom: 0.8rem;
+}
+.provide-cols li {
+  font-size: 0.92rem;
+  color: rgba(244, 237, 226, 0.85);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+}
+
+@media (max-width: 760px) {
+  .provide-cols { grid-template-columns: 1fr; gap: var(--space-md); }
+}
+
+/* Closing call-to-collaboration block */
+.closing-cta {
+  text-align: center;
+  background-color: var(--basalt-charcoal);
+  color: var(--salt-white);
+}
+.closing-cta h2 { color: var(--warm-ivory); -webkit-text-stroke: 0.5px var(--accent-strong); }
+.closing-cta p { color: rgba(244, 237, 226, 0.85); max-width: 34rem; margin: 0 auto var(--space-sm); }
+.closing-cta .cta { margin-top: var(--space-sm); color: var(--warm-ivory); border-color: var(--accent-strong); }
+.closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }

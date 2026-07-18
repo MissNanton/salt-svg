@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SALT AIR — an in-depth experience page within the SALT site.
+     Shares styles.css and script.js with the master site. This page
+     is wrapped in class="accent-air" on <body> so every shared
+     component (quote interludes, acts, timeline, closing CTA) picks
+     up SALT Air's own turquoise accent automatically.
+     ============================================================ -->
+
+<title>SALT Air | A Scenic Aerial Safari Across Saint Vincent & the Grenadines</title>
+<meta name="description" content="SALT Air is a scenic aerial exploration of Saint Vincent & the Grenadines — an in-development experience revealing the archipelago through flight, geography and story.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="SALT Air | A Scenic Aerial Safari Across Saint Vincent & the Grenadines">
+<meta property="og:description" content="A scenic aerial exploration of Saint Vincent & the Grenadines, revealing the archipelago through flight, geography and story.">
+<meta property="og:image" content="images/social/salt-og-image.jpg">
+<meta property="og:url" content="https://example.github.io/salt/salt-air.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="accent-air">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     NAVIGATION — identical to the master site. Section links point
+     back to the homepage's own anchors; wordmark returns home.
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="wordmark" aria-label="SALT — home">SALT</a>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="index.html#experiences">Experiences</a></li>
+        <li><a href="index.html#partners">For Hospitality Partners</a></li>
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="menu-toggle-line"></span>
+      <span class="menu-toggle-line"></span>
+      <span class="menu-toggle-line"></span>
+      <span class="visually-hidden">Open menu</span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul>
+      <li><a href="index.html#philosophy">Philosophy</a></li>
+      <li><a href="index.html#experiences">Experiences</a></li>
+      <li><a href="index.html#partners">For Hospitality Partners</a></li>
+      <li><a href="index.html#journal">Journal</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="top">
+    <!-- IMAGE: images/experiences/air/salt-air-hero-flight-window.jpg
+         Suggested shot: view from a small aircraft window over the
+         Grenadines, islands and reefs visible below, soft light. -->
+    <div class="hero-media scene-panel scene-air" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
+      <svg class="scene-art" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M-20 480 C 140 430, 240 520, 380 460 C 500 410, 580 500, 700 450 C 840 390, 940 490, 1080 440 C 1140 415, 1180 440, 1220 425" opacity="0.5"/>
+        <path d="M120 240 C 280 190, 400 280, 540 220 C 680 160, 780 240, 920 190" stroke="rgba(250,248,244,0.8)" stroke-width="1.6" stroke-dasharray="2 10"/>
+        <path d="M880 175 L 935 200 L 880 192 L 858 212 L 870 185 Z" fill="rgba(250,248,244,0.85)" stroke="none"/>
+        <circle cx="320" cy="360" r="60" opacity="0.16" fill="rgba(255,255,255,0.1)" stroke="none"/>
+        <circle cx="720" cy="420" r="90" opacity="0.12" fill="rgba(255,255,255,0.08)" stroke="none"/>
+      </svg>
+      <span class="panel-caption">Ascend · Unfold · Return</span>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal">Saint Vincent &amp; the Grenadines — a SALT experience</p>
+      <h1 class="hero-title reveal">SALT Air</h1>
+      <p class="hero-tagline reveal">A scenic aerial safari across the Grenadines.</p>
+      <p class="hero-subline reveal">From a few thousand feet, the archipelago stops being a list of names and becomes a single, breathing shape.</p>
+      <a class="cta cta-light reveal" href="#vision">View the Concept</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <p class="exp-breadcrumb reveal"><a href="index.html#experiences">&larr; Back to Signature Experiences</a></p>
+  </div>
+
+  <!-- ============================================================
+       VISION
+       ============================================================ -->
+  <section class="section" id="vision">
+    <div class="container narrow">
+      <p class="eyebrow reveal">The Vision</p>
+      <h2 class="reveal">An archipelago, read as one shape</h2>
+      <p class="section-intro reveal">SALT Air is a scenic aerial exploration of Saint Vincent &amp; the Grenadines, revealing the archipelago through flight, geography, storytelling and wonder. Seen from above, the relationship between sea, reef and land becomes legible in a way no map or itinerary quite captures on the ground.</p>
+      <p class="section-intro reveal">This is a concept currently in development. Aircraft, exact routing, timings and any aviation partnerships are not yet confirmed — what follows describes the intended shape of the experience, not a finished, bookable product.</p>
+    </div>
+  </section>
+
+  <div class="quote-interlude on-accent reveal">
+    <p>Guests already know these islands from the water. SALT Air lets them meet the same islands from the sky.</p>
+  </div>
+
+  <!-- ============================================================
+       THREE WAYS TO EXPERIENCE
+       ============================================================ -->
+  <section class="section" id="formats">
+    <div class="container narrow">
+      <p class="eyebrow reveal">Three Ways to Experience</p>
+      <h2 class="reveal">SALT Air, in three formats</h2>
+      <ul class="format-list">
+        <li class="reveal"><span class="n">01</span><span class="t">The Full Safari — a complete scenic flight across the Grenadines, paired with a SALT experience on arrival.</span></li>
+        <li class="reveal"><span class="n">02</span><span class="t">Private Charter Add-On — a scenic routing arranged around an existing villa, yacht or hotel stay.</span></li>
+        <li class="reveal"><span class="n">03</span><span class="t">A Signature Pairing — a shorter flight introducing a longer SALT day, such as Salt &amp; Sorrel or SALT After Dark.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ASCEND · UNFOLD · RETURN — cinematic acts
+       ============================================================ -->
+  <section id="journey" style="padding: 0;">
+    <div class="container" style="padding-top: var(--space-lg); padding-bottom: var(--space-md);">
+      <p class="eyebrow reveal">The Flight</p>
+      <h2 class="reveal">Ascend. Unfold. Return.</h2>
+    </div>
+
+    <div class="acts">
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/air/salt-air-act-ascent.jpg
+             Suggested shot: aircraft door/steps, coastline falling away
+             on take-off. -->
+        <div class="scene-panel scene-air" role="img" aria-label="Small aircraft ascending over the coastline of Saint Vincent">
+          <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+            <path d="M60 380 C 160 350, 260 400, 360 360 C 440 330, 500 360, 560 340" opacity="0.6"/>
+            <path d="M280 340 L 320 220" stroke-dasharray="2 8"/>
+            <path d="M300 240 L 336 258 L 300 252 L 284 268 L 292 246 Z" fill="rgba(255,255,255,0.8)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="act-copy">
+          <span class="act-label">Ascend</span>
+          <h3>Saint Vincent falls away</h3>
+          <p>Guests board a small aircraft near the coast. Within minutes, the island's own shape — mountain, bay, town, reef — becomes visible whole for the first time.</p>
+          <p class="act-note">Aircraft, departure point and exact timings to be confirmed with an aviation partner.</p>
+        </div>
+      </div>
+
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/air/salt-air-act-unfold.jpg
+             Suggested shot: wide aerial view of reef and island patterns
+             across the Grenadines. -->
+        <div class="scene-panel scene-air" role="img" aria-label="Wide aerial view of reef and island patterns across the Grenadines">
+          <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+            <path d="M0 260 C 90 230, 150 280, 230 250 C 310 220, 360 260, 440 240 C 500 225, 550 240, 600 230" stroke-dasharray="2 9"/>
+            <circle cx="150" cy="330" r="40" fill="rgba(255,255,255,0.12)" stroke="none"/>
+            <circle cx="330" cy="360" r="55" fill="rgba(255,255,255,0.09)" stroke="none"/>
+            <circle cx="470" cy="320" r="30" fill="rgba(255,255,255,0.1)" stroke="none"/>
+          </svg>
+        </div>
+        <div class="act-copy">
+          <span class="act-label">Unfold</span>
+          <h3>The islands, one after another</h3>
+          <p>The heart of the flight: a low, unhurried pass across the Grenadines, tracing reef, channel and coastline as the archipelago reveals its own logic from above.</p>
+          <p class="act-note">Route illustrative only, subject to aviation arrangements and weather.</p>
+        </div>
+      </div>
+
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/air/salt-air-act-return.jpg
+             Suggested shot: aircraft on final approach, landscape below
+             turning gold in late light. -->
+        <div class="scene-panel scene-air" role="img" aria-label="Aircraft on final approach in late afternoon light"></div>
+        <div class="act-copy">
+          <span class="act-label">Return</span>
+          <h3>An arrival, not just a landing</h3>
+          <p>The flight closes not with a return to routine, but a handover into whatever comes next — a Salt &amp; Sorrel table, a SALT After Dark evening, or simply the rest of a private day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GUEST JOURNEY
+       ============================================================ -->
+  <section class="section" id="guest-journey">
+    <div class="container">
+      <p class="eyebrow reveal">The Guest Experience</p>
+      <h2 class="reveal">The guest journey</h2>
+      <div class="exp-timeline">
+        <div class="t-item reveal"><h4>Arrival &amp; Briefing</h4><p>A short welcome and safety briefing at the point of departure.</p></div>
+        <div class="t-item reveal"><h4>Boarding</h4><p>Guests board a small aircraft, seated for clear views on both sides where possible.</p></div>
+        <div class="t-item reveal"><h4>The Ascent</h4><p>Saint Vincent's coastline and mountain interior open up within the first minutes of flight.</p></div>
+        <div class="t-item reveal"><h4>The Island Traverse</h4><p>A guided pass across the Grenadines, with light narration on geography, history and the islands below.</p></div>
+        <div class="t-item reveal"><h4>Descent &amp; Landing</h4><p>A gentler return leg, giving a second, later-light view of the same landscape.</p></div>
+        <div class="t-item reveal"><h4>Onward</h4><p>Where arranged, the flight hands directly into another SALT experience or back to the guest's own day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOR HOSPITALITY PARTNERS
+       ============================================================ -->
+  <section class="section exp-partnership" id="partnership">
+    <div class="container">
+      <p class="eyebrow reveal">For Hospitality Partners</p>
+      <h2 class="reveal">How SALT Air could extend a stay</h2>
+      <p class="section-intro reveal" style="max-width: 42rem;">SALT Air is well suited to properties with guests who arrive by air, or who already think of a stay as beginning before check-in. It can act as an arrival moment, a signature excursion, or a pairing with another SALT experience.</p>
+
+      <div class="provide-cols reveal" style="margin-top: var(--space-lg);">
+        <div>
+          <h4>What SALT Air May Provide</h4>
+          <ul>
+            <li>Concept and narration design</li>
+            <li>Coordination with an aviation partner</li>
+            <li>Guest briefing materials</li>
+            <li>Pairing design with other SALT experiences</li>
+          </ul>
+        </div>
+        <div>
+          <h4>What a Partner May Provide</h4>
+          <ul>
+            <li>Guest referral and concierge sales</li>
+            <li>Ground transfer coordination</li>
+            <li>Departure point or helipad access, where applicable</li>
+            <li>Marketing support for a signature offering</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CLOSING
+       ============================================================ -->
+  <section class="section closing-cta">
+    <div class="container narrow">
+      <p class="eyebrow reveal" style="color: rgba(244,237,226,0.7);">Closing Vision</p>
+      <h2 class="reveal">An archipelago worth reading from above</h2>
+      <p class="reveal">SALT Air is in development. We are seeking thoughtful aviation, hospitality and destination partners to help shape it into a considered, repeatable experience.</p>
+      <a class="cta reveal" href="mailto:partnerships@salt-grenadines.com?subject=SALT%20Air%20Partnership%20Enquiry">Discuss a Hospitality Partnership</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER — identical to the master site
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="wordmark footer-wordmark">SALT</p>
+        <p>Saint Vincent &amp; the Grenadines</p>
+        <p>Editorial hospitality house</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="index.html#philosophy">Philosophy</a></li>
+          <li><a href="index.html#experiences">Experiences</a></li>
+          <li><a href="index.html#partners">For Hospitality Partners</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <a href="mailto:hello@salt-grenadines.com">hello@salt-grenadines.com</a>
+        <p>@salt.grenadines</p>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <p>&copy; <span id="year"></span> SALT. All rights reserved.</p>
+      <p class="footer-note">Private experiences and hospitality partnerships by enquiry.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
