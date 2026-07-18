@@ -86,6 +86,9 @@
      throughout. See the README for the full rationale. */
   --font-serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
   --font-sans: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
+  /* Used only for the Philosophy pull-quote — a second, classic serif that
+     gives Bodoni Moda something to contrast against. */
+  --font-statement: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -403,12 +406,9 @@ p { margin: 0 0 var(--space-sm); }
   content: "";
   position: absolute;
   inset: 0;
-  /* Deepened from the original version — the scene-hero gradient's lighter
-     turquoise stop can land right behind the hero text depending on
-     viewport width, and the old overlay wasn't dark enough to guarantee
-     contrast for white text against it. This stays dark enough at the
-     bottom (where the text sits) regardless of what's underneath. */
-  background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 100%);
+  /* The hero background is now a solid chocolate fill, so this is just a
+     soft vignette for depth rather than a contrast fix. */
+  background: linear-gradient(180deg, rgba(10,10,10,0.05) 0%, rgba(10,10,10,0.3) 100%);
 }
 
 .hero-content {
@@ -420,15 +420,13 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .hero-content .eyebrow {
-  color: rgba(250, 248, 244, 0.9);
+  color: rgba(15, 163, 163, 0.85);
 }
 
 .hero-title {
-  color: var(--salt-white);
+  color: var(--turquoise);
   letter-spacing: 0.06em;
-  /* A soft, deep drop shadow lifts the mark off the background and adds
-     weight/drama, without the "outlined" look of a text-stroke. */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55), 0 18px 48px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .hero-tagline {
@@ -473,18 +471,14 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .philosophy .statement p {
-  font-family: var(--font-serif);
-  font-weight: 500;
-  /* Capping the optical-size axis keeps the letterforms from getting too
-     hairline-thin at this size — Bodoni Moda would otherwise auto-select
-     a very high, very high-contrast optical size here, which is dramatic
-     but hard to read across a full sentence. This keeps the character
-     while staying legible. */
-  font-variation-settings: 'opsz' 28;
-  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
-  line-height: 1.4;
+  /* Cormorant Garamond, light — a second, classic serif used only for this
+     statement, deliberately thinner and quieter than Bodoni Moda so it
+     reads as a considered pull-quote rather than a headline. */
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-size: clamp(1.9rem, 4.4vw, 2.9rem);
+  line-height: 1.45;
   color: var(--basalt-charcoal);
-  -webkit-text-stroke: 0.3px var(--turquoise);
   margin: 0;
 }
 
@@ -838,7 +832,7 @@ p { margin: 0 0 var(--space-sm); }
 /* One gradient per section, drawn from that section's own accent —
    see the accent library and .accent-* classes above for the source
    colours. Add a new .scene-* rule here for any future experience. */
-.scene-hero      { background: linear-gradient(160deg, #0A0A0A 0%, #0D3C3C 45%, #0FA3A3 82%, #6FCFCF 100%); }
+.scene-hero      { background: var(--chocolate); }
 .scene-world     { background: linear-gradient(150deg, #17140F 0%, #4A4032 55%, #B9915C 130%); }
 .scene-air       { background: linear-gradient(155deg, #0A2E2E 0%, #0FA3A3 55%, #7FE0E0 120%); }
 .scene-sorrel    { background: linear-gradient(155deg, #2A0B10 0%, #6B1E2E 55%, #C97E52 125%); }
