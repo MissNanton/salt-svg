@@ -65,10 +65,28 @@
      distinct sibling tone from the same rich, warm, Caribbean-editorial
      family. Layout and typography stay identical across all five; only
      this one colour changes. */
-  --sorrel-wine:   #6B1E2E;   /* Salt & Sorrel — wine and fruit */
-  --mango-gold:    #D98F3B;   /* SALT After Dark — lantern and firelight */
-  /* SALT Air uses --turquoise, SALT Studio uses --lime-green,
-     SALT Private uses --aged-brass — all defined above. */
+  --sorrel-wine:   #6B1E2E;   /* retained for reference, no longer used as an accent */
+  --mango-gold:    #D98F3B;   /* retained for reference, no longer used as an accent */
+
+  /* Revised per-experience palette — every gradient below used to open on
+     a near-black stop for editorial moodiness, but across five experiences
+     that read as "everything is just black plus one colour" rather than
+     each experience having its own real hue. Rebuilt so each one is a
+     genuine, non-black colour family, and picked so the accent tone also
+     passes WCAG AA (>=3:1) as text on the limestone background. */
+  --bequia-turquoise: #0A7975; /* SALT Air — the actual colour of shallow Bequia water, not a dark teal */
+  --sky-blue:          #3D7CA8; /* SALT Air gradient — sky/deep sea, no black */
+  --sea-aqua:          #8FE8DC; /* SALT Air gradient — pale shallow-water highlight */
+  --tamarind:          #7A3226; /* Salt & Sorrel — tamarind, not wine */
+  --olive:             #6B6A2E; /* Salt & Sorrel / Studio — olive */
+  --cracker:           #D9C9A3; /* Salt & Sorrel / Studio — pale cracker/wheat */
+  --twilight-violet:   #5A3E8C; /* SALT After Dark — dusk/constellation purple, not orange */
+  --midnight-indigo:   #241640; /* SALT After Dark gradient — deep indigo, not black */
+  --terracotta:        #B2502A; /* SALT Studio — craft/bead accent */
+  --mustard:           #C68A1F; /* SALT Studio — bead colour */
+  --rust:              #8F3A22; /* SALT Studio — bead colour */
+  /* SALT Private keeps --aged-brass; only its gradient's darkest stop
+     changes below, from near-black to --chocolate. */
 
   /* Body-text colour variants — the master site now varies reading-copy
      colour by section (basalt, chocolate or deep blue) instead of one flat
@@ -89,6 +107,10 @@
   /* Used only for the Philosophy pull-quote — a second, classic serif that
      gives Bodoni Moda something to contrast against. */
   --font-statement: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* Used only for h2 section headings — a third voice reserved for that
+     one role. Italiana ships in a single thin weight with no bold, so it
+     must stay scoped to short headings and never body copy. */
+  --font-display-alt: 'Italiana', Georgia, 'Times New Roman', serif;
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -129,6 +151,20 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+body::before {
+  /* A quiet stone grain across the whole limestone ground, so the base
+     colour reads as an actual quarried surface rather than a flat tint. */
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: -1;
 }
 
 img, svg { max-width: 100%; display: block; }
@@ -190,15 +226,36 @@ h1, h2, h3, h4 {
   line-height: 1.15;
   margin: 0 0 var(--space-sm);
   color: var(--deep-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
-h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; }
+h1 {
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 400;
+  /* Forcing the optical-size axis to its maximum is what produces the
+     razor-thin hairlines and near-invisible crossbars (look at the A) that
+     read as "very high stroke contrast, refined, understated luxury" —
+     the browser's automatic opsz mapping at this font-size doesn't push
+     the axis this far on its own. Wider tracking completes the look. */
+  font-variation-settings: 'opsz' 96;
+  letter-spacing: 0.09em;
+}
 
 /* Section titles: plain ink, no outline. A turquoise stroke on every h2
    across the page (there are six) was the single biggest contributor to
    the site feeling heavy rather than premium — removed. Colour now shows
    up in fewer, larger moments (the hero, the philosophy statement) instead
    of on every heading. */
+/* Italiana carries every heading except h1 (h1 stays Bodoni Moda at max
+   optical size — the wordmark/page-title treatment). Wide tracking
+   compensates for it being a single, delicate weight with no bold
+   sibling. */
+h2, h3, h4 {
+  font-family: var(--font-display-alt);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
 
@@ -406,21 +463,19 @@ p { margin: 0 0 var(--space-sm); }
   content: "";
   position: absolute;
   inset: 0;
-  /* The hero background is now a solid chocolate fill, so this is just a
-     soft vignette for depth rather than a contrast fix. */
-  background: linear-gradient(180deg, rgba(10,10,10,0.05) 0%, rgba(10,10,10,0.3) 100%);
+  /* Back to a plain limestone ground — no dark overlay needed. */
+  background: none;
 }
 
 .hero-media::before {
-  /* A stronger grain than the standard scene-panel texture, so the solid
-     chocolate ground reads as a worked, stone-like surface rather than a
-     flat colour fill — giving the white title something to sit on. */
+  /* Real limestone texture — fine stone grain, visible but quiet, sitting
+     directly on the same limestone tone as the rest of the page. */
   content: "";
   position: absolute;
   inset: 0;
   background-image: var(--grain);
-  opacity: 0.14;
-  mix-blend-mode: overlay;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
 }
@@ -439,8 +494,8 @@ p { margin: 0 0 var(--space-sm); }
 
 .hero-title {
   color: var(--salt-white);
-  letter-spacing: 0.06em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: none;
+  filter: none;
 }
 
 .hero-tagline {
@@ -588,10 +643,10 @@ p { margin: 0 0 var(--space-sm); }
 /* Accent colour assignments — one colour per experience, drawn from the
    library declared in :root. To retune any single experience, just change
    its line below — nothing else about the layout or type needs to change. */
-.accent-air        { --accent-strong: var(--turquoise); }
-.accent-sorrel     { --accent-strong: var(--sorrel-wine); }
-.accent-afterdark  { --accent-strong: var(--mango-gold); }
-.accent-studio     { --accent-strong: var(--lime-green); }
+.accent-air        { --accent-strong: var(--bequia-turquoise); }
+.accent-sorrel     { --accent-strong: var(--tamarind); }
+.accent-afterdark  { --accent-strong: var(--twilight-violet); }
+.accent-studio     { --accent-strong: var(--terracotta); }
 .accent-private    { --accent-strong: var(--aged-brass); }
 
 /* ----------------------------------------------------------------
@@ -853,13 +908,33 @@ p { margin: 0 0 var(--space-sm); }
 /* One gradient per section, drawn from that section's own accent —
    see the accent library and .accent-* classes above for the source
    colours. Add a new .scene-* rule here for any future experience. */
-.scene-hero      { background: var(--chocolate); }
+.scene-hero      { background: var(--limestone); }
 .scene-world     { background: linear-gradient(150deg, #17140F 0%, #4A4032 55%, #B9915C 130%); }
-.scene-air       { background: linear-gradient(155deg, #0A2E2E 0%, #0FA3A3 55%, #7FE0E0 120%); }
-.scene-sorrel    { background: linear-gradient(155deg, #2A0B10 0%, #6B1E2E 55%, #C97E52 125%); }
-.scene-afterdark { background: linear-gradient(160deg, #0A0A0A 0%, #1F1B12 45%, #D98F3B 135%); }
-.scene-studio    { background: linear-gradient(160deg, #1B2A0A 0%, #4C6B0F 55%, #8FD400 130%); }
-.scene-private   { background: linear-gradient(160deg, #241E19 0%, #6B4A32 55%, #D9B98A 130%); }
+/* Sky-to-sea blues, no black — actual Bequia water colour. */
+.scene-air       { background: linear-gradient(155deg, #3D7CA8 0%, #0A7975 55%, #8FE8DC 120%); }
+/* Cocoa, tamarind and mango — a warm food palette, no black or wine. */
+.scene-sorrel    { background: linear-gradient(155deg, #3B2415 0%, #7A3226 50%, #D98F3B 120%); }
+/* Midnight indigo into dusk violet, grounded by a warm brown horizon —
+   constellations and sunset, not orange lantern-light. */
+.scene-afterdark { background: linear-gradient(160deg, #241640 0%, #5A3E8C 55%, #6B4A32 130%); }
+/* Scattered coloured beads on a woven, cracker-toned ground, standing in
+   for the craft/beading work itself rather than a landscape gradient. */
+.scene-studio {
+  background-color: #D9C9A3;
+  background-image:
+    radial-gradient(circle at 18% 28%, #B2502A 9px, transparent 10px),
+    radial-gradient(circle at 52% 12%, #C68A1F 7px, transparent 8px),
+    radial-gradient(circle at 82% 38%, #0A7975 8px, transparent 9px),
+    radial-gradient(circle at 32% 62%, #6B6A2E 7px, transparent 8px),
+    radial-gradient(circle at 68% 78%, #8F3A22 9px, transparent 10px),
+    radial-gradient(circle at 8% 82%, #C68A1F 6px, transparent 7px),
+    radial-gradient(circle at 92% 8%, #7A3226 6px, transparent 7px);
+  background-size: 150px 150px;
+  background-repeat: repeat;
+}
+/* Chocolate into tan — brown kept for its "privacy and subtlety" feel,
+   black removed. */
+.scene-private   { background: linear-gradient(160deg, #3B2415 0%, #6B4A32 55%, #D9B98A 130%); }
 .scene-partners  { background: linear-gradient(150deg, #0A0A0A 0%, #3A2E22 55%, #B9915C 130%); }
 .scene-passport  { background: linear-gradient(150deg, #6B4A32 0%, #B9915C 55%, #EFE6D4 125%); }
 .scene-journal-air        { background: linear-gradient(155deg, #0A2E2E 0%, #0FA3A3 50%, #9FE8E8 120%); }
@@ -1008,7 +1083,8 @@ p { margin: 0 0 var(--space-sm); }
      each experience page automatically gets a readable pairing. */
   color: var(--deep-ink);
 }
-.accent-sorrel .quote-interlude.on-accent {
+.accent-sorrel .quote-interlude.on-accent,
+.accent-afterdark .quote-interlude.on-accent {
   color: var(--warm-ivory);
 }
 .quote-interlude.on-dark {
@@ -1051,6 +1127,15 @@ p { margin: 0 0 var(--space-sm); }
 .act:nth-child(even) { direction: rtl; }
 .act:nth-child(even) > * { direction: ltr; }
 .act .scene-panel { aspect-ratio: auto; min-height: 320px; border-radius: 0; border: none; }
+
+/* The Studio panel background changed from a dark gradient to a light
+   cracker-toned bead pattern — its line art was drawn in cream for a dark
+   backdrop and would be nearly invisible now. Re-tinted dark; this
+   overrides the inline SVG stroke/fill attributes. */
+.scene-studio .scene-art { stroke: rgba(23, 20, 15, 0.4); }
+.scene-studio .scene-art circle[fill],
+.scene-studio .scene-art path[fill] { fill: rgba(23, 20, 15, 0.5); }
+.scene-studio .panel-caption { color: rgba(23, 20, 15, 0.85); text-shadow: none; }
 .act-copy {
   display: flex;
   flex-direction: column;
@@ -1066,6 +1151,13 @@ p { margin: 0 0 var(--space-sm); }
   line-height: 1;
   color: var(--accent-strong);
   margin-bottom: 0.6rem;
+}
+/* Same dark-on-dark contrast issue as the partnership heading — tamarind
+   and twilight-violet fail as solid text on basalt-charcoal at this size. */
+.accent-sorrel .act-label,
+.accent-afterdark .act-label {
+  color: var(--warm-ivory);
+  -webkit-text-stroke: 0.3px var(--accent-strong);
 }
 .act-copy h3 { color: var(--warm-ivory); font-size: 1.4rem; margin-bottom: 0.6rem; }
 .act-copy p { color: rgba(244, 237, 226, 0.82); max-width: 26rem; }
@@ -1117,9 +1209,16 @@ p { margin: 0 0 var(--space-sm); }
 }
 .exp-partnership .eyebrow { color: var(--sand); }
 .exp-partnership h2 { color: var(--accent-strong); }
+/* Tamarind and twilight-violet are both too dark to pass contrast as a
+   solid fill on basalt-charcoal — ivory fill with a thin coloured stroke
+   instead, same pattern used elsewhere for dark-on-dark accent colours. */
 .accent-sorrel .exp-partnership h2 {
   color: var(--warm-ivory);
-  -webkit-text-stroke: 0.3px var(--sorrel-wine);
+  -webkit-text-stroke: 0.3px var(--tamarind);
+}
+.accent-afterdark .exp-partnership h2 {
+  color: var(--warm-ivory);
+  -webkit-text-stroke: 0.3px var(--twilight-violet);
 }
 .exp-partnership .section-intro { color: rgba(244, 237, 226, 0.85); }
 
@@ -1133,7 +1232,10 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-strong, var(--aged-brass));
+  /* Sand rather than accent-strong: at this small size several of the
+     accent colours fall short of AA against basalt-charcoal, whereas sand
+     passes comfortably for every experience, matching the eyebrow above it. */
+  color: var(--sand);
   margin-bottom: 0.8rem;
 }
 .provide-cols li {
@@ -1157,3 +1259,8 @@ p { margin: 0 0 var(--space-sm); }
 .closing-cta p { color: rgba(244, 237, 226, 0.85); max-width: 34rem; margin: 0 auto var(--space-sm); }
 .closing-cta .cta { margin-top: var(--space-sm); color: var(--warm-ivory); border-color: var(--accent-strong); }
 .closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }
+.accent-sorrel .closing-cta .cta:hover,
+.accent-afterdark .closing-cta .cta:hover {
+  /* Ink fails against tamarind/twilight-violet at this size — ivory instead. */
+  color: var(--warm-ivory);
+}
