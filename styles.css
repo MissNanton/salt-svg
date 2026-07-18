@@ -178,7 +178,12 @@ button {
    ---------------------------------------------------------------- */
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 500;
+  /* A lighter base weight than earlier — 500 plus the coloured hairline
+     outlines that used to sit on every h2 and card title compounded into
+     a heavier, less premium feel across the page. 400 matches the weight
+     already used on the SALT wordmark and nav, which read as the right
+     level of refinement. */
+  font-weight: 400;
   line-height: 1.15;
   margin: 0 0 var(--space-sm);
   color: var(--deep-ink);
@@ -186,17 +191,11 @@ h1, h2, h3, h4 {
 
 h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; }
 
-/* Section titles keep their ink fill for reading contrast, but carry a
-   thin turquoise outline — SALT's signature colour, without the legibility
-   cost of setting the whole headline in a lighter hue (turquoise on
-   limestone falls well short of AA contrast as solid text; as a hairline
-   stroke it reads as a deliberate colour accent instead). The SALT
-   wordmark (h1) and experience-card titles (h3, styled further down) keep
-   their own treatment. */
-h2 {
-  color: var(--deep-ink);
-  -webkit-text-stroke: 0.5px var(--turquoise);
-}
+/* Section titles: plain ink, no outline. A turquoise stroke on every h2
+   across the page (there are six) was the single biggest contributor to
+   the site feeling heavy rather than premium — removed. Colour now shows
+   up in fewer, larger moments (the hero, the philosophy statement) instead
+   of on every heading. */
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
 
@@ -404,7 +403,12 @@ p { margin: 0 0 var(--space-sm); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(28,27,24,0.15) 0%, rgba(28,27,24,0.55) 100%);
+  /* Deepened from the original version — the scene-hero gradient's lighter
+     turquoise stop can land right behind the hero text depending on
+     viewport width, and the old overlay wasn't dark enough to guarantee
+     contrast for white text against it. This stays dark enough at the
+     bottom (where the text sits) regardless of what's underneath. */
+  background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.8) 100%);
 }
 
 .hero-content {
@@ -416,12 +420,15 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .hero-content .eyebrow {
-  color: rgba(250, 248, 244, 0.8);
+  color: rgba(250, 248, 244, 0.9);
 }
 
 .hero-title {
   color: var(--salt-white);
   letter-spacing: 0.06em;
+  /* A soft, deep drop shadow lifts the mark off the background and adds
+     weight/drama, without the "outlined" look of a text-stroke. */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55), 0 18px 48px rgba(0, 0, 0, 0.4);
 }
 
 .hero-tagline {
@@ -432,7 +439,7 @@ p { margin: 0 0 var(--space-sm); }
 
 .hero-subline {
   font-size: 0.95rem;
-  color: rgba(250, 248, 244, 0.85);
+  color: rgba(250, 248, 244, 0.92);
   margin-bottom: var(--space-md);
 }
 
@@ -477,7 +484,7 @@ p { margin: 0 0 var(--space-sm); }
   font-size: clamp(1.6rem, 3.6vw, 2.3rem);
   line-height: 1.4;
   color: var(--basalt-charcoal);
-  -webkit-text-stroke: 0.4px var(--turquoise);
+  -webkit-text-stroke: 0.3px var(--turquoise);
   margin: 0;
 }
 
@@ -536,12 +543,10 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .experience-copy h3 {
-  /* Ink fill for contrast, thin accent-coloured outline and underline —
-     several of the experience accents (mango gold, lime green) fall short
-     of AA contrast as solid text on this light background, so the colour
-     shows as a hairline stroke and a rule instead of the fill itself. */
+  /* Plain ink, no outline — the coloured underline alone is enough to
+     signal each experience's own accent without adding weight to the
+     letterforms themselves. */
   color: var(--deep-ink);
-  -webkit-text-stroke: 0.5px var(--accent-strong, var(--aged-brass));
   border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
   display: inline-block;
   padding-bottom: 0.2rem;
@@ -995,7 +1000,7 @@ p { margin: 0 0 var(--space-sm); }
   background-color: var(--basalt-charcoal);
   color: var(--warm-ivory);
 }
-.quote-interlude.on-dark p { color: var(--warm-ivory); -webkit-text-stroke: 0.4px var(--accent-strong); }
+.quote-interlude.on-dark p { color: var(--warm-ivory); -webkit-text-stroke: 0.3px var(--accent-strong); }
 
 /* Numbered format list — "three ways to experience", collaboration
    formats, and similar short enumerated lists */
@@ -1099,7 +1104,7 @@ p { margin: 0 0 var(--space-sm); }
 .exp-partnership h2 { color: var(--accent-strong); }
 .accent-sorrel .exp-partnership h2 {
   color: var(--warm-ivory);
-  -webkit-text-stroke: 0.5px var(--sorrel-wine);
+  -webkit-text-stroke: 0.3px var(--sorrel-wine);
 }
 .exp-partnership .section-intro { color: rgba(244, 237, 226, 0.85); }
 
@@ -1133,7 +1138,7 @@ p { margin: 0 0 var(--space-sm); }
   background-color: var(--basalt-charcoal);
   color: var(--salt-white);
 }
-.closing-cta h2 { color: var(--warm-ivory); -webkit-text-stroke: 0.5px var(--accent-strong); }
+.closing-cta h2 { color: var(--warm-ivory); -webkit-text-stroke: 0.3px var(--accent-strong); }
 .closing-cta p { color: rgba(244, 237, 226, 0.85); max-width: 34rem; margin: 0 auto var(--space-sm); }
 .closing-cta .cta { margin-top: var(--space-sm); color: var(--warm-ivory); border-color: var(--accent-strong); }
 .closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }
