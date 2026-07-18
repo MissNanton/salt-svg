@@ -28,11 +28,15 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16.png">
 <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
 
-<!-- Google Fonts: Fraunces (editorial serif) + Inter (restrained sans-serif) -->
-<!-- Free, web-hosted, no paid licence required. See README for pairing rationale. -->
+<!-- Google Fonts: Bodoni Moda — a single high-contrast editorial serif used
+     for the wordmark, headlines, navigation and body copy. No secondary
+     sans-serif. Free, web-hosted, no paid licence required. Bodoni Moda is
+     a variable font (opsz + wght axes); loading the full range below lets
+     the browser auto-adjust contrast between display and body sizes. See
+     README for the full rationale. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -88,8 +92,15 @@
     <!-- IMAGE: images/hero/salt-hero-grenadines-aerial.jpg
          Suggested shot: wide aerial view of the Grenadines archipelago,
          sea meeting volcanic coastline, soft early or late light. -->
-    <div class="hero-media image-placeholder" role="img" aria-label="Aerial view of the Grenadines archipelago, islands set in turquoise and deep blue sea">
-      <span class="placeholder-label">images/hero/salt-hero-grenadines-aerial.jpg</span>
+    <div class="hero-media scene-panel scene-hero" role="img" aria-label="Aerial view of the Grenadines archipelago, islands set in turquoise and deep blue sea">
+      <svg class="scene-art" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M-20 520 C 120 470, 220 560, 340 500 C 460 440, 540 540, 660 480 C 800 410, 900 520, 1040 460 C 1120 425, 1160 460, 1220 440" opacity="0.5"/>
+        <path d="M100 260 C 260 210, 380 300, 520 240 C 660 180, 760 260, 900 210" stroke="rgba(143,212,0,0.7)" stroke-width="1.6" stroke-dasharray="2 10"/>
+        <path d="M860 195 L 915 220 L 860 212 L 838 232 L 850 205 Z" fill="rgba(143,212,0,0.8)" stroke="none"/>
+        <circle cx="300" cy="380" r="60" opacity="0.16" fill="rgba(255,255,255,0.1)" stroke="none"/>
+        <circle cx="700" cy="440" r="90" opacity="0.12" fill="rgba(255,255,255,0.08)" stroke="none"/>
+      </svg>
+      <span class="panel-caption">images/hero/salt-hero-grenadines-aerial.jpg</span>
     </div>
 
     <div class="hero-content">
@@ -140,8 +151,14 @@
           <!-- IMAGE: images/world/salt-world-detail-textures.jpg
                Suggested shot: still life detail — woven textures, timber, ceramics,
                an old map or navigation chart alongside a linen napkin. -->
-          <div class="image-placeholder tall reveal" role="img" aria-label="Still life of woven textures, timber and ceramics alongside an archival navigation chart">
-            <span class="placeholder-label">images/world/salt-world-detail-textures.jpg</span>
+          <div class="scene-panel scene-world tall reveal" role="img" aria-label="Still life of woven textures, timber and ceramics alongside an archival navigation chart">
+            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(239,230,212,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+              <path d="M40 120 C 140 90, 200 160, 300 130 C 400 100, 460 170, 560 140" stroke-dasharray="1 9"/>
+              <path d="M60 260 L 540 260 M60 300 L 540 300 M60 340 L 540 340" opacity="0.35"/>
+              <circle cx="300" cy="130" r="7" fill="rgba(239,230,212,0.7)" stroke="none"/>
+              <circle cx="300" cy="130" r="16" opacity="0.3"/>
+            </svg>
+            <span class="panel-caption">images/world/salt-world-detail-textures.jpg</span>
           </div>
         </div>
       </div>
@@ -165,8 +182,14 @@
             <!-- IMAGE: images/experiences/salt-air-aerial-grenadines.jpg
                  Suggested shot: view from a small aircraft window over the Grenadines,
                  islands and reefs visible below. -->
-            <div class="image-placeholder" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
-              <span class="placeholder-label">images/experiences/salt-air-aerial-grenadines.jpg</span>
+            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M0 300 C 100 260, 180 330, 280 280 C 380 230, 440 300, 540 260" stroke-dasharray="2 9"/>
+                <path d="M480 245 L 528 268 L 480 260 L 460 278 L 470 252 Z" fill="rgba(255,255,255,0.8)" stroke="none"/>
+                <circle cx="180" cy="380" r="50" fill="rgba(255,255,255,0.12)" stroke="none"/>
+                <circle cx="380" cy="410" r="70" fill="rgba(255,255,255,0.08)" stroke="none"/>
+              </svg>
+              <span class="panel-caption">images/experiences/salt-air-aerial-grenadines.jpg</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -183,8 +206,13 @@
             <!-- IMAGE: images/experiences/salt-sorrel-tasting-table.jpg
                  Suggested shot: hands serving food at a set table, sorrel, breadfruit,
                  local produce and wine being poured. -->
-            <div class="image-placeholder" role="img" aria-label="Hands serving a tasting table of Vincentian produce, sorrel and wine being poured">
-              <span class="placeholder-label">images/experiences/salt-sorrel-tasting-table.jpg</span>
+            <div class="scene-panel scene-sorrel" role="img" aria-label="Hands serving a tasting table of Vincentian produce, sorrel and wine being poured">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M260 150 C 275 150, 288 162, 283 178 C 279 192, 264 197, 253 188 L 258 260 C 258 270, 270 275, 282 275 L 236 275 C 248 275, 258 270, 258 260 L 253 188 C 241 195, 229 183, 234 169 C 239 155, 250 150, 260 150 Z"/>
+                <circle cx="400" cy="330" r="46" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)"/>
+                <circle cx="400" cy="330" r="18" fill="rgba(255,255,255,0.2)" stroke="none"/>
+              </svg>
+              <span class="panel-caption">images/experiences/salt-sorrel-tasting-table.jpg</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -201,8 +229,16 @@
             <!-- IMAGE: images/experiences/salt-afterdark-stargazing.jpg
                  Suggested shot: quiet landscape at night, lantern light, stars visible,
                  a table set for evening hospitality. -->
-            <div class="image-placeholder" role="img" aria-label="Quiet island landscape at night with lantern light and a clear view of the stars">
-              <span class="placeholder-label">images/experiences/salt-afterdark-stargazing.jpg</span>
+            <div class="scene-panel scene-afterdark" role="img" aria-label="Quiet island landscape at night with lantern light and a clear view of the stars">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                <path d="M330 140 C 300 150, 280 180, 280 215 C 280 255, 312 287, 352 287 C 372 287, 390 279, 402 266 C 380 270, 356 258, 344 236 C 332 214, 334 186, 350 166 C 344 156, 337 148, 330 140 Z" fill="rgba(255,255,255,0.14)"/>
+                <circle cx="180" cy="180" r="2.5" fill="rgba(255,255,255,0.8)" stroke="none"/>
+                <circle cx="220" cy="240" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+                <circle cx="150" cy="300" r="2.5" fill="rgba(255,255,255,0.75)" stroke="none"/>
+                <circle cx="440" cy="150" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+                <path d="M0 400 C 150 380, 300 410, 450 390 C 500 384, 550 392, 600 386" opacity="0.4"/>
+              </svg>
+              <span class="panel-caption">images/experiences/salt-afterdark-stargazing.jpg</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -219,8 +255,15 @@
             <!-- IMAGE: images/experiences/salt-studio-craftsmanship.jpg
                  Suggested shot: hands at work — weaving, pottery, botanical or
                  culinary craft, natural materials and tools. -->
-            <div class="image-placeholder" role="img" aria-label="Hands at work on a local craft, surrounded by natural materials and tools">
-              <span class="placeholder-label">images/experiences/salt-studio-craftsmanship.jpg</span>
+            <div class="scene-panel scene-studio" role="img" aria-label="Hands at work on a local craft, surrounded by natural materials and tools">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                <circle cx="220" cy="260" r="90" opacity="0.35"/>
+                <circle cx="220" cy="260" r="55" opacity="0.5"/>
+                <circle cx="220" cy="260" r="6" fill="rgba(255,255,255,0.6)" stroke="none"/>
+                <path d="M380 160 C 400 190, 400 230, 375 255 C 350 280, 350 320, 380 345" opacity="0.5"/>
+                <path d="M380 160 C 360 190, 360 230, 385 255" opacity="0.3"/>
+              </svg>
+              <span class="panel-caption">images/experiences/salt-studio-craftsmanship.jpg</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -237,8 +280,13 @@
             <!-- IMAGE: images/experiences/salt-private-villa-terrace.jpg
                  Suggested shot: private villa terrace or yacht deck set for a
                  quiet, intimate gathering, linen moving in the breeze. -->
-            <div class="image-placeholder" role="img" aria-label="Private villa terrace set for an intimate gathering, linen moving in the breeze">
-              <span class="placeholder-label">images/experiences/salt-private-villa-terrace.jpg</span>
+            <div class="scene-panel scene-private" role="img" aria-label="Private villa terrace set for an intimate gathering, linen moving in the breeze">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(23,20,15,0.4)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                <path d="M120 340 L 120 180 C 120 130, 160 100, 210 100 C 260 100, 300 130, 300 180 L 300 340"/>
+                <path d="M60 340 L 360 340" opacity="0.5"/>
+                <path d="M150 250 C 180 270, 220 270, 250 250 C 240 285, 200 300, 170 285 C 155 278, 148 262, 150 250 Z" opacity="0.3" fill="rgba(23,20,15,0.08)"/>
+              </svg>
+              <span class="panel-caption on-light">images/experiences/salt-private-villa-terrace.jpg</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -286,8 +334,13 @@
           <!-- IMAGE: images/partners/salt-partners-villa-hosting.jpg
                Suggested shot: a host or villa team member setting a table or
                greeting guests, natural and unposed. -->
-          <div class="image-placeholder tall reveal" role="img" aria-label="A host setting a table for guests in a private villa setting, natural and unposed">
-            <span class="placeholder-label">images/partners/salt-partners-villa-hosting.jpg</span>
+          <div class="scene-panel scene-partners tall reveal" role="img" aria-label="A host setting a table for guests in a private villa setting, natural and unposed">
+            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+              <circle cx="300" cy="260" r="70" opacity="0.4"/>
+              <path d="M180 190 L 180 340 M195 190 L 195 250 C 195 260, 180 260, 180 250" opacity="0.4"/>
+              <path d="M420 190 C 435 200, 435 230, 420 240 L 420 340" opacity="0.4"/>
+            </svg>
+            <span class="panel-caption">images/partners/salt-partners-villa-hosting.jpg</span>
           </div>
         </div>
       </div>
@@ -304,8 +357,14 @@
           <!-- IMAGE: images/passport/salt-passport-journal.jpg
                Suggested shot: a bound passport-style journal on textured paper
                or timber, perhaps beside a fountain pen and an old map. -->
-          <div class="image-placeholder reveal" role="img" aria-label="A bound passport-style travel journal resting on textured paper, beside a fountain pen">
-            <span class="placeholder-label">images/passport/salt-passport-journal.jpg</span>
+          <div class="scene-panel scene-passport reveal" role="img" aria-label="A bound passport-style travel journal resting on textured paper, beside a fountain pen">
+            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(23,20,15,0.42)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+              <path d="M180 140 L 180 360 C 180 360, 240 340, 300 360 C 360 340, 420 360, 420 360 L 420 140 C 420 140, 360 120, 300 140 C 240 120, 180 140, 180 140 Z"/>
+              <path d="M300 140 L 300 360" opacity="0.4"/>
+              <circle cx="300" cy="250" r="34" opacity="0.35"/>
+              <path d="M300 226 L 300 274 M276 250 L 324 250" opacity="0.3"/>
+            </svg>
+            <span class="panel-caption on-light">images/passport/salt-passport-journal.jpg</span>
           </div>
         </div>
         <div class="passport-text reveal">
@@ -339,7 +398,13 @@
         <article class="journal-card reveal">
           <!-- IMAGE: images/journal/salt-journal-islands-from-above.jpg
                Suggested shot: aircraft window view of islands and reef patterns. -->
-          <div class="image-placeholder" role="img" aria-label="Aircraft window view over island and reef patterns"></div>
+          <div class="scene-panel scene-journal-air" role="img" aria-label="Aircraft window view over island and reef patterns">
+            <svg class="scene-art" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+              <path d="M0 240 C 90 210, 150 260, 230 220 C 310 180, 360 240, 450 210" stroke-dasharray="2 8"/>
+              <path d="M400 198 L 438 216 L 400 210 L 384 224 L 392 204 Z" fill="rgba(255,255,255,0.75)" stroke="none"/>
+              <circle cx="140" cy="300" r="40" fill="rgba(255,255,255,0.1)" stroke="none"/>
+            </svg>
+          </div>
           <p class="journal-label">Stories in development</p>
           <h3>The Islands from Above</h3>
           <p>There is a particular geography lesson that only altitude can teach. From a few thousand feet, the Grenadines stop being a list of names and become a single, breathing shape — reef, channel, island, reef again...</p>
@@ -348,7 +413,13 @@
         <article class="journal-card reveal">
           <!-- IMAGE: images/journal/salt-journal-breadfruit.jpg
                Suggested shot: breadfruit being prepared, hands and produce close up. -->
-          <div class="image-placeholder" role="img" aria-label="Breadfruit being prepared by hand in a kitchen setting"></div>
+          <div class="scene-panel scene-journal-breadfruit" role="img" aria-label="Breadfruit being prepared by hand in a kitchen setting">
+            <svg class="scene-art" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+              <path d="M250 120 C 300 140, 320 200, 300 250 C 280 300, 220 300, 200 250 C 180 200, 200 140, 250 120 Z" opacity="0.4"/>
+              <path d="M250 120 L 250 90" opacity="0.5"/>
+              <path d="M220 180 C 235 200, 265 200, 280 180" opacity="0.3"/>
+            </svg>
+          </div>
           <p class="journal-label">Stories in development</p>
           <h3>In Praise of Breadfruit</h3>
           <p>No ingredient says more about Vincentian resourcefulness than breadfruit — roasted, fried, boiled, or turned into something entirely its own. This is a short study of one tree and its many lives on the table...</p>
@@ -357,7 +428,14 @@
         <article class="journal-card reveal">
           <!-- IMAGE: images/journal/salt-journal-after-dark.jpg
                Suggested shot: night landscape, stars, lantern or table light. -->
-          <div class="image-placeholder" role="img" aria-label="Night landscape in the Grenadines with stars visible above the water"></div>
+          <div class="scene-panel scene-journal-afterdark" role="img" aria-label="Night landscape in the Grenadines with stars visible above the water">
+            <svg class="scene-art" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+              <path d="M280 110 C 255 118, 238 144, 238 174 C 238 208, 265 235, 299 235 C 316 235, 331 228, 341 217 C 322 220, 302 210, 292 191 C 282 172, 284 148, 298 131 C 293 123, 287 116, 280 110 Z" fill="rgba(255,255,255,0.14)"/>
+              <circle cx="150" cy="150" r="2.2" fill="rgba(255,255,255,0.75)" stroke="none"/>
+              <circle cx="190" cy="200" r="1.8" fill="rgba(255,255,255,0.65)" stroke="none"/>
+              <circle cx="370" cy="130" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+            </svg>
+          </div>
           <p class="journal-label">Stories in development</p>
           <h3>After Dark in the Grenadines</h3>
           <p>Away from the coastal glow, the sky here still does what skies used to do everywhere. A short note on dark skies, quiet company, and why the best part of an island evening often begins after dinner...</p>
