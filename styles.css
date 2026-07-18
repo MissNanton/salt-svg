@@ -74,17 +74,35 @@
      each experience having its own real hue. Rebuilt so each one is a
      genuine, non-black colour family, and picked so the accent tone also
      passes WCAG AA (>=3:1) as text on the limestone background. */
-  --bequia-turquoise: #0A7975; /* SALT Air — the actual colour of shallow Bequia water, not a dark teal */
-  --sky-blue:          #3D7CA8; /* SALT Air gradient — sky/deep sea, no black */
-  --sea-aqua:          #8FE8DC; /* SALT Air gradient — pale shallow-water highlight */
-  --tamarind:          #7A3226; /* Salt & Sorrel — tamarind, not wine */
-  --olive:             #6B6A2E; /* Salt & Sorrel / Studio — olive */
-  --cracker:           #D9C9A3; /* Salt & Sorrel / Studio — pale cracker/wheat */
-  --twilight-violet:   #5A3E8C; /* SALT After Dark — dusk/constellation purple, not orange */
-  --midnight-indigo:   #241640; /* SALT After Dark gradient — deep indigo, not black */
-  --terracotta:        #B2502A; /* SALT Studio — craft/bead accent */
-  --mustard:           #C68A1F; /* SALT Studio — bead colour */
-  --rust:              #8F3A22; /* SALT Studio — bead colour */
+  /* SALT Air — a rich, deep sea blue into a genuinely light, bright
+     turquoise (not the darker teal used for text contrast below). */
+  --bequia-turquoise:  #0A7975; /* text/underline use — passes AA on limestone */
+  --deep-sea-blue:     #123F63; /* gradient — rich, dark, but a real blue, not black */
+  --bright-turquoise:  #2FD4C9; /* gradient — light, vivid turquoise */
+  --pale-aqua:         #A8F0E6; /* gradient — shallow-water highlight */
+
+  /* Salt & Sorrel — an obviously brown cocoa (not near-black) into a true
+     hibiscus red, replacing the muddier tamarind/mango-gold pairing. */
+  --sorrel-brown:      #6B4226;
+  --hibiscus-red:      #C81E4A;
+  --hibiscus-pink:     #E85C7B; /* gradient highlight */
+
+  /* SALT After Dark — a night-sky nebula gradient (indigo/plum/magenta)
+     standing in for an actual astrophotography image, which isn't
+     something I can generate here. Editorial plum, not a flat cartoon
+     purple, and no orange. */
+  --nebula-indigo:     #150C33;
+  --nebula-plum:       #5C2A7D;
+  --nebula-magenta:    #A8477E;
+  --nebula-fade:       #3A2A52;
+
+  /* SALT Studio — back to a smooth editorial gradient (olive, clay,
+     cream) after the multicoloured dot pattern read as childish rather
+     than crafted. */
+  --studio-olive:      #4A4A26;
+  --studio-clay:       #A8552E;
+  --studio-cream:      #E3D3A8;
+
   /* SALT Private keeps --aged-brass; only its gradient's darkest stop
      changes below, from near-black to --chocolate. */
 
@@ -233,12 +251,11 @@ h1, h2, h3, h4 {
 h1 {
   font-size: clamp(3rem, 9vw, 7rem);
   font-weight: 400;
-  /* Forcing the optical-size axis to its maximum is what produces the
-     razor-thin hairlines and near-invisible crossbars (look at the A) that
-     read as "very high stroke contrast, refined, understated luxury" —
-     the browser's automatic opsz mapping at this font-size doesn't push
-     the axis this far on its own. Wider tracking completes the look. */
-  font-variation-settings: 'opsz' 96;
+  /* Slightly below the axis maximum (96) — full 96 was a touch too
+     fragile to read comfortably; 80 keeps the dramatic thin/thick
+     contrast and the near-invisible crossbar on the A, with just enough
+     more weight in the hairlines to stay legible at a glance. */
+  font-variation-settings: 'opsz' 80;
   letter-spacing: 0.09em;
 }
 
@@ -644,9 +661,9 @@ p { margin: 0 0 var(--space-sm); }
    library declared in :root. To retune any single experience, just change
    its line below — nothing else about the layout or type needs to change. */
 .accent-air        { --accent-strong: var(--bequia-turquoise); }
-.accent-sorrel     { --accent-strong: var(--tamarind); }
-.accent-afterdark  { --accent-strong: var(--twilight-violet); }
-.accent-studio     { --accent-strong: var(--terracotta); }
+.accent-sorrel     { --accent-strong: var(--hibiscus-red); }
+.accent-afterdark  { --accent-strong: var(--nebula-plum); }
+.accent-studio     { --accent-strong: var(--studio-clay); }
 .accent-private    { --accent-strong: var(--aged-brass); }
 
 /* ----------------------------------------------------------------
@@ -910,28 +927,19 @@ p { margin: 0 0 var(--space-sm); }
    colours. Add a new .scene-* rule here for any future experience. */
 .scene-hero      { background: var(--limestone); }
 .scene-world     { background: linear-gradient(150deg, #17140F 0%, #4A4032 55%, #B9915C 130%); }
-/* Sky-to-sea blues, no black — actual Bequia water colour. */
-.scene-air       { background: linear-gradient(155deg, #3D7CA8 0%, #0A7975 55%, #8FE8DC 120%); }
-/* Cocoa, tamarind and mango — a warm food palette, no black or wine. */
-.scene-sorrel    { background: linear-gradient(155deg, #3B2415 0%, #7A3226 50%, #D98F3B 120%); }
-/* Midnight indigo into dusk violet, grounded by a warm brown horizon —
-   constellations and sunset, not orange lantern-light. */
-.scene-afterdark { background: linear-gradient(160deg, #241640 0%, #5A3E8C 55%, #6B4A32 130%); }
-/* Scattered coloured beads on a woven, cracker-toned ground, standing in
-   for the craft/beading work itself rather than a landscape gradient. */
-.scene-studio {
-  background-color: #D9C9A3;
-  background-image:
-    radial-gradient(circle at 18% 28%, #B2502A 9px, transparent 10px),
-    radial-gradient(circle at 52% 12%, #C68A1F 7px, transparent 8px),
-    radial-gradient(circle at 82% 38%, #0A7975 8px, transparent 9px),
-    radial-gradient(circle at 32% 62%, #6B6A2E 7px, transparent 8px),
-    radial-gradient(circle at 68% 78%, #8F3A22 9px, transparent 10px),
-    radial-gradient(circle at 8% 82%, #C68A1F 6px, transparent 7px),
-    radial-gradient(circle at 92% 8%, #7A3226 6px, transparent 7px);
-  background-size: 150px 150px;
-  background-repeat: repeat;
-}
+/* Rich deep sea blue into a genuinely light, bright turquoise — no black,
+   no muddy dark teal. */
+.scene-air       { background: linear-gradient(155deg, var(--deep-sea-blue) 0%, var(--bright-turquoise) 55%, var(--pale-aqua) 120%); }
+/* Obviously brown cocoa into true hibiscus red — no near-black, no
+   orange/mango. */
+.scene-sorrel    { background: linear-gradient(155deg, var(--sorrel-brown) 0%, var(--hibiscus-red) 60%, var(--hibiscus-pink) 120%); }
+/* Night-sky nebula — indigo into plum into magenta, fading to a muted
+   violet-brown rather than snapping to black or orange. */
+.scene-afterdark { background: linear-gradient(160deg, var(--nebula-indigo) 0%, var(--nebula-plum) 45%, var(--nebula-magenta) 75%, var(--nebula-fade) 100%); }
+/* Back to a smooth editorial gradient — olive into clay into cream —
+   after the multicoloured dot pattern read as childish rather than
+   crafted. */
+.scene-studio    { background: linear-gradient(160deg, var(--studio-olive) 0%, var(--studio-clay) 55%, var(--studio-cream) 130%); }
 /* Chocolate into tan — brown kept for its "privacy and subtlety" feel,
    black removed. */
 .scene-private   { background: linear-gradient(160deg, #3B2415 0%, #6B4A32 55%, #D9B98A 130%); }
@@ -1128,14 +1136,6 @@ p { margin: 0 0 var(--space-sm); }
 .act:nth-child(even) > * { direction: ltr; }
 .act .scene-panel { aspect-ratio: auto; min-height: 320px; border-radius: 0; border: none; }
 
-/* The Studio panel background changed from a dark gradient to a light
-   cracker-toned bead pattern — its line art was drawn in cream for a dark
-   backdrop and would be nearly invisible now. Re-tinted dark; this
-   overrides the inline SVG stroke/fill attributes. */
-.scene-studio .scene-art { stroke: rgba(23, 20, 15, 0.4); }
-.scene-studio .scene-art circle[fill],
-.scene-studio .scene-art path[fill] { fill: rgba(23, 20, 15, 0.5); }
-.scene-studio .panel-caption { color: rgba(23, 20, 15, 0.85); text-shadow: none; }
 .act-copy {
   display: flex;
   flex-direction: column;
@@ -1152,8 +1152,8 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--accent-strong);
   margin-bottom: 0.6rem;
 }
-/* Same dark-on-dark contrast issue as the partnership heading — tamarind
-   and twilight-violet fail as solid text on basalt-charcoal at this size. */
+/* Same dark-on-dark contrast issue as the partnership heading — hibiscus
+   red and nebula plum fail as solid text on basalt-charcoal at this size. */
 .accent-sorrel .act-label,
 .accent-afterdark .act-label {
   color: var(--warm-ivory);
@@ -1209,16 +1209,17 @@ p { margin: 0 0 var(--space-sm); }
 }
 .exp-partnership .eyebrow { color: var(--sand); }
 .exp-partnership h2 { color: var(--accent-strong); }
-/* Tamarind and twilight-violet are both too dark to pass contrast as a
-   solid fill on basalt-charcoal — ivory fill with a thin coloured stroke
-   instead, same pattern used elsewhere for dark-on-dark accent colours. */
+/* Hibiscus red and nebula plum are both too dark/marginal to pass
+   contrast as a solid fill on basalt-charcoal — ivory fill with a thin
+   coloured stroke instead, same pattern used elsewhere for dark-on-dark
+   accent colours. */
 .accent-sorrel .exp-partnership h2 {
   color: var(--warm-ivory);
-  -webkit-text-stroke: 0.3px var(--tamarind);
+  -webkit-text-stroke: 0.3px var(--hibiscus-red);
 }
 .accent-afterdark .exp-partnership h2 {
   color: var(--warm-ivory);
-  -webkit-text-stroke: 0.3px var(--twilight-violet);
+  -webkit-text-stroke: 0.3px var(--nebula-plum);
 }
 .exp-partnership .section-intro { color: rgba(244, 237, 226, 0.85); }
 
@@ -1261,6 +1262,6 @@ p { margin: 0 0 var(--space-sm); }
 .closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }
 .accent-sorrel .closing-cta .cta:hover,
 .accent-afterdark .closing-cta .cta:hover {
-  /* Ink fails against tamarind/twilight-violet at this size — ivory instead. */
+  /* Ink fails against hibiscus red/nebula plum at this size — ivory instead. */
   color: var(--warm-ivory);
 }
