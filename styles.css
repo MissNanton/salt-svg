@@ -339,7 +339,22 @@ p { margin: 0 0 var(--space-sm); }
 
 .section {
   padding: var(--space-xl) 0;
-  border-top: var(--border-hairline);
+  position: relative;
+}
+
+/* A short, centred rule rather than a full-width hairline — reads as a
+   deliberate break between sections without cutting the page into visible
+   blocks, which matters now that several adjacent sections share the same
+   limestone background. */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 2px;
+  background-color: rgba(28, 27, 24, 0.28);
 }
 
 .cta {
