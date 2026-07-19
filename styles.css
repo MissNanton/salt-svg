@@ -107,6 +107,15 @@
   /* SALT Private keeps --aged-brass; only its gradient's darkest stop
      changes below, from near-black to --chocolate. */
 
+  /* SALT Kitchen — fire, spice and harvest. Terracotta and saffron keep it
+     distinct from Sorrel's wine-red/cocoa and Private's neutral chocolate-
+     tan; olive is a genuinely new hue in the house palette (garden herbs,
+     callaloo), used as this experience's --accent-strong. */
+  --kitchen-terracotta: #7A2E12;
+  --kitchen-saffron:    #D98A2E;
+  --kitchen-gold-light: #F0C878;
+  --kitchen-olive:      #4B5320;
+
   /* Body-text colour variants — the master site now varies reading-copy
      colour by section (basalt, chocolate or deep blue) instead of one flat
      ink everywhere. Still dark enough for comfortable reading contrast on
@@ -695,6 +704,7 @@ p { margin: 0 0 var(--space-sm); }
 .accent-sorrel     { --accent-strong: var(--hibiscus-red); }
 .accent-afterdark  { --accent-strong: var(--nebula-plum); }
 .accent-studio     { --accent-strong: var(--studio-indigo); }
+.accent-kitchen    { --accent-strong: var(--kitchen-olive); }
 .accent-private    { --accent-strong: var(--aged-brass); }
 
 /* ----------------------------------------------------------------
@@ -997,6 +1007,7 @@ p { margin: 0 0 var(--space-sm); }
 .scene-studio    { background: linear-gradient(160deg, var(--studio-indigo) 0%, var(--studio-clay) 55%, var(--studio-cream) 130%); }
 /* Chocolate into tan — brown kept for its "privacy and subtlety" feel,
    black removed. */
+.scene-kitchen   { background: linear-gradient(155deg, var(--kitchen-terracotta) 0%, var(--kitchen-saffron) 60%, var(--kitchen-gold-light) 120%); }
 .scene-private   { background: linear-gradient(160deg, #3B2415 0%, #6B4A32 55%, #D9B98A 130%); }
 .scene-partners  { background: linear-gradient(150deg, #0A0A0A 0%, #3A2E22 55%, #B9915C 130%); }
 .scene-passport  { background: linear-gradient(150deg, #6B4A32 0%, #B9915C 55%, #EFE6D4 125%); }
@@ -1148,7 +1159,8 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--deep-ink);
 }
 .accent-sorrel .quote-interlude.on-accent,
-.accent-studio .quote-interlude.on-accent {
+.accent-studio .quote-interlude.on-accent,
+.accent-kitchen .quote-interlude.on-accent {
   color: var(--warm-ivory);
 }
 /* Air — deep sea blue with ivory text instead of the default
@@ -1379,7 +1391,8 @@ p { margin: 0 0 var(--space-sm); }
 .accent-air .closing-cta .cta:hover,
 .accent-sorrel .closing-cta .cta:hover,
 .accent-afterdark .closing-cta .cta:hover,
-.accent-studio .closing-cta .cta:hover {
+.accent-studio .closing-cta .cta:hover,
+.accent-kitchen .closing-cta .cta:hover {
   /* Ink fails against these four accents at this size — ivory instead.
      Aged-brass (Private) keeps ink, which reads better against it. */
   color: var(--warm-ivory);

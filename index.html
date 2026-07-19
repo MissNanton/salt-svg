@@ -38,7 +38,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:wght@300;400&family=Italiana&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 
 <body>
@@ -151,10 +151,19 @@
                an old map or navigation chart alongside a linen napkin. -->
           <div class="scene-panel scene-world tall reveal" role="img" aria-label="Still life of woven textures, timber and ceramics alongside an archival navigation chart">
             <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(239,230,212,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-              <path d="M40 120 C 140 90, 200 160, 300 130 C 400 100, 460 170, 560 140" stroke-dasharray="1 9"/>
-              <path d="M60 260 L 540 260 M60 300 L 540 300 M60 340 L 540 340" opacity="0.35"/>
-              <circle cx="300" cy="130" r="7" fill="rgba(239,230,212,0.7)" stroke="none"/>
-              <circle cx="300" cy="130" r="16" opacity="0.3"/>
+              <!-- Land: two layered coastline silhouettes -->
+              <path d="M60 300 C 110 258, 165 246, 220 268 C 258 283, 292 256, 340 246 C 392 235, 440 258, 495 282 L 495 300 Z" fill="rgba(239,230,212,0.12)" stroke="rgba(239,230,212,0.4)"/>
+              <path d="M255 300 C 288 274, 320 268, 352 284 C 374 295, 398 280, 430 286 L 430 300 Z" fill="rgba(239,230,212,0.08)" stroke="none"/>
+              <!-- Sea: horizon line -->
+              <path d="M40 300 L 560 300" opacity="0.45"/>
+              <!-- Story: a small compass rose, wayfinding across the house -->
+              <circle cx="452" cy="152" r="46" opacity="0.3"/>
+              <path d="M452 106 L 452 198 M406 152 L 498 152" opacity="0.32"/>
+              <path d="M452 124 L 461 152 L 452 180 L 443 152 Z" fill="rgba(239,230,212,0.55)" stroke="none"/>
+              <!-- A few distant stars -->
+              <circle cx="130" cy="110" r="1.6" fill="rgba(239,230,212,0.6)" stroke="none"/>
+              <circle cx="180" cy="150" r="1.3" fill="rgba(239,230,212,0.5)" stroke="none"/>
+              <circle cx="90" cy="170" r="1.4" fill="rgba(239,230,212,0.45)" stroke="none"/>
             </svg>
             <span class="panel-caption">Sea, land and story</span>
           </div>
@@ -169,7 +178,7 @@
   <section class="section experiences" id="experiences">
     <div class="container">
       <p class="eyebrow reveal">Signature Experiences</p>
-      <h2 class="section-title reveal">Five ways into the islands</h2>
+      <h2 class="section-title reveal">Six ways into the islands</h2>
       <p class="section-intro reveal">Each SALT experience carries its own name and mood, while sharing the same house standard. The concepts below are in varying stages of development. Some are available now by private enquiry; others are still being shaped.</p>
 
       <div class="experience-list">
@@ -223,6 +232,33 @@
           </div>
         </article>
 
+        <!-- SALT Kitchen -->
+        <article class="experience-card accent-kitchen reveal">
+          <div class="experience-media">
+            <!-- IMAGE: images/experiences/salt-kitchen-villa-cooking.jpg
+                 Suggested shot: guests cooking together at a kitchen island in an
+                 open villa kitchen, wine glasses nearby, warm evening light. -->
+            <div class="scene-panel scene-kitchen" role="img" aria-label="Guests cooking together at a kitchen island in an open villa kitchen, wine glasses nearby">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                <path d="M220 320 C 220 280, 250 254, 290 254 C 330 254, 360 280, 360 320 L 360 350 L 220 350 Z" opacity="0.55"/>
+                <path d="M245 244 C 240 226, 250 208, 245 188" stroke-dasharray="1 8" opacity="0.4"/>
+                <path d="M290 234 C 285 216, 296 198, 290 178" stroke-dasharray="1 8" opacity="0.45"/>
+                <path d="M335 244 C 330 226, 341 208, 335 188" stroke-dasharray="1 8" opacity="0.4"/>
+                <circle cx="460" cy="330" r="30" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)"/>
+                <circle cx="460" cy="330" r="12" fill="rgba(255,255,255,0.18)" stroke="none"/>
+              </svg>
+              <span class="panel-caption">Arrive, cook and feast together</span>
+            </div>
+          </div>
+          <div class="experience-copy">
+            <p class="experience-eyebrow">03 — Vincentian Cooking</p>
+            <h3>SALT Kitchen</h3>
+            <p>A hands-on Vincentian cooking experience hosted in a private villa kitchen. Guests arrive to wine and conversation, cook a purely Vincentian menu together — callaloo soup, breadfruit, saltfish fritters, roast meats — then feast on a terrace overlooking Saint Vincent.</p>
+            <p class="experience-note">Programmes can be adapted for hotels, private villas, yachts or selected partners. Available by private enquiry as the concept is finalised.</p>
+            <a class="experience-more" href="salt-kitchen.html">Explore SALT Kitchen &rarr;</a>
+          </div>
+        </article>
+
         <!-- SALT After Dark -->
         <article class="experience-card accent-afterdark reveal">
           <div class="experience-media">
@@ -242,7 +278,7 @@
             </div>
           </div>
           <div class="experience-copy">
-            <p class="experience-eyebrow">03 — Stargazing &amp; Hosting</p>
+            <p class="experience-eyebrow">04 — Stargazing &amp; Hosting</p>
             <h3>SALT After Dark</h3>
             <p>A refined stargazing and evening hospitality concept featuring dark skies, quiet landscapes, storytelling, considered food and drink, and atmospheric hosting long after the day's heat has passed.</p>
             <p class="experience-note">Programmes can be adapted for hotels, private villas, yachts or selected partners. Available by private enquiry.</p>
@@ -268,7 +304,7 @@
             </div>
           </div>
           <div class="experience-copy">
-            <p class="experience-eyebrow">04 — Craft &amp; Botanical</p>
+            <p class="experience-eyebrow">05 — Craft &amp; Botanical</p>
             <h3>SALT Studio</h3>
             <p>Creative and cultural encounters built around local craftsmanship, art, botanical knowledge and the quiet satisfaction of making something with your hands, guided by people who know the material well.</p>
             <p class="experience-note">Programmes can be adapted for hotels, private villas, yachts or selected partners. Available by private enquiry.</p>
@@ -292,7 +328,7 @@
             </div>
           </div>
           <div class="experience-copy">
-            <p class="experience-eyebrow">05 — Bespoke &amp; Private</p>
+            <p class="experience-eyebrow">06 — Bespoke &amp; Private</p>
             <h3>SALT Private</h3>
             <p>Bespoke experiences designed around a villa, a yacht, a couple, a family or a private group — drawing on the full SALT repertoire and shaped entirely around the setting and the guest.</p>
             <p class="experience-note">Designed in direct collaboration with villa managers, yacht crews and hospitality partners. Available by private enquiry.</p>
