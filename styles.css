@@ -1385,13 +1385,16 @@ p { margin: 0 0 var(--space-sm); }
 
 /* Closing call-to-collaboration block */
 .closing-cta {
+  /* Limestone rather than chocolate — matches the Partners/Founder's Note
+     fix on the homepage, so the page reads as one continuous surface all
+     the way to the footer instead of ending on a stacked dark panel. */
   text-align: center;
-  background-color: var(--chocolate);
-  color: var(--salt-white);
+  background-color: var(--limestone);
+  color: var(--basalt-charcoal);
 }
-.closing-cta h2 { color: var(--warm-ivory); -webkit-text-stroke: 0.3px var(--accent-strong); }
-.closing-cta p { color: rgba(244, 237, 226, 0.85); max-width: 34rem; margin: 0 auto var(--space-sm); }
-.closing-cta .cta { margin-top: var(--space-sm); color: var(--warm-ivory); border-color: var(--accent-strong); }
+.closing-cta h2 { color: var(--chocolate); -webkit-text-stroke: 0.3px var(--accent-strong); }
+.closing-cta p { color: rgba(23, 20, 15, 0.75); max-width: 34rem; margin: 0 auto var(--space-sm); }
+.closing-cta .cta { margin-top: var(--space-sm); color: var(--chocolate); border-color: var(--accent-strong); }
 .closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }
 .accent-air .closing-cta .cta:hover,
 .accent-sorrel .closing-cta .cta:hover,
