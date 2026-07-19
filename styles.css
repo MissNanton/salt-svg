@@ -305,12 +305,14 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .pull-line {
-  font-family: var(--font-serif);
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-  color: var(--turquoise);
+  /* Cormorant Garamond light italic, in ink rather than a bright accent —
+     a quiet magazine deck line under the pull-quote above it, not a bold
+     uppercase banner. */
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  color: var(--chocolate);
   text-align: center;
   max-width: 34rem;
   margin: var(--space-lg) auto 0;
@@ -520,6 +522,23 @@ p { margin: 0 0 var(--space-sm); }
   color: rgba(250, 248, 244, 0.9);
 }
 
+/* Homepage hero only (plain limestone, no accent gradient) — the eyebrow
+   and subline read more easily in chocolate than white against this light
+   background. Scoped via the sibling combinator so the darker/gradient
+   hero backgrounds on the experience pages are unaffected; SALT and the
+   CTA stay white as requested. */
+.scene-hero ~ .hero-content .eyebrow {
+  color: var(--chocolate);
+}
+.scene-hero ~ .hero-content .hero-subline {
+  color: var(--chocolate);
+  opacity: 0.85;
+}
+.scene-hero ~ .hero-content .hero-tagline {
+  color: var(--chocolate);
+  opacity: 0.9;
+}
+
 .hero-title {
   color: var(--salt-white);
   text-shadow: none;
@@ -540,17 +559,26 @@ p { margin: 0 0 var(--space-sm); }
 
 /* SALT Air only: its gradient stays light/turquoise throughout the hero
    crop, so chocolate ink reads more easily than white here. Checked against
-   the other four experiences' gradients too — they run dark enough in
+   the other five experiences' gradients too — they run dark enough in
    places that chocolate text would fail contrast, so this stays scoped to
-   Air rather than becoming a global hero rule. */
+   Air rather than becoming a global hero rule. All reading copy (eyebrow,
+   tagline, subline) is the same ink tone, consistent with the homepage
+   hero treatment — only the wordmark/CTA read as a separate graphic tier
+   there; here the whole hero reads as one consistent ink block on light
+   turquoise. */
 .accent-air .hero-title,
 .accent-air .hero-content .eyebrow,
+.accent-air .hero-tagline,
 .accent-air .hero-subline {
   color: var(--chocolate);
 }
 
 .accent-air .hero-content .eyebrow {
   opacity: 0.85;
+}
+
+.accent-air .hero-tagline {
+  opacity: 0.9;
 }
 
 .accent-air .hero-subline {
@@ -711,7 +739,10 @@ p { margin: 0 0 var(--space-sm); }
    11. HOSPITALITY PARTNERS
    ---------------------------------------------------------------- */
 .partners {
-  background-color: var(--basalt-charcoal);
+  /* Chocolate rather than basalt-charcoal — warmer and noticeably less
+     "almost black" than the near-black panel this used to be, matching the
+     warm dark-panel treatment used everywhere else on the site. */
+  background-color: var(--chocolate);
   color: var(--warm-ivory);
 }
 
@@ -737,6 +768,7 @@ p { margin: 0 0 var(--space-sm); }
    small-caps label above untouched. */
 .partners-text p:not(.eyebrow) {
   font-family: var(--font-statement);
+  font-weight: 300;
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -745,6 +777,7 @@ p { margin: 0 0 var(--space-sm); }
   padding: 0.55rem 0;
   border-bottom: 1px solid rgba(244, 237, 226, 0.14);
   font-family: var(--font-statement);
+  font-weight: 300;
   font-size: 1.02rem;
 }
 
@@ -813,7 +846,9 @@ p { margin: 0 0 var(--space-sm); }
    14. FOUNDER'S NOTE
    ---------------------------------------------------------------- */
 .founder {
-  background-color: var(--basalt-charcoal);
+  /* Chocolate rather than basalt-charcoal — warm instead of near-black,
+     matching the rest of the site's dark panels. */
+  background-color: var(--chocolate);
   color: var(--salt-white);
 }
 
@@ -872,7 +907,9 @@ p { margin: 0 0 var(--space-sm); }
    16. FOOTER
    ---------------------------------------------------------------- */
 .site-footer {
-  background-color: var(--deep-ink);
+  /* Chocolate rather than deep-ink — warm instead of near-black, matching
+     the rest of the site's dark panels. */
+  background-color: var(--chocolate);
   color: var(--warm-ivory);
   padding: var(--space-lg) 0 var(--space-md);
 }
@@ -1163,13 +1200,23 @@ p { margin: 0 0 var(--space-sm); }
 .accent-kitchen .quote-interlude.on-accent {
   color: var(--warm-ivory);
 }
-/* Air — deep sea blue with ivory text instead of the default
-   bequia-turquoise fill, so this panel reads as sky/sea rather than
-   repeating the same turquoise the illustrated panels already use. */
+/* Air — no colour panel at all: a flat corporate-blue block read more like
+   a banner than an editorial device, so this drops the accent fill and
+   matches the homepage's own philosophy pull-quote instead — plain
+   limestone, large italic Cormorant Garamond in ink. */
 .accent-air .quote-interlude.on-accent {
-  background-color: var(--deep-sea-blue);
-  color: var(--warm-ivory);
+  background-color: var(--limestone);
+  color: var(--chocolate);
 }
+.accent-air .quote-interlude p {
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
 /* After Dark — the same night-sky nebula gradient used in the hero,
    instead of a flat purple fill. */
 .accent-afterdark .quote-interlude.on-accent {
@@ -1210,10 +1257,11 @@ p { margin: 0 0 var(--space-sm); }
    of being tiled rectangles. The split ratio flips every second act, so
    the image width — and therefore its height, since it's aspect-ratio
    driven — genuinely varies act to act rather than repeating a fixed
-   template, and the final act becomes one large full-width illustration
-   with copy underneath as a bigger closing beat instead of a third
-   identical split. Piloted on SALT Air, approved, now applied to all
-   five experience pages. */
+   template. (An earlier version stretched the final act to a full-width
+   band; with several of the closing acts having no line art in their
+   panel, that read as a large empty box, so it's back to the same
+   side-by-side treatment as the rest.) Piloted on SALT Air, approved,
+   now applied to all six experience pages. */
 .acts {
   display: flex;
   flex-direction: column;
@@ -1241,21 +1289,6 @@ p { margin: 0 0 var(--space-sm); }
   min-height: 0;
   border-radius: 3px;
   border: none;
-}
-
-.act:last-child {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 2rem;
-}
-.act:last-child .scene-panel {
-  flex: none;
-  width: 100%;
-  aspect-ratio: 21 / 9;
-}
-.act:last-child .act-copy {
-  flex: none;
-  max-width: 34rem;
 }
 
 .act-copy {
@@ -1289,8 +1322,7 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 @media (max-width: 820px) {
-  .act,
-  .act:last-child {
+  .act {
     flex-direction: column;
     align-items: stretch;
   }
@@ -1300,8 +1332,7 @@ p { margin: 0 0 var(--space-sm); }
   .act:nth-child(2n) > .act-copy {
     flex-basis: auto;
   }
-  .act .scene-panel,
-  .act:last-child .scene-panel {
+  .act .scene-panel {
     min-height: 260px;
     aspect-ratio: 4 / 3;
   }
