@@ -297,7 +297,9 @@ p { margin: 0 0 var(--space-sm); }
 
 .pull-line {
   font-family: var(--font-serif);
-  font-style: italic;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   font-size: clamp(1.2rem, 2.4vw, 1.6rem);
   color: var(--turquoise);
   text-align: center;
@@ -719,10 +721,21 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 1rem;
 }
 
+/* Cormorant Garamond, upright — same body-copy treatment as the philosophy
+   text. Bodoni Moda's high stroke contrast reads fine at display sizes but
+   gets harder to scan across full paragraphs; :not(.eyebrow) keeps the
+   small-caps label above untouched. */
+.partners-text p:not(.eyebrow) {
+  font-family: var(--font-statement);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
 .partners-list li {
   padding: 0.55rem 0;
   border-bottom: 1px solid rgba(244, 237, 226, 0.14);
-  font-size: 0.95rem;
+  font-family: var(--font-statement);
+  font-size: 1.02rem;
 }
 
 .partners .cta-dark {
@@ -797,9 +810,9 @@ p { margin: 0 0 var(--space-sm); }
 .founder .eyebrow { color: rgba(250, 248, 244, 0.75); }
 
 .founder-copy p {
-  font-family: var(--font-serif);
+  font-family: var(--font-statement);
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 /* ----------------------------------------------------------------
@@ -862,7 +875,14 @@ p { margin: 0 0 var(--space-sm); }
   border-bottom: 1px solid rgba(244, 237, 226, 0.14);
 }
 
-.footer-brand p { margin: 0 0 0.3rem; color: rgba(244, 237, 226, 0.75); }
+/* Cormorant Garamond, upright, for all footer body copy — the wordmark
+   keeps the site's Bodoni Moda identity type via :not(). */
+.footer-brand p:not(.footer-wordmark) {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-statement);
+  font-size: 1.05rem;
+  color: rgba(244, 237, 226, 0.75);
+}
 
 .footer-wordmark {
   font-size: 1.4rem;
@@ -872,13 +892,18 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .footer-nav ul { display: flex; flex-direction: column; gap: 0.6rem; }
-.footer-nav a { font-size: 0.9rem; color: rgba(244, 237, 226, 0.85); }
+.footer-nav a {
+  font-family: var(--font-statement);
+  font-size: 1rem;
+  color: rgba(244, 237, 226, 0.85);
+}
 .footer-nav a:hover { color: var(--aged-brass); }
 
 .footer-contact a {
   display: inline-block;
   margin-bottom: 0.4rem;
-  font-size: 0.95rem;
+  font-family: var(--font-statement);
+  font-size: 1.05rem;
   color: var(--salt-white);
 }
 .footer-contact p { color: rgba(244, 237, 226, 0.7); font-size: 0.9rem; }
@@ -889,7 +914,8 @@ p { margin: 0 0 var(--space-sm); }
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-xs);
-  font-size: 0.8rem;
+  font-family: var(--font-statement);
+  font-size: 0.92rem;
   color: rgba(244, 237, 226, 0.6);
 }
 
