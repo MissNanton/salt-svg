@@ -558,41 +558,16 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 /* SALT Air only: its gradient stays light/turquoise throughout the hero
-   crop, so chocolate ink reads more easily than white here. Checked against
-   the other five experiences' gradients too — they run dark enough in
-   places that chocolate text would fail contrast, so this stays scoped to
-   Air rather than becoming a global hero rule. All reading copy (eyebrow,
-   tagline, subline) is the same ink tone, consistent with the homepage
-   hero treatment — only the wordmark/CTA read as a separate graphic tier
-   there; here the whole hero reads as one consistent ink block on light
-   turquoise. */
-.accent-air .hero-title,
-.accent-air .hero-content .eyebrow,
-.accent-air .hero-tagline,
-.accent-air .hero-subline {
-  color: var(--chocolate);
-}
-
-.accent-air .hero-content .eyebrow {
-  opacity: 0.85;
-}
-
-.accent-air .hero-tagline {
-  opacity: 0.9;
-}
-
-.accent-air .hero-subline {
-  opacity: 0.92;
-}
-
-.accent-air .hero-content .cta-light {
-  color: var(--chocolate);
-  border-color: rgba(59, 36, 21, 0.55);
-}
-
-.accent-air .hero-content .cta-light:hover {
-  background-color: var(--chocolate);
-  color: var(--salt-white);
+   crop, which previously made white text hard to read, so this used to
+   switch the whole hero to chocolate ink instead. That left Air as the one
+   experience page with dark hero text while the other five stayed white —
+   an inconsistency of its own. Fixed at the root instead: a scrim gradient
+   behind the text, darkest at the bottom where the copy sits and fading to
+   nothing higher up, so the hero stays light and bright everywhere else
+   but white text reads safely — restoring the same white hero treatment
+   used on every other experience page. */
+.accent-air .hero-media::after {
+  background: linear-gradient(to top, rgba(10, 42, 69, 0.8) 0%, rgba(10, 42, 69, 0.4) 32%, rgba(10, 42, 69, 0) 62%);
 }
 
 /* ----------------------------------------------------------------
@@ -739,16 +714,14 @@ p { margin: 0 0 var(--space-sm); }
    11. HOSPITALITY PARTNERS
    ---------------------------------------------------------------- */
 .partners {
-  /* Chocolate rather than basalt-charcoal — warmer and noticeably less
-     "almost black" than the near-black panel this used to be, matching the
-     warm dark-panel treatment used everywhere else on the site. */
-  background-color: var(--chocolate);
-  color: var(--warm-ivory);
+  /* Limestone rather than chocolate — with the Closing CTA already carrying
+     the site's one deliberate dark moment near the end of each page, a
+     second dark block here read as a stack rather than an accent. Plain
+     limestone keeps this section flowing into Passport/Journal/Founder's
+     Note as one continuous page. */
+  background-color: var(--limestone);
+  color: var(--basalt-charcoal);
 }
-
-.partners h2 { color: var(--turquoise); }
-.partners h3 { color: var(--salt-white); }
-.partners .eyebrow { color: var(--sand); }
 
 .partners-grid {
   display: grid;
@@ -775,19 +748,10 @@ p { margin: 0 0 var(--space-sm); }
 
 .partners-list li {
   padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+  border-bottom: var(--border-hairline);
   font-family: var(--font-statement);
   font-weight: 300;
   font-size: 1.02rem;
-}
-
-.partners .cta-dark {
-  color: var(--warm-ivory);
-  border-color: var(--aged-brass);
-}
-.partners .cta-dark:hover {
-  background-color: var(--aged-brass);
-  color: var(--deep-ink);
 }
 
 /* ----------------------------------------------------------------
@@ -846,13 +810,12 @@ p { margin: 0 0 var(--space-sm); }
    14. FOUNDER'S NOTE
    ---------------------------------------------------------------- */
 .founder {
-  /* Chocolate rather than basalt-charcoal — warm instead of near-black,
-     matching the rest of the site's dark panels. */
-  background-color: var(--chocolate);
-  color: var(--salt-white);
+  /* Limestone rather than chocolate — matches the Partners section above it
+     and keeps the page reading as one continuous, editorial surface rather
+     than a run of stacked dark panels before the footer. */
+  background-color: var(--limestone);
+  color: var(--basalt-charcoal);
 }
-
-.founder .eyebrow { color: rgba(250, 248, 244, 0.75); }
 
 .founder-copy p {
   font-family: var(--font-statement);
@@ -1363,24 +1326,21 @@ p { margin: 0 0 var(--space-sm); }
 .exp-timeline h4 { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; margin-bottom: 0.2rem; }
 .exp-timeline p { font-size: 0.9rem; color: var(--soft-stone-grey); max-width: 30rem; }
 
-/* Dark "for hospitality partners" section reused across every experience
-   page. Heading colour defaults to that page's own accent, except on the
-   Salt & Sorrel page, where the wine accent is too dark to read as solid
-   text against this near-black background — it shows as a hairline stroke
-   on ivory instead, the same safety pattern used for headings elsewhere. */
-.exp-partnership {
-  background-color: var(--chocolate);
-  color: var(--warm-ivory);
-}
-.exp-partnership .eyebrow { color: var(--sand); }
-/* Ivory fill, coloured stroke, universally — same reasoning as .act-label:
-   chocolate is light enough that solid accent-coloured text no longer
-   passes contrast reliably for most of the five accents. */
+/* "For hospitality partners" section reused across every experience page.
+   Previously a solid chocolate panel — but with Closing CTA and the footer
+   both also chocolate now, that meant three consecutive dark blocks
+   stacked at the bottom of every page. Moved onto the plain page
+   background instead, flowing continuously with Guest Journey above it,
+   so Closing CTA remains the one deliberate dark accent before the
+   footer rather than one of three repeats. */
+.exp-partnership .eyebrow { color: var(--soft-stone-grey); }
+/* Chocolate fill, coloured hairline stroke — same treatment as .act-label,
+   since several accent colours don't pass solid-fill contrast here either. */
 .exp-partnership h2 {
-  color: var(--warm-ivory);
+  color: var(--chocolate);
   -webkit-text-stroke: 0.3px var(--accent-strong);
 }
-.exp-partnership .section-intro { color: rgba(244, 237, 226, 0.85); }
+.exp-partnership .section-intro { color: rgba(23, 20, 15, 0.72); }
 
 /* Two-column "what SALT provides / what a partner provides" */
 .provide-cols {
@@ -1392,17 +1352,16 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  /* Sand rather than accent-strong: at this small size several of the
-     accent colours fall short of AA against basalt-charcoal, whereas sand
-     passes comfortably for every experience, matching the eyebrow above it. */
-  color: var(--sand);
+  /* Chocolate rather than accent-strong: at this small size several of the
+     accent colours fall short of AA against limestone. */
+  color: var(--chocolate);
   margin-bottom: 0.8rem;
 }
 .provide-cols li {
   font-size: 0.92rem;
-  color: rgba(244, 237, 226, 0.85);
+  color: rgba(23, 20, 15, 0.75);
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+  border-bottom: var(--border-hairline);
 }
 
 @media (max-width: 760px) {
