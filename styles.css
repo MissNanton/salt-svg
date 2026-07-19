@@ -1147,6 +1147,44 @@ p { margin: 0 0 var(--space-sm); }
 }
 .exp-breadcrumb a:hover { color: var(--accent-strong, var(--basalt-charcoal)); }
 
+/* A short, unlabelled cinematic passage between the hero and "The Vision"
+   — atmosphere and imagery before explanation, so each experience earns
+   its factual introduction rather than opening with it cold. No eyebrow
+   on purpose: this is a cold open, not another labelled section. */
+.overture-text {
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  line-height: 1.75;
+  color: var(--basalt-charcoal);
+  max-width: 38rem;
+}
+
+/* A quiet, clearly-labelled note for "this is still in development" language
+   — set apart from the main copy so it reads as a footnote rather than the
+   second thing a guest learns about the experience. */
+.dev-status {
+  max-width: 42rem;
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border-hairline);
+}
+.dev-status .dev-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft-stone-grey);
+  margin-bottom: 0.4rem;
+}
+.dev-status p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--soft-stone-grey);
+  margin: 0;
+}
+
 /* Full-bleed coloured statement between sections */
 .quote-interlude {
   padding: clamp(4rem, 10vh, 7rem) var(--space-md);
