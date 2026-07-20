@@ -168,6 +168,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
+  font-size: 112.5%;
 }
 
 body {
