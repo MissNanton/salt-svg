@@ -561,6 +561,10 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--salt-white);
   text-shadow: none;
   filter: none;
+  /* Extra breathing room below the wordmark, now that it's the dominant
+     element in the hero and needs to feel separated from the line under
+     it rather than crowding into it. */
+  margin-bottom: var(--space-md);
 }
 
 .hero-tagline {
