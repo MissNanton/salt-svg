@@ -259,7 +259,10 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(3rem, 9vw, 7rem);
+  /* SALT is the only word this ever renders (every hero across the site),
+     so pushed as large as the viewport reasonably allows — a dramatic,
+     full-bleed wordmark rather than a conventional headline size. */
+  font-size: clamp(4rem, 16vw, 13rem);
   font-weight: 400;
   /* Pulled down further from 80 — still a genuinely high-contrast
      Didone, but the hairlines needed more weight to read comfortably
