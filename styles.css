@@ -664,7 +664,17 @@ p { margin: 0 0 var(--space-sm); }
   align-items: center;
 }
 
-.world-text p { color: var(--deep-blue); }
+.world-text p {
+  color: var(--deep-blue);
+  /* Matches .section-intro / .philosophy-copy — these paragraphs were
+     plain, unclassed <p> tags and missed the sitewide body-copy pass
+     that moved everything else to Cormorant Garamond at a lighter
+     weight and larger size. */
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
 
 /* ----------------------------------------------------------------
    10. SIGNATURE EXPERIENCES + ACCENT SYSTEM
@@ -1020,7 +1030,7 @@ p { margin: 0 0 var(--space-sm); }
    see the accent library and .accent-* classes above for the source
    colours. Add a new .scene-* rule here for any future experience. */
 .scene-hero      { background: var(--limestone); }
-.scene-world     { background: linear-gradient(150deg, #17140F 0%, #4A4032 55%, #B9915C 130%); }
+.scene-world     { background: linear-gradient(150deg, #12160D 0%, #33401C 55%, #8A7A3F 130%); }
 /* Rich deep sea blue into a genuinely light, bright turquoise — no black,
    no muddy dark teal. */
 .scene-air       { background: linear-gradient(155deg, var(--deep-sea-blue) 0%, var(--bright-turquoise) 55%, var(--pale-aqua) 120%); }
