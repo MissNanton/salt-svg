@@ -304,7 +304,13 @@ p { margin: 0 0 var(--space-sm); }
 .section-intro {
   max-width: 42rem;
   color: var(--basalt-charcoal);
-  font-size: 1.05rem;
+  /* Cormorant Garamond light, matching the philosophy body copy — larger
+     and noticeably lighter than the default Bodoni Moda paragraph weight,
+     which read heavier than the rest of the editorial voice at this size. */
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-size: 1.18rem;
+  line-height: 1.75;
 }
 
 .pull-line {
@@ -642,8 +648,8 @@ p { margin: 0 0 var(--space-sm); }
      upright style — thin, quiet, editorial body copy rather than a
      display face doing a body-copy job. */
   font-family: var(--font-statement);
-  font-weight: 400;
-  font-size: 1.2rem;
+  font-weight: 300;
+  font-size: 1.32rem;
   line-height: 1.75;
 }
 
