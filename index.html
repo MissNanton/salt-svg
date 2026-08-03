@@ -38,7 +38,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Italiana&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=32">
+<link rel="stylesheet" href="styles.css?v=35">
 </head>
 
 <body>
@@ -109,6 +109,14 @@
   </section>
 
   <!-- ============================================================
+       BREATHING IMAGE: full-bleed, no text — a pause between the hero
+       and Philosophy. Placeholder gradient until real photography lands;
+       suggested file: images/hero/salt-breathing-image.jpg (wide,
+       landscape or lifestyle shot, no caption needed on purpose).
+       ============================================================ -->
+  <div class="section-bleed reveal" role="img" aria-label="A quiet landscape moment from Saint Vincent and the Grenadines"></div>
+
+  <!-- ============================================================
        BRAND PHILOSOPHY
        ============================================================ -->
   <section class="section philosophy" id="philosophy">
@@ -136,7 +144,7 @@
         <div class="world-text reveal">
           <p class="eyebrow">The SALT World</p>
           <h2>A house of original experiences.</h2>
-          <p>SALT is a collection of original hospitality experiences, each developed around its own setting, rhythm and point of view.</p>
+          <p>Every SALT experience is shaped around its own setting, rhythm and point of view.</p>
           <p>Some begin with a flight. Others around a shared table, beneath a night sky or alongside the hands of a local maker. Each is conceived independently, with its own identity and atmosphere, while belonging unmistakably to the same house.</p>
           <p>Together, they reflect a shared philosophy of thoughtful curation, generous hosting and quiet attention to detail.</p>
         </div>
@@ -172,32 +180,37 @@
     <div class="container">
       <p class="eyebrow reveal">The Collection</p>
       <h2 class="section-title reveal">Six ways into the islands.</h2>
-      <p class="section-intro reveal">Six original hospitality experiences, each developed around a different way of encountering Saint Vincent &amp; the Grenadines.</p>
-      <p class="section-intro reveal">Independent in character. Connected by a shared point of view.</p>
+      <p class="section-intro reveal">Six experiences, each developed around a different way of encountering Saint Vincent &amp; the Grenadines.</p>
+      <p class="section-intro reveal">Distinct in character. United by the same philosophy.</p>
+
+      <p class="section-question reveal">How do you want to experience Saint Vincent today?</p>
 
       <div class="experience-list">
 
-        <!-- SALT Air -->
-        <article class="experience-card accent-air reveal">
+        <!-- SALT After Dark -->
+        <article class="experience-card accent-afterdark reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-air-aerial-grenadines.jpg
-                 Suggested shot: view from a small aircraft window over the Grenadines,
-                 islands and reefs visible below. -->
-            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-                <path d="M0 300 C 100 260, 180 330, 280 280 C 380 230, 440 300, 540 260" stroke-dasharray="2 9"/>
-                <path d="M480 245 L 528 268 L 480 260 L 460 278 L 470 252 Z" fill="rgba(255,255,255,0.8)" stroke="none"/>
-                <circle cx="180" cy="380" r="50" fill="rgba(255,255,255,0.12)" stroke="none"/>
-                <circle cx="380" cy="410" r="70" fill="rgba(255,255,255,0.08)" stroke="none"/>
+            <!-- IMAGE: images/experiences/salt-afterdark-stargazing.jpg
+                 Suggested shot: quiet landscape at night, lantern light, stars visible,
+                 a table set for evening hospitality. -->
+            <div class="scene-panel scene-afterdark" role="img" aria-label="Quiet island landscape at night with lantern light and a clear view of the stars">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+                <path d="M330 140 C 300 150, 280 180, 280 215 C 280 255, 312 287, 352 287 C 372 287, 390 279, 402 266 C 380 270, 356 258, 344 236 C 332 214, 334 186, 350 166 C 344 156, 337 148, 330 140 Z" fill="rgba(255,255,255,0.14)"/>
+                <circle cx="180" cy="180" r="2.5" fill="rgba(255,255,255,0.8)" stroke="none"/>
+                <circle cx="220" cy="240" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+                <circle cx="150" cy="300" r="2.5" fill="rgba(255,255,255,0.75)" stroke="none"/>
+                <circle cx="440" cy="150" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
+                <path d="M0 400 C 150 380, 300 410, 450 390 C 500 384, 550 392, 600 386" opacity="0.4"/>
               </svg>
-              <span class="panel-caption">The islands, seen from the air</span>
+              <span class="panel-caption">Dark skies over the Grenadines</span>
             </div>
           </div>
           <div class="experience-copy">
-            <p class="experience-eyebrow">01 · Aerial Safari</p>
-            <h3>SALT Air</h3>
-            <p>A scenic journey through Saint Vincent &amp; the Grenadines, experienced from the air. As the islands unfold beneath you, sea, reef and volcanic landscape become part of a single story.</p>
-            <a class="experience-more" href="salt-air.html">Explore SALT Air &rarr;</a>
+            <p class="chapter-line">The best hours on these islands often start after dark.</p>
+            <p class="experience-eyebrow">01 · Stargazing &amp; Evening</p>
+            <h3>SALT After Dark</h3>
+            <p>As the islands grow quiet and the heat begins to lift, the evening unfolds slowly beneath some of the Caribbean's darkest skies.</p>
+            <a class="experience-more" href="salt-afterdark.html">Explore SALT After Dark &rarr;</a>
           </div>
         </article>
 
@@ -217,10 +230,10 @@
             </div>
           </div>
           <div class="experience-copy">
+            <p class="chapter-line">The quickest way to understand a place is often around a table.</p>
             <p class="experience-eyebrow">02 · Vincentian Tasting</p>
             <h3>Salt &amp; Sorrel</h3>
             <p>A Vincentian tasting experience shaped by season, place and memory.</p>
-            <p class="experience-note">Hosted around a single table.</p>
             <a class="experience-more" href="salt-sorrel.html">Explore Salt &amp; Sorrel &rarr;</a>
           </div>
         </article>
@@ -244,38 +257,36 @@
             </div>
           </div>
           <div class="experience-copy">
+            <p class="chapter-line">Nothing tastes quite the same as something you helped make.</p>
             <p class="experience-eyebrow">03 · Vincentian Cooking</p>
             <h3>SALT Kitchen</h3>
             <p>A Vincentian cooking experience where the kitchen becomes the gathering place.</p>
-            <p class="experience-note">Traditional recipes are prepared together before everyone sits down to share the meal.</p>
             <a class="experience-more" href="salt-kitchen.html">Explore SALT Kitchen &rarr;</a>
           </div>
         </article>
 
-        <!-- SALT After Dark -->
-        <article class="experience-card accent-afterdark reveal">
+        <!-- SALT Air -->
+        <article class="experience-card accent-air reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-afterdark-stargazing.jpg
-                 Suggested shot: quiet landscape at night, lantern light, stars visible,
-                 a table set for evening hospitality. -->
-            <div class="scene-panel scene-afterdark" role="img" aria-label="Quiet island landscape at night with lantern light and a clear view of the stars">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-                <path d="M330 140 C 300 150, 280 180, 280 215 C 280 255, 312 287, 352 287 C 372 287, 390 279, 402 266 C 380 270, 356 258, 344 236 C 332 214, 334 186, 350 166 C 344 156, 337 148, 330 140 Z" fill="rgba(255,255,255,0.14)"/>
-                <circle cx="180" cy="180" r="2.5" fill="rgba(255,255,255,0.8)" stroke="none"/>
-                <circle cx="220" cy="240" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-                <circle cx="150" cy="300" r="2.5" fill="rgba(255,255,255,0.75)" stroke="none"/>
-                <circle cx="440" cy="150" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-                <path d="M0 400 C 150 380, 300 410, 450 390 C 500 384, 550 392, 600 386" opacity="0.4"/>
+            <!-- IMAGE: images/experiences/salt-air-aerial-grenadines.jpg
+                 Suggested shot: view from a small aircraft window over the Grenadines,
+                 islands and reefs visible below. -->
+            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
+              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M0 300 C 100 260, 180 330, 280 280 C 380 230, 440 300, 540 260" stroke-dasharray="2 9"/>
+                <path d="M480 245 L 528 268 L 480 260 L 460 278 L 470 252 Z" fill="rgba(255,255,255,0.8)" stroke="none"/>
+                <circle cx="180" cy="380" r="50" fill="rgba(255,255,255,0.12)" stroke="none"/>
+                <circle cx="380" cy="410" r="70" fill="rgba(255,255,255,0.08)" stroke="none"/>
               </svg>
-              <span class="panel-caption">Dark skies over the Grenadines</span>
+              <span class="panel-caption">The islands, seen from the air</span>
             </div>
           </div>
           <div class="experience-copy">
-            <p class="experience-eyebrow">04 · Stargazing &amp; Evening Hospitality</p>
-            <h3>SALT After Dark</h3>
-            <p>As the islands grow quiet and the heat begins to lift, the evening unfolds slowly beneath some of the Caribbean's darkest skies.</p>
-            <p class="experience-note">Thoughtful hospitality, shared conversation and unhurried stargazing continue long after sunset.</p>
-            <a class="experience-more" href="salt-afterdark.html">Explore SALT After Dark &rarr;</a>
+            <p class="chapter-line">Some journeys begin long before you arrive.</p>
+            <p class="experience-eyebrow">04 · Aerial Safari</p>
+            <h3>SALT Air</h3>
+            <p>A scenic journey through Saint Vincent &amp; the Grenadines, experienced from the air.</p>
+            <a class="experience-more" href="salt-air.html">Explore SALT Air &rarr;</a>
           </div>
         </article>
 
@@ -297,10 +308,10 @@
             </div>
           </div>
           <div class="experience-copy">
+            <p class="chapter-line">Hands remember what photographs forget.</p>
             <p class="experience-eyebrow">05 · Craft &amp; Botanical</p>
             <h3>SALT Studio</h3>
             <p>Creative encounters rooted in craft, conversation and the quiet pleasure of making something by hand.</p>
-            <p class="experience-note">Guided by the people who have spent a lifetime learning their materials.</p>
             <a class="experience-more" href="salt-studio.html">Explore SALT Studio &rarr;</a>
           </div>
         </article>
@@ -321,9 +332,10 @@
             </div>
           </div>
           <div class="experience-copy">
+            <p class="chapter-line">The best things are often made simply because someone asked.</p>
             <p class="experience-eyebrow">06 · Bespoke &amp; Private</p>
             <h3>SALT Private</h3>
-            <p>A bespoke hospitality service drawing from the full SALT collection to create experiences that feel as though they could only happen here.</p>
+            <p>A bespoke planning and hosting service drawing from the full SALT collection to create experiences that feel as though they could only happen here.</p>
             <a class="experience-more" href="salt-private.html">Explore SALT Private &rarr;</a>
           </div>
         </article>
@@ -342,15 +354,15 @@
           <p class="eyebrow">For Hospitality Partners</p>
           <h2>An extension of your guest experience.</h2>
           <p class="section-intro">The finest hospitality doesn't end at the hotel door.</p>
-          <p>Most guest experiences in Saint Vincent &amp; the Grenadines begin on the water. SALT exists to reveal everything beyond it, through a collection of original hospitality experiences designed exclusively for these islands.</p>
+          <p>SALT reveals everything beyond the coastline through a collection of experiences designed exclusively for these islands.</p>
           <p>Every collaboration is developed around your guests, your standards and your sense of place, allowing the experience to feel like a natural extension of your property rather than an external excursion.</p>
-          <p>We partner with hotels, resorts, villas, yacht managers and travel advisors who believe memorable hospitality is measured not only by where guests stay, but by how they experience a destination.</p>
+          <p>We partner with hotels, resorts, villas, yacht managers and travel advisors who believe a destination is measured not only by where guests stay, but by how they experience it.</p>
 
           <h3 class="partners-subhead">Ways we collaborate</h3>
           <ul class="partners-list">
             <li>Signature guest experiences</li>
             <li>Seasonal programming</li>
-            <li>Private villa hospitality</li>
+            <li>Private villa hosting</li>
             <li>Bespoke itineraries</li>
             <li>Culinary residencies</li>
             <li>Creative workshops</li>
