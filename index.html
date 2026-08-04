@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=39">
+<link rel="stylesheet" href="styles.css?v=40">
 </head>
 
 <body>
@@ -89,14 +89,8 @@
     <!-- IMAGE: images/hero/salt-hero-grenadines-aerial.jpg
          Suggested shot: wide aerial view of the Grenadines archipelago,
          sea meeting volcanic coastline, soft early or late light. -->
-    <div class="hero-media scene-panel scene-hero" style="background-color: #E7E1D2;" role="img" aria-label="Aerial view of the Grenadines archipelago, islands set in turquoise and deep blue sea">
-      <svg class="scene-art" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-        <path d="M-20 520 C 120 470, 220 560, 340 500 C 460 440, 540 540, 660 480 C 800 410, 900 520, 1040 460 C 1120 425, 1160 460, 1220 440" opacity="0.5"/>
-        <path d="M100 260 C 260 210, 380 300, 520 240 C 660 180, 760 260, 900 210" stroke="rgba(143,212,0,0.7)" stroke-width="1.6" stroke-dasharray="2 10"/>
-        <path d="M860 195 L 915 220 L 860 212 L 838 232 L 850 205 Z" fill="rgba(143,212,0,0.8)" stroke="none"/>
-        <circle cx="300" cy="380" r="60" opacity="0.16" fill="rgba(255,255,255,0.1)" stroke="none"/>
-        <circle cx="700" cy="440" r="90" opacity="0.12" fill="rgba(255,255,255,0.08)" stroke="none"/>
-      </svg>
+    <div class="hero-media scene-panel scene-hero" role="img" aria-label="Aerial view of the Grenadines archipelago at golden hour, islands and yachts set in deep blue sea">
+      <img class="scene-photo" src="images/hero/salt-hero-grenadines-aerial.jpg" alt="Aerial view of the Grenadines archipelago at golden hour, islands and yachts set in deep blue sea">
       <span class="panel-caption">Saint Vincent &amp; the Grenadines, from above</span>
     </div>
 
@@ -109,11 +103,12 @@
 
   <!-- ============================================================
        BREATHING IMAGE: full-bleed, no text — a pause between the hero
-       and Philosophy. Placeholder gradient until real photography lands;
-       suggested file: images/hero/salt-breathing-image.jpg (wide,
-       landscape or lifestyle shot, no caption needed on purpose).
+       and Philosophy. Removed for now since it was just a placeholder
+       gradient with no real photo behind it yet — bring back by
+       uncommenting the div below once images/hero/salt-breathing-image.jpg
+       (or similar) exists.
+       <div class="section-bleed reveal" role="img" aria-label="A quiet landscape moment from Saint Vincent and the Grenadines"></div>
        ============================================================ -->
-  <div class="section-bleed reveal" role="img" aria-label="A quiet landscape moment from Saint Vincent and the Grenadines"></div>
 
   <!-- ============================================================
        BRAND PHILOSOPHY
@@ -148,23 +143,8 @@
           <p>Together, they reflect a shared philosophy of thoughtful curation, generous hosting and quiet attention to detail.</p>
         </div>
         <div class="world-media">
-          <!-- IMAGE: images/world/salt-world-detail-textures.jpg
-               Suggested shot: still life detail, woven textures, timber, ceramics,
-               an old map or navigation chart alongside a linen napkin. -->
-          <div class="scene-panel scene-world tall reveal" role="img" aria-label="Still life of woven textures, timber and ceramics alongside an archival navigation chart">
-            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(239,230,212,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-              <!-- Land: two layered ridge silhouettes, filled to the base of the panel rather than a flat horizon -->
-              <path d="M60 300 C 110 258, 165 246, 220 268 C 258 283, 292 256, 340 246 C 392 235, 440 258, 495 282 L 495 500 L 60 500 Z" fill="rgba(239,230,212,0.12)" stroke="rgba(239,230,212,0.4)"/>
-              <path d="M255 300 C 288 274, 320 268, 352 284 C 374 295, 398 280, 430 286 L 430 500 L 255 500 Z" fill="rgba(239,230,212,0.08)" stroke="none"/>
-              <!-- Story: a small compass rose, wayfinding across the house -->
-              <circle cx="452" cy="152" r="46" opacity="0.3"/>
-              <path d="M452 106 L 452 198 M406 152 L 498 152" opacity="0.32"/>
-              <path d="M452 124 L 461 152 L 452 180 L 443 152 Z" fill="rgba(239,230,212,0.55)" stroke="none"/>
-              <!-- Craft: small leaf marks, in place of stars (which belong to After Dark's night-sky motif) -->
-              <path d="M120 130 c 6 -12 18 -16 26 -10 c -6 10 -16 16 -26 10 Z" fill="rgba(239,230,212,0.45)" stroke="none"/>
-              <path d="M170 165 c 6 -12 18 -16 26 -10 c -6 10 -16 16 -26 10 Z" fill="rgba(239,230,212,0.4)" stroke="none"/>
-              <path d="M95 190 c 6 -12 18 -16 26 -10 c -6 10 -16 16 -26 10 Z" fill="rgba(239,230,212,0.35)" stroke="none"/>
-            </svg>
+          <div class="scene-panel scene-world tall reveal" role="img" aria-label="Still life of cacao pods, island citrus, hibiscus and garden herbs on a sunlit stone counter">
+            <img class="scene-photo" src="images/world/salt-world-detail-textures.jpg" alt="Still life of cacao pods, island citrus, hibiscus and garden herbs on a sunlit stone counter">
             <span class="panel-caption">Land, craft and story</span>
           </div>
         </div>
@@ -189,18 +169,8 @@
         <!-- SALT After Dark -->
         <article class="experience-card accent-afterdark reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-afterdark-stargazing.jpg
-                 Suggested shot: quiet landscape at night, lantern light, stars visible,
-                 a table set for evening hospitality. -->
-            <div class="scene-panel scene-afterdark" role="img" aria-label="Quiet island landscape at night with lantern light and a clear view of the stars">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-                <path d="M330 140 C 300 150, 280 180, 280 215 C 280 255, 312 287, 352 287 C 372 287, 390 279, 402 266 C 380 270, 356 258, 344 236 C 332 214, 334 186, 350 166 C 344 156, 337 148, 330 140 Z" fill="rgba(255,255,255,0.14)"/>
-                <circle cx="180" cy="180" r="2.5" fill="rgba(255,255,255,0.8)" stroke="none"/>
-                <circle cx="220" cy="240" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-                <circle cx="150" cy="300" r="2.5" fill="rgba(255,255,255,0.75)" stroke="none"/>
-                <circle cx="440" cy="150" r="2" fill="rgba(255,255,255,0.7)" stroke="none"/>
-                <path d="M0 400 C 150 380, 300 410, 450 390 C 500 384, 550 392, 600 386" opacity="0.4"/>
-              </svg>
+            <div class="scene-panel scene-afterdark" role="img" aria-label="Telescopes and a picnic set for stargazing at dusk, overlooking the sea">
+              <img class="scene-photo" src="images/experiences/afterdark/salt-afterdark-hero-stargazing.jpg" alt="Telescopes and a picnic set for stargazing at dusk, overlooking the sea">
               <span class="panel-caption">Dark skies over the Grenadines</span>
             </div>
           </div>
@@ -216,15 +186,8 @@
         <!-- Salt & Sorrel -->
         <article class="experience-card accent-sorrel reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-sorrel-tasting-table.jpg
-                 Suggested shot: hands serving food at a set table, sorrel, breadfruit,
-                 local produce and wine being poured. -->
-            <div class="scene-panel scene-sorrel" role="img" aria-label="Hands serving a tasting table of Vincentian produce, sorrel and wine being poured">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-                <path d="M260 150 C 275 150, 288 162, 283 178 C 279 192, 264 197, 253 188 L 258 260 C 258 270, 270 275, 282 275 L 236 275 C 248 275, 258 270, 258 260 L 253 188 C 241 195, 229 183, 234 169 C 239 155, 250 150, 260 150 Z"/>
-                <circle cx="400" cy="330" r="46" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)"/>
-                <circle cx="400" cy="330" r="18" fill="rgba(255,255,255,0.2)" stroke="none"/>
-              </svg>
+            <div class="scene-panel scene-sorrel" role="img" aria-label="Sorrel wine poured into ceramic cups on a sunlit table, palm shadows behind">
+              <img class="scene-photo" src="images/experiences/sorrel/salt-sorrel-hero-table.jpg" alt="Sorrel wine poured into ceramic cups on a sunlit table, palm shadows behind">
               <span class="panel-caption">A Vincentian tasting table</span>
             </div>
           </div>
@@ -240,18 +203,8 @@
         <!-- SALT Kitchen -->
         <article class="experience-card accent-kitchen reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-kitchen-villa-cooking.jpg
-                 Suggested shot: guests cooking together at a kitchen island in an
-                 open villa kitchen, wine glasses nearby, warm evening light. -->
-            <div class="scene-panel scene-kitchen" role="img" aria-label="Guests cooking together at a kitchen island in an open villa kitchen, wine glasses nearby">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-                <path d="M220 320 C 220 280, 250 254, 290 254 C 330 254, 360 280, 360 320 L 360 350 L 220 350 Z" opacity="0.55"/>
-                <path d="M245 244 C 240 226, 250 208, 245 188" stroke-dasharray="1 8" opacity="0.4"/>
-                <path d="M290 234 C 285 216, 296 198, 290 178" stroke-dasharray="1 8" opacity="0.45"/>
-                <path d="M335 244 C 330 226, 341 208, 335 188" stroke-dasharray="1 8" opacity="0.4"/>
-                <circle cx="460" cy="330" r="30" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)"/>
-                <circle cx="460" cy="330" r="12" fill="rgba(255,255,255,0.18)" stroke="none"/>
-              </svg>
+            <div class="scene-panel scene-kitchen" role="img" aria-label="A chef and two guests cooking together at an open villa kitchen counter overlooking the sea">
+              <img class="scene-photo" src="images/experiences/kitchen/salt-kitchen-hero.jpg" alt="A chef and two guests cooking together at an open villa kitchen counter overlooking the sea">
               <span class="panel-caption">Arrive, cook and feast together</span>
             </div>
           </div>
@@ -267,16 +220,8 @@
         <!-- SALT Air -->
         <article class="experience-card accent-air reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-air-aerial-grenadines.jpg
-                 Suggested shot: view from a small aircraft window over the Grenadines,
-                 islands and reefs visible below. -->
-            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over the Grenadines, islands and reefs visible below">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
-                <path d="M0 300 C 100 260, 180 330, 280 280 C 380 230, 440 300, 540 260" stroke-dasharray="2 9"/>
-                <path d="M480 245 L 528 268 L 480 260 L 460 278 L 470 252 Z" fill="rgba(255,255,255,0.8)" stroke="none"/>
-                <circle cx="180" cy="380" r="50" fill="rgba(255,255,255,0.12)" stroke="none"/>
-                <circle cx="380" cy="410" r="70" fill="rgba(255,255,255,0.08)" stroke="none"/>
-              </svg>
+            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over turquoise reefs and islands of the Grenadines">
+              <img class="scene-photo" src="images/experiences/air/salt-air-hero-flight-window.jpg" alt="View from a small aircraft window over turquoise reefs and islands of the Grenadines">
               <span class="panel-caption">The islands, seen from the air</span>
             </div>
           </div>
@@ -292,17 +237,8 @@
         <!-- SALT Studio -->
         <article class="experience-card accent-studio reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-studio-craftsmanship.jpg
-                 Suggested shot: hands at work, weaving, pottery, botanical or
-                 culinary craft, natural materials and tools. -->
-            <div class="scene-panel scene-studio" role="img" aria-label="Hands at work on a local craft, surrounded by natural materials and tools">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-                <circle cx="220" cy="260" r="90" opacity="0.35"/>
-                <circle cx="220" cy="260" r="55" opacity="0.5"/>
-                <circle cx="220" cy="260" r="6" fill="rgba(255,255,255,0.6)" stroke="none"/>
-                <path d="M380 160 C 400 190, 400 230, 375 255 C 350 280, 350 320, 380 345" opacity="0.5"/>
-                <path d="M380 160 C 360 190, 360 230, 385 255" opacity="0.3"/>
-              </svg>
+            <div class="scene-panel scene-studio" role="img" aria-label="Plein-air painters at their easels in a misty tropical garden at golden hour">
+              <img class="scene-photo" src="images/experiences/studio/salt-studio-hero-craft.jpg" alt="Plein-air painters at their easels in a misty tropical garden at golden hour">
               <span class="panel-caption">Craft, botany and making</span>
             </div>
           </div>
@@ -318,16 +254,13 @@
         <!-- SALT Private -->
         <article class="experience-card accent-private reveal">
           <div class="experience-media">
-            <!-- IMAGE: images/experiences/salt-private-villa-terrace.jpg
-                 Suggested shot: private villa terrace or yacht deck set for a
-                 quiet, intimate gathering, linen moving in the breeze. -->
-            <div class="scene-panel scene-private" role="img" aria-label="Private villa terrace set for an intimate gathering, linen moving in the breeze">
-              <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(23,20,15,0.4)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-                <path d="M120 340 L 120 180 C 120 130, 160 100, 210 100 C 260 100, 300 130, 300 180 L 300 340"/>
-                <path d="M60 340 L 360 340" opacity="0.5"/>
-                <path d="M150 250 C 180 270, 220 270, 250 250 C 240 285, 200 300, 170 285 C 155 278, 148 262, 150 250 Z" opacity="0.3" fill="rgba(23,20,15,0.08)"/>
-              </svg>
-              <span class="panel-caption on-light">A private terrace, quietly set</span>
+            <!-- Stand-in only: no true villa/yacht-terrace shot exists yet in the
+                 current batch (flagged in salt-photography-plan.md). This sailboat
+                 image is the closest fit for the mood until a genuine Private shot
+                 is sourced. -->
+            <div class="scene-panel scene-private" role="img" aria-label="A private sailboat bow at golden hour, sails up, islands ahead">
+              <img class="scene-photo" src="images/experiences/private/salt-private-hero-sailing.jpg" alt="A private sailboat bow at golden hour, sails up, islands ahead">
+              <span class="panel-caption on-light">A private passage, quietly made</span>
             </div>
           </div>
           <div class="experience-copy">
@@ -374,15 +307,8 @@
         </div>
 
         <div class="partners-media">
-          <!-- IMAGE: images/partners/salt-partners-villa-hosting.jpg
-               Suggested shot: a host or villa team member setting a table or
-               greeting guests, natural and unposed. -->
-          <div class="scene-panel scene-partners tall reveal" role="img" aria-label="A host setting a table for guests in a private villa setting, natural and unposed">
-            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-              <circle cx="300" cy="260" r="70" opacity="0.4"/>
-              <path d="M180 190 L 180 340 M195 190 L 195 250 C 195 260, 180 260, 180 250" opacity="0.4"/>
-              <path d="M420 190 C 435 200, 435 230, 420 240 L 420 340" opacity="0.4"/>
-            </svg>
+          <div class="scene-panel scene-partners tall reveal" role="img" aria-label="A plate of food being passed hand to hand across a candlelit table, sea visible beyond">
+            <img class="scene-photo" src="images/partners/salt-partners-villa-hosting.jpg" alt="A plate of food being passed hand to hand across a candlelit table, sea visible beyond">
             <span class="panel-caption">Hosting, extended with care</span>
           </div>
         </div>
