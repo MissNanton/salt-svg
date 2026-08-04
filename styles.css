@@ -136,11 +136,11 @@
      its use is deliberately restricted to the wordmark itself. */
   --font-serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
   /* Everything functional: navigation, buttons, eyebrows, captions, card
-     copy, partner-facing paragraphs, footer, forms. Instrument Sans is
-     neutral without reading as generic product-UI the way Inter does —
-     it disappears rather than asking to be noticed, which is what lets
-     the photography and the editorial copy carry the page. */
-  --font-sans: 'Instrument Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+     copy, partner-facing paragraphs, footer, forms. Plus Jakarta Sans is
+     softer and less geometric than Instrument Sans or Inter — it reads as
+     warm rather than "product UI," while staying legible and compact for
+     the site's genuinely functional text (nav, buttons, tables, footer). */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   /* The editorial voice: section headings, pull-quotes, Philosophy,
      Founder's Note, the chapter-line transitions, and any other evocative,
      brand-defining copy. Cormorant Garamond now also carries section
@@ -286,12 +286,12 @@ h1 {
    up in fewer, larger moments (the hero, the philosophy statement) instead
    of on every heading. */
 /* Cormorant Garamond carries every heading except h1 (h1 stays Bodoni
-   Moda at max optical size — the wordmark/page-title treatment). Regular
-   weight, not medium — Cormorant Garamond's charm is in its lighter
-   weights, and 500 read heavier and less elegant than intended. */
+   Moda at max optical size — the wordmark/page-title treatment). Light,
+   not regular — Cormorant Garamond's charm is in its lighter weights, and
+   luxury type generally reads best thinner than instinct suggests. */
 h2, h3, h4 {
   font-family: var(--font-statement);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.01em;
 }
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
@@ -319,7 +319,7 @@ p { margin: 0 0 var(--space-sm); }
   font-family: var(--font-statement);
   font-weight: 300;
   font-size: 1.18rem;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 /* A single large standalone line, used to open a section without a
@@ -686,7 +686,7 @@ p { margin: 0 0 var(--space-sm); }
   font-family: var(--font-statement);
   font-weight: 300;
   font-size: 1.32rem;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 /* ----------------------------------------------------------------
@@ -708,7 +708,7 @@ p { margin: 0 0 var(--space-sm); }
   font-family: var(--font-statement);
   font-weight: 300;
   font-size: 1.18rem;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 
 /* ----------------------------------------------------------------
@@ -718,39 +718,37 @@ p { margin: 0 0 var(--space-sm); }
   background-color: var(--salt-white);
 }
 
-/* A real grid, not a stack of alternating rows — six cards seen together
-   at a glance (three across on desktop) rather than one long scroll of
-   near-identical left-right blocks. Editorial, image-led, no dividing
-   lines: whitespace alone separates each card. */
+/* Alternating rows — image and copy side by side, flipping left-right
+   every other card. */
 .experience-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
   margin-top: var(--space-lg);
 }
 
 .experience-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+  border-top: var(--border-hairline);
+  padding-top: var(--space-lg);
 }
 
-.experience-copy {
-  padding-top: var(--space-sm);
-}
-
-.experience-copy h3 {
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
+.experience-card:nth-child(even) .experience-media {
+  order: 2;
 }
 
 .experience-eyebrow {
-  /* Cormorant Garamond, not Inter/Instrument Sans — the chapter-line,
-     eyebrow and title sit right on top of each other in a narrow card,
-     and switching serif/sans/serif in that little space read as fussy
-     rather than restrained. One serif voice for the top of the card,
-     sans only for the body copy and link below it. */
+  /* Cormorant Garamond, not Instrument Sans — the chapter-line, eyebrow
+     and title sit close together, and switching serif/sans/serif in
+     that small space read as fussy rather than restrained. One serif
+     voice for the top of the block, sans only for the body copy and
+     link below it. */
   font-family: var(--font-statement);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-strong, var(--soft-stone-grey));
   margin-bottom: var(--space-xs);
@@ -902,8 +900,9 @@ p { margin: 0 0 var(--space-sm); }
 
 .founder-copy p {
   font-family: var(--font-statement);
+  font-weight: 300;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.65;
+  line-height: 1.85;
 }
 
 /* ----------------------------------------------------------------
@@ -1136,7 +1135,10 @@ p { margin: 0 0 var(--space-sm); }
 
   .world-media, .passport-media { order: -1; }
 
-  .experience-list { grid-template-columns: repeat(2, 1fr); }
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+  .experience-card:nth-child(even) .experience-media { order: 0; }
 
   .journal-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1148,7 +1150,6 @@ p { margin: 0 0 var(--space-sm); }
   .menu-toggle { display: flex; }
 
   .contact-grid { grid-template-columns: 1fr; }
-  .experience-list { grid-template-columns: 1fr; }
   .journal-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
 
@@ -1233,7 +1234,7 @@ p { margin: 0 0 var(--space-sm); }
   font-family: var(--font-statement);
   font-weight: 300;
   font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-  line-height: 1.75;
+  line-height: 1.85;
   color: var(--basalt-charcoal);
   max-width: 38rem;
 }
