@@ -136,10 +136,11 @@
      its use is deliberately restricted to the wordmark itself. */
   --font-serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
   /* Everything functional: navigation, buttons, eyebrows, captions, card
-     copy, partner-facing paragraphs, footer, forms. Inter is intentionally
-     neutral — it disappears rather than asking to be noticed, which is
-     what lets the photography and the editorial copy carry the page. */
-  --font-sans: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+     copy, partner-facing paragraphs, footer, forms. Instrument Sans is
+     neutral without reading as generic product-UI the way Inter does —
+     it disappears rather than asking to be noticed, which is what lets
+     the photography and the editorial copy carry the page. */
+  --font-sans: 'Instrument Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   /* The editorial voice: section headings, pull-quotes, Philosophy,
      Founder's Note, the chapter-line transitions, and any other evocative,
      brand-defining copy. Cormorant Garamond now also carries section
@@ -285,12 +286,12 @@ h1 {
    up in fewer, larger moments (the hero, the philosophy statement) instead
    of on every heading. */
 /* Cormorant Garamond carries every heading except h1 (h1 stays Bodoni
-   Moda at max optical size — the wordmark/page-title treatment). Slightly
-   heavier weight than the light body-copy treatment elsewhere, so
-   headings still read with enough authority at this weight. */
+   Moda at max optical size — the wordmark/page-title treatment). Regular
+   weight, not medium — Cormorant Garamond's charm is in its lighter
+   weights, and 500 read heavier and less elegant than intended. */
 h2, h3, h4 {
   font-family: var(--font-statement);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.01em;
 }
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
@@ -742,8 +743,14 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .experience-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  /* Cormorant Garamond, not Inter/Instrument Sans — the chapter-line,
+     eyebrow and title sit right on top of each other in a narrow card,
+     and switching serif/sans/serif in that little space read as fussy
+     rather than restrained. One serif voice for the top of the card,
+     sans only for the body copy and link below it. */
+  font-family: var(--font-statement);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent-strong, var(--soft-stone-grey));
   margin-bottom: var(--space-xs);
@@ -812,7 +819,7 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 1rem;
 }
 
-/* Inter rather than Cormorant Garamond — these paragraphs explain how a
+/* Instrument Sans rather than Cormorant Garamond — these paragraphs explain how a
    partnership actually works, an operational and reassuring register
    aimed at a business reader rather than an evocative one, so they sit
    with the rest of the site's functional text. :not(.eyebrow) keeps the
