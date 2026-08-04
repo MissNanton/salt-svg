@@ -130,15 +130,22 @@
      (captions, nav) and heightens it at display sizes (the SALT wordmark) —
      that's why body text stays legible even though the same family is used
      throughout. See the README for the full rationale. */
+  /* Logo only — the SALT wordmark and nothing else. Bodoni Moda's dramatic
+     thick-thin contrast gives a four-letter word real presence, but that
+     same contrast makes it tiring as a running headline or body face, so
+     its use is deliberately restricted to the wordmark itself. */
   --font-serif: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
-  --font-sans: 'Bodoni Moda', Georgia, 'Times New Roman', serif;
-  /* Used only for the Philosophy pull-quote — a second, classic serif that
-     gives Bodoni Moda something to contrast against. */
+  /* Everything functional: navigation, buttons, eyebrows, captions, card
+     copy, partner-facing paragraphs, footer, forms. Inter is intentionally
+     neutral — it disappears rather than asking to be noticed, which is
+     what lets the photography and the editorial copy carry the page. */
+  --font-sans: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  /* The editorial voice: section headings, pull-quotes, Philosophy,
+     Founder's Note, the chapter-line transitions, and any other evocative,
+     brand-defining copy. Cormorant Garamond now also carries section
+     headings (h2/h3/h4) — Italiana has been retired so the site runs on
+     two typefaces instead of three, plus the Bodoni logotype. */
   --font-statement: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  /* Used only for h2 section headings — a third voice reserved for that
-     one role. Italiana ships in a single thin weight with no bold, so it
-     must stay scoped to short headings and never body copy. */
-  --font-display-alt: 'Italiana', Georgia, 'Times New Roman', serif;
 
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -277,14 +284,14 @@ h1 {
    the site feeling heavy rather than premium — removed. Colour now shows
    up in fewer, larger moments (the hero, the philosophy statement) instead
    of on every heading. */
-/* Italiana carries every heading except h1 (h1 stays Bodoni Moda at max
-   optical size — the wordmark/page-title treatment). Wide tracking
-   compensates for it being a single, delicate weight with no bold
-   sibling. */
+/* Cormorant Garamond carries every heading except h1 (h1 stays Bodoni
+   Moda at max optical size — the wordmark/page-title treatment). Slightly
+   heavier weight than the light body-copy treatment elsewhere, so
+   headings still read with enough authority at this weight. */
 h2, h3, h4 {
-  font-family: var(--font-display-alt);
-  font-weight: 400;
-  letter-spacing: 0.03em;
+  font-family: var(--font-statement);
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
@@ -312,6 +319,20 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 300;
   font-size: 1.18rem;
   line-height: 1.75;
+}
+
+/* A single large standalone line, used to open a section without a
+   supporting paragraph underneath (e.g. the question before the
+   Collection grid). Deliberately roomier than .section-intro, with
+   nothing following it. */
+.section-question {
+  max-width: 34rem;
+  margin: var(--space-lg) 0;
+  color: var(--basalt-charcoal);
+  font-family: var(--font-statement);
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  line-height: 1.4;
 }
 
 .pull-line {
@@ -493,7 +514,7 @@ p { margin: 0 0 var(--space-sm); }
   display: block;
   padding: 0.9rem 0;
   font-size: 1rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   border-bottom: var(--border-hairline);
 }
 
@@ -512,6 +533,19 @@ p { margin: 0 0 var(--space-sm); }
   position: absolute;
   inset: 0;
   z-index: 0;
+}
+
+/* A full-bleed breathing image between the hero and Philosophy — no text,
+   no container, just room to look at a photograph before the copy starts.
+   Swap the background-image out for real photography; the gradient below
+   is a placeholder only. */
+.section-bleed {
+  height: 62vh;
+  min-height: 380px;
+  max-height: 640px;
+  background: linear-gradient(150deg, #12160D 0%, #33401C 55%, #8A7A3F 130%);
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-media::after {
@@ -575,7 +609,7 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .hero-tagline {
-  font-family: var(--font-serif);
+  font-family: var(--font-statement);
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   max-width: 32rem;
 }
@@ -683,24 +717,28 @@ p { margin: 0 0 var(--space-sm); }
   background-color: var(--salt-white);
 }
 
+/* A real grid, not a stack of alternating rows — six cards seen together
+   at a glance (three across on desktop) rather than one long scroll of
+   near-identical left-right blocks. Editorial, image-led, no dividing
+   lines: whitespace alone separates each card. */
 .experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg) var(--space-md);
   margin-top: var(--space-lg);
 }
 
 .experience-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-  align-items: center;
-  border-top: var(--border-hairline);
-  padding-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
 }
 
-.experience-card:nth-child(even) .experience-media {
-  order: 2;
+.experience-copy {
+  padding-top: var(--space-sm);
+}
+
+.experience-copy h3 {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
 }
 
 .experience-eyebrow {
@@ -774,23 +812,22 @@ p { margin: 0 0 var(--space-sm); }
   font-size: 1rem;
 }
 
-/* Cormorant Garamond, upright — same body-copy treatment as the philosophy
-   text. Bodoni Moda's high stroke contrast reads fine at display sizes but
-   gets harder to scan across full paragraphs; :not(.eyebrow) keeps the
+/* Inter rather than Cormorant Garamond — these paragraphs explain how a
+   partnership actually works, an operational and reassuring register
+   aimed at a business reader rather than an evocative one, so they sit
+   with the rest of the site's functional text. :not(.eyebrow) keeps the
    small-caps label above untouched. */
 .partners-text p:not(.eyebrow) {
-  font-family: var(--font-statement);
-  font-weight: 300;
-  font-size: 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
 .partners-list li {
   padding: 0.55rem 0;
   border-bottom: var(--border-hairline);
-  font-family: var(--font-statement);
-  font-weight: 300;
-  font-size: 1.02rem;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
 }
 
 /* ----------------------------------------------------------------
@@ -894,7 +931,7 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .contact-value {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   color: var(--deep-ink);
 }
@@ -942,7 +979,7 @@ p { margin: 0 0 var(--space-sm); }
 
 .footer-nav ul { display: flex; flex-direction: column; gap: 0.6rem; }
 .footer-nav a {
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-size: 1rem;
   color: rgba(23, 20, 15, 0.8);
 }
@@ -951,7 +988,7 @@ p { margin: 0 0 var(--space-sm); }
 .footer-contact a {
   display: inline-block;
   margin-bottom: 0.4rem;
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   color: var(--chocolate);
 }
@@ -963,7 +1000,7 @@ p { margin: 0 0 var(--space-sm); }
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-xs);
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-size: 0.92rem;
   color: rgba(23, 20, 15, 0.6);
 }
@@ -1092,10 +1129,7 @@ p { margin: 0 0 var(--space-sm); }
 
   .world-media, .passport-media { order: -1; }
 
-  .experience-card {
-    grid-template-columns: 1fr;
-  }
-  .experience-card:nth-child(even) .experience-media { order: 0; }
+  .experience-list { grid-template-columns: repeat(2, 1fr); }
 
   .journal-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1107,6 +1141,7 @@ p { margin: 0 0 var(--space-sm); }
   .menu-toggle { display: flex; }
 
   .contact-grid { grid-template-columns: 1fr; }
+  .experience-list { grid-template-columns: 1fr; }
   .journal-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
 
@@ -1171,6 +1206,18 @@ p { margin: 0 0 var(--space-sm); }
 }
 .exp-breadcrumb a:hover { color: var(--accent-strong, var(--basalt-charcoal)); }
 
+/* A single-line editorial transition, set just above the Overture on each
+   experience page (and above each card on the homepage grid). Quiet and
+   italic on purpose — a narrative thread between chapters, not a heading. */
+.chapter-line {
+  font-family: var(--font-statement);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--accent-strong, var(--soft-stone-grey));
+  margin-bottom: var(--space-sm);
+}
+
 /* A short, unlabelled cinematic passage between the hero and "The Vision"
    — atmosphere and imagery before explanation, so each experience earns
    its factual introduction rather than opening with it cold. No eyebrow
@@ -1209,7 +1256,12 @@ p { margin: 0 0 var(--space-sm); }
   margin: 0;
 }
 
-/* Full-bleed coloured statement between sections */
+/* Full-bleed statement between sections. A solid accent-colour fill read
+   like a corporate banner rather than an editorial device (this was
+   already true of Air specifically, and it's true of the others too), so
+   the accent now whispers as a hairline border instead of announcing
+   itself as a background — plain limestone, large italic Cormorant
+   Garamond in ink, on every experience except After Dark. */
 .quote-interlude {
   padding: clamp(4rem, 10vh, 7rem) var(--space-md);
   text-align: center;
@@ -1218,51 +1270,31 @@ p { margin: 0 0 var(--space-sm); }
   justify-content: center;
 }
 .quote-interlude p {
-  /* Italiana instead of italic Bodoni Moda — upright rather than slanted,
-     and noticeably easier to read across a full sentence at this size. */
-  font-family: var(--font-display-alt);
-  font-weight: 400;
-  font-size: clamp(1.4rem, 3.6vw, 2.1rem);
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-  max-width: 42rem;
-  margin: 0;
-}
-.quote-interlude.on-accent {
-  background-color: var(--accent-strong);
-  /* Ink reads fine against bequia turquoise (Air's default) and aged
-     brass (Private); the rest are overridden below, either because ink
-     fails contrast or because the page gets a bespoke background. */
-  color: var(--deep-ink);
-}
-.accent-sorrel .quote-interlude.on-accent,
-.accent-studio .quote-interlude.on-accent,
-.accent-kitchen .quote-interlude.on-accent {
-  color: var(--warm-ivory);
-}
-/* Air — no colour panel at all: a flat corporate-blue block read more like
-   a banner than an editorial device, so this drops the accent fill and
-   matches the homepage's own philosophy pull-quote instead — plain
-   limestone, large italic Cormorant Garamond in ink. */
-.accent-air .quote-interlude.on-accent {
-  background-color: var(--limestone);
-  color: var(--chocolate);
-}
-.accent-air .quote-interlude p {
   font-family: var(--font-statement);
   font-weight: 300;
   font-style: italic;
   font-size: clamp(1.7rem, 4vw, 2.6rem);
   line-height: 1.45;
-  letter-spacing: normal;
+  max-width: 42rem;
+  margin: 0;
+}
+.quote-interlude.on-accent {
+  background-color: var(--limestone);
+  color: var(--chocolate);
+  border-top: 2px solid var(--accent-strong, var(--aged-brass));
+  border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
 }
 
-/* After Dark — the same night-sky nebula gradient used in the hero,
-   instead of a flat purple fill. */
+/* After Dark is the one deliberate exception: the same night-sky nebula
+   gradient used in its hero, which is the point of the experience rather
+   than a generic colour fill, so it keeps a full-bleed background. */
 .accent-afterdark .quote-interlude.on-accent {
   background: linear-gradient(160deg, var(--nebula-indigo) 0%, var(--nebula-plum) 45%, var(--nebula-magenta) 75%, var(--nebula-fade) 100%);
   color: var(--warm-ivory);
+  border: none;
 }
+.accent-afterdark .quote-interlude p { color: var(--warm-ivory); }
+
 .quote-interlude.on-dark {
   background-color: var(--basalt-charcoal);
   color: var(--warm-ivory);
@@ -1344,7 +1376,7 @@ p { margin: 0 0 var(--space-sm); }
    own accent — reads clearly against the light limestone page background
    now that copy is no longer sitting on a solid dark panel. */
 .act-label {
-  font-family: var(--font-serif);
+  font-family: var(--font-statement);
   font-style: italic;
   font-size: 2.4rem;
   line-height: 1;
@@ -1400,7 +1432,7 @@ p { margin: 0 0 var(--space-sm); }
   border-radius: 50%;
   background-color: var(--accent-strong, var(--aged-brass));
 }
-.exp-timeline h4 { font-family: var(--font-serif); font-style: italic; font-size: 1.1rem; margin-bottom: 0.2rem; }
+.exp-timeline h4 { font-family: var(--font-sans); font-weight: 600; font-size: 1.02rem; margin-bottom: 0.2rem; }
 .exp-timeline p { font-size: 0.9rem; color: var(--soft-stone-grey); max-width: 30rem; }
 
 /* "For hospitality partners" section reused across every experience page.
