@@ -573,13 +573,17 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .hero-media::before {
-  /* Real limestone texture — fine stone grain, visible but quiet, sitting
-     directly on the same limestone tone as the rest of the page. */
+  /* Real film-grain texture over the hero photo — pushed up hard from the
+     original quiet stone-grain opacity now that this is always a real
+     photograph rather than a flat illustrated gradient, matching the
+     heavier grain now used on every other real photo on the site. */
   content: "";
   position: absolute;
   inset: 0;
-  background-image: var(--grain);
-  opacity: 0.16;
+  background-image: var(--grain), var(--grain);
+  background-position: 0 0, 50% 50%;
+  background-size: 200px 200px, 160px 160px;
+  opacity: 0.5;
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 1;
@@ -1068,18 +1072,23 @@ p { margin: 0 0 var(--space-sm); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.86) contrast(0.93) brightness(1.03) sepia(0.06);
+  filter: saturate(0.84) contrast(1.02) brightness(1.02) sepia(0.06);
 }
 
-/* Real photography gets a heavier, more visible grain than the illustrated
-   panels — where the base 0.06 is a whisper meant for flat gradients, real
-   photos want enough texture to actually read as "on film" rather than a
-   clean digital shot. :not(.hero-media) excludes the hero, which already
-   has its own grain via ::before and uses ::after solely for the text
-   scrim — letting this rule reach it would fight that scrim on opacity
-   at equal specificity. */
+/* Real photography gets a much heavier, more visible grain than the
+   illustrated panels — where the base 0.06 is a whisper meant for flat
+   gradients, real photos are pushed hard enough to properly read as "on
+   film" rather than a clean digital shot. :not(.hero-media) excludes the
+   hero, which already has its own grain via ::before and uses ::after
+   solely for the text scrim — letting this rule reach it would fight
+   that scrim on opacity at equal specificity. Two stacked grain layers,
+   one flipped, so the pattern doesn't read as an obviously repeating
+   tile at this strength. */
 .scene-panel:not(.hero-media):has(.scene-photo)::after {
-  opacity: 0.16;
+  opacity: 0.48;
+  background-image: var(--grain), var(--grain);
+  background-position: 0 0, 50% 50%;
+  background-size: 200px 200px, 160px 160px;
 }
 
 /* Real photography reads better at something closer to its natural
