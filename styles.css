@@ -313,10 +313,11 @@ p { margin: 0 0 var(--space-sm); }
 .section-intro {
   max-width: 42rem;
   color: var(--basalt-charcoal);
-  /* Cormorant Garamond light, matching the philosophy body copy — larger
-     and noticeably lighter than the default Bodoni Moda paragraph weight,
-     which read heavier than the rest of the editorial voice at this size. */
-  font-family: var(--font-statement);
+  /* Plus Jakarta Sans, not Cormorant — this is running body copy, and the
+     serif read as heavier and less minimal than intended for continuous
+     reading text. Serif now reserved for headings and true display/pull-
+     quote moments (Philosophy statement, quote interludes, chapter lines). */
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: 1.18rem;
   line-height: 1.85;
@@ -616,7 +617,7 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .hero-tagline {
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   max-width: 32rem;
 }
@@ -686,10 +687,9 @@ p { margin: 0 0 var(--space-sm); }
   margin: 0 auto;
   text-align: left;
   color: var(--chocolate);
-  /* Same second serif as the pull-quote above it, at a plain weight and
-     upright style — thin, quiet, editorial body copy rather than a
-     display face doing a body-copy job. */
-  font-family: var(--font-statement);
+  /* Plus Jakarta Sans — running body copy, kept separate from the serif
+     pull-quote above it, which stays display/heading territory. */
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: 1.32rem;
   line-height: 1.85;
@@ -707,11 +707,8 @@ p { margin: 0 0 var(--space-sm); }
 
 .world-text p {
   color: var(--deep-blue);
-  /* Matches .section-intro / .philosophy-copy — these paragraphs were
-     plain, unclassed <p> tags and missed the sitewide body-copy pass
-     that moved everything else to Cormorant Garamond at a lighter
-     weight and larger size. */
-  font-family: var(--font-statement);
+  /* Matches .section-intro / .philosophy-copy — running body copy, sans. */
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: 1.18rem;
   line-height: 1.85;
@@ -905,7 +902,7 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .founder-copy p {
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   line-height: 1.85;
@@ -973,11 +970,11 @@ p { margin: 0 0 var(--space-sm); }
   border-bottom: var(--border-hairline);
 }
 
-/* Cormorant Garamond, upright, for all footer body copy — the wordmark
-   keeps the site's Bodoni Moda identity type via :not(). */
+/* Plus Jakarta Sans, matching the nav — the wordmark keeps the site's
+   Bodoni Moda identity type via :not(). */
 .footer-brand p:not(.footer-wordmark) {
   margin: 0 0 0.3rem;
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   color: rgba(23, 20, 15, 0.75);
 }
@@ -1263,7 +1260,7 @@ p { margin: 0 0 var(--space-sm); }
    its factual introduction rather than opening with it cold. No eyebrow
    on purpose: this is a cold open, not another labelled section. */
 .overture-text {
-  font-family: var(--font-statement);
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: clamp(1.15rem, 2.2vw, 1.4rem);
   line-height: 1.85;
