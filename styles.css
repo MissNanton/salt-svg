@@ -316,10 +316,13 @@ p { margin: 0 0 var(--space-sm); }
   /* Plus Jakarta Sans, not Cormorant — this is running body copy, and the
      serif read as heavier and less minimal than intended for continuous
      reading text. Serif now reserved for headings and true display/pull-
-     quote moments (Philosophy statement, quote interludes, chapter lines). */
+     quote moments (Philosophy statement, quote interludes, chapter lines).
+     Sized down from 1.18rem — sans reads clearly smaller than serif did,
+     and quieter, smaller body copy suits an UHNWI-facing site better than
+     large-print text. */
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   line-height: 1.85;
 }
 
@@ -688,10 +691,11 @@ p { margin: 0 0 var(--space-sm); }
   text-align: left;
   color: var(--chocolate);
   /* Plus Jakarta Sans — running body copy, kept separate from the serif
-     pull-quote above it, which stays display/heading territory. */
+     pull-quote above it, which stays display/heading territory. Sized
+     down from 1.32rem for the same reason as .section-intro. */
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 1.32rem;
+  font-size: 1.1rem;
   line-height: 1.85;
 }
 
@@ -710,7 +714,7 @@ p { margin: 0 0 var(--space-sm); }
   /* Matches .section-intro / .philosophy-copy — running body copy, sans. */
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   line-height: 1.85;
 }
 
@@ -904,7 +908,7 @@ p { margin: 0 0 var(--space-sm); }
 .founder-copy p {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
   line-height: 1.85;
 }
 
@@ -1262,7 +1266,7 @@ p { margin: 0 0 var(--space-sm); }
 .overture-text {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
   line-height: 1.85;
   color: var(--basalt-charcoal);
   max-width: 38rem;
