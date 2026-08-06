@@ -778,27 +778,41 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .experience-eyebrow {
-  /* Cormorant Garamond, not Instrument Sans — the chapter-line, eyebrow
-     and title sit close together, and switching serif/sans/serif in
-     that small space read as fussy rather than restrained. One serif
-     voice for the top of the block, sans only for the body copy and
-     link below it. */
+  /* Cormorant Garamond — kept for the label's small caps character.
+     Colour dropped from the per-experience accent down to a quiet
+     charcoal/grey: this card used to also carry a .chapter-line directly
+     above it, also serif and also accent-coloured, so two labels were
+     competing for attention before the heading even loaded. The eyebrow
+     now does that identity-label job alone, quietly — the accent colour
+     is reserved for the single hairline underline below, the one
+     deliberate colour touch per card. */
   font-family: var(--font-statement);
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent-strong, var(--soft-stone-grey));
+  color: var(--soft-stone-grey);
   margin-bottom: var(--space-xs);
 }
 
 .experience-copy h3 {
   /* Plain ink, no outline — the coloured underline alone is enough to
      signal each experience's own accent without adding weight to the
-     letterforms themselves. */
+     letterforms themselves. Extra margin-bottom now that the heading
+     sits directly above the lead paragraph (the redundant .chapter-line
+     that used to separate them has been removed from this card). */
   color: var(--deep-ink);
   border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
   display: inline-block;
   padding-bottom: 0.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.experience-copy > p {
+  /* The card's lead/body paragraph — narrowed and given more line-height
+     so it reads as a considered editorial sentence rather than a caption,
+     now that it's the card's only remaining prose voice. */
+  max-width: 32rem;
+  line-height: 1.75;
 }
 
 .experience-note {
