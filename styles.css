@@ -294,7 +294,12 @@ h2, h3, h4 {
   font-weight: 300;
   letter-spacing: 0.01em;
 }
-h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
+/* Pulled down from clamp(1.9rem, 4vw, 2.75rem) and given more tracking —
+   section headings are structural labels ("Kitchen", "The Vision"), not
+   the site's voice. Quieting them creates real contrast against the
+   pull-quote / statement moments below, which now carry the emphasis
+   headings used to compete with. */
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); letter-spacing: 0.04em; }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.6rem); }
 
 p { margin: 0 0 var(--space-sm); }
@@ -324,6 +329,10 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 200;
   font-size: 1rem;
   line-height: 1.85;
+  /* A touch more room between paragraphs than the site-wide default
+     (1rem), so multi-paragraph blocks like this one get real separation
+     between thoughts rather than reading as one dense block. */
+  margin-bottom: 1.4rem;
 }
 
 /* A single large standalone line, used to open a section without a
@@ -332,11 +341,16 @@ p { margin: 0 0 var(--space-sm); }
    nothing following it. */
 .section-question {
   max-width: 34rem;
-  margin: var(--space-lg) 0;
+  /* Widened from --space-lg (4rem) to --space-xl (7rem) — this is one of
+     the site's few standalone statement lines, and needs enough air
+     around it to actually register as a pause rather than just another
+     paragraph in the flow. */
+  margin: var(--space-xl) 0;
   color: var(--basalt-charcoal);
   font-family: var(--font-statement);
   font-weight: 300;
-  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
   line-height: 1.4;
 }
 
@@ -351,7 +365,7 @@ p { margin: 0 0 var(--space-sm); }
   color: var(--chocolate);
   text-align: center;
   max-width: 34rem;
-  margin: var(--space-lg) auto 0;
+  margin: var(--space-xl) auto 0;
 }
 
 .note-flag {
@@ -667,7 +681,10 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .philosophy .statement {
-  margin: 0 auto var(--space-lg);
+  /* Widened from --space-lg (4rem) to --space-xl (7rem) — this is the
+     site's single biggest statement moment, and needed more room to
+     breathe before the supporting copy beneath it starts. */
+  margin: 0 auto var(--space-xl);
   max-width: 42rem;
   border: none;
   padding: 0;
@@ -676,11 +693,15 @@ p { margin: 0 0 var(--space-sm); }
 .philosophy .statement p {
   /* Cormorant Garamond, light — a second, classic serif used only for this
      statement, deliberately thinner and quieter than Bodoni Moda so it
-     reads as a considered pull-quote rather than a headline. */
+     reads as a considered pull-quote rather than a headline. Sized up
+     slightly and set in italic so it reads as a distinct, larger "voice"
+     moment against the now-quieter, upright section headings elsewhere
+     on the page — the contrast between the two is the point. */
   font-family: var(--font-statement);
   font-weight: 300;
-  font-size: clamp(1.9rem, 4.4vw, 2.9rem);
-  line-height: 1.45;
+  font-style: italic;
+  font-size: clamp(2.1rem, 5vw, 3.3rem);
+  line-height: 1.5;
   color: var(--basalt-charcoal);
   margin: 0;
 }
@@ -699,6 +720,13 @@ p { margin: 0 0 var(--space-sm); }
   line-height: 1.85;
 }
 
+.philosophy-copy p {
+  /* This block runs three separate paragraphs — extra room between them
+     so each reads as its own thought rather than one dense stack. */
+  margin-bottom: 1.4rem;
+}
+.philosophy-copy p:last-child { margin-bottom: 0; }
+
 /* ----------------------------------------------------------------
    9. THE SALT WORLD
    ---------------------------------------------------------------- */
@@ -716,7 +744,9 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 200;
   font-size: 1rem;
   line-height: 1.85;
+  margin-bottom: 1.4rem;
 }
+.world-text p:last-child { margin-bottom: 0; }
 
 /* ----------------------------------------------------------------
    10. SIGNATURE EXPERIENCES + ACCENT SYSTEM
@@ -910,7 +940,9 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 200;
   font-size: clamp(0.92rem, 1.3vw, 1.04rem);
   line-height: 1.85;
+  margin-bottom: 1.4rem;
 }
+.founder-copy p:last-child { margin-bottom: 0; }
 
 /* ----------------------------------------------------------------
    15. CONTACT
@@ -1256,7 +1288,10 @@ p { margin: 0 0 var(--space-sm); }
   font-weight: 300;
   font-size: 1.05rem;
   color: var(--accent-strong, var(--soft-stone-grey));
-  margin-bottom: var(--space-sm);
+  /* Widened from --space-sm (1rem) to --space-md (2rem) — this line was
+     sitting almost flush against the overture copy beneath it, when it's
+     meant to read as its own quiet beat before the paragraph begins. */
+  margin-bottom: var(--space-md);
 }
 
 /* A short, unlabelled cinematic passage between the hero and "The Vision"
@@ -1304,7 +1339,10 @@ p { margin: 0 0 var(--space-sm); }
    itself as a background — plain limestone, large italic Cormorant
    Garamond in ink, on every experience except After Dark. */
 .quote-interlude {
-  padding: clamp(4rem, 10vh, 7rem) var(--space-md);
+  /* More vertical room — clamp(5rem, 12vh, 9rem), up from clamp(4rem, 10vh,
+     7rem) — so this reads as a genuine pause between chapters rather than
+     a slightly taller section. */
+  padding: clamp(5rem, 12vh, 9rem) var(--space-md);
   text-align: center;
   display: flex;
   align-items: center;
