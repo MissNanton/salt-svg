@@ -1378,15 +1378,12 @@ p { margin: 0 0 var(--space-sm); }
   border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
 }
 
-/* After Dark is the one deliberate exception: the same night-sky nebula
-   gradient used in its hero, which is the point of the experience rather
-   than a generic colour fill, so it keeps a full-bleed background. */
-.accent-afterdark .quote-interlude.on-accent {
-  background: linear-gradient(160deg, var(--nebula-indigo) 0%, var(--nebula-plum) 45%, var(--nebula-magenta) 75%, var(--nebula-fade) 100%);
-  color: var(--warm-ivory);
-  border: none;
-}
-.accent-afterdark .quote-interlude p { color: var(--warm-ivory); }
+/* After Dark used to be a deliberate exception here — a full-bleed purple
+   nebula gradient behind this quote, on the reasoning that it echoed the
+   hero. In practice it reads as a jarring colour banner rather than an
+   editorial pause, especially now that the rest of the site keeps colour
+   to hairlines and single accents. Removed so After Dark now shares the
+   same quiet limestone treatment as every other experience page. */
 
 .quote-interlude.on-dark {
   background-color: var(--basalt-charcoal);
