@@ -211,6 +211,24 @@ a {
   text-decoration: none;
 }
 
+/* Inline cross-references between experience pages, sitting mid-sentence
+   in running copy (e.g. "...a Salt & Sorrel table, a SALT After Dark
+   evening..."). Needs its own quiet affordance since the base `a` above
+   is deliberately invisible — a soft underline rather than a button or
+   bright colour, shifting to this page's own accent on hover/focus. */
+.cross-ref {
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 20, 15, 0.32);
+  text-underline-offset: 3px;
+  transition: color var(--transition-standard), text-decoration-color var(--transition-standard);
+}
+
+.cross-ref:hover,
+.cross-ref:focus-visible {
+  color: var(--accent-strong, var(--aged-brass));
+  text-decoration-color: currentColor;
+}
+
 ul { list-style: none; margin: 0; padding: 0; }
 
 button {
@@ -755,6 +773,28 @@ p { margin: 0 0 var(--space-sm); }
   background-color: var(--salt-white);
 }
 
+/* The intro block (eyebrow, heading, intro copy, the standalone question)
+   sits in the full-width .container ahead of the card grid below — left-
+   aligned by default that reads as stranded in a lot of empty right-hand
+   space. Centering it as its own preamble, then letting the grid below
+   run full width, is the more editorial, intentional shape. */
+.experiences > .container > .eyebrow,
+.experiences > .container > .section-title,
+.experiences > .container > .section-intro,
+.experiences > .container > .section-question {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Same fix, same reasoning, for the "journey" header that opens the acts
+   grid on every experience page (Arrive/Cook/Feast, Ascend/Unfold/Return,
+   etc.) — identical wide-container-with-left-aligned-intro pattern. */
+#journey > .container > .eyebrow,
+#journey > .container > h2 {
+  text-align: center;
+}
+
 /* Alternating rows — image and copy side by side, flipping left-right
    every other card. */
 .experience-list {
@@ -1087,7 +1127,6 @@ p { margin: 0 0 var(--space-sm); }
   align-items: flex-end;
   overflow: hidden;
   isolation: isolate;
-  transition: transform var(--transition-standard);
 }
 
 .scene-panel::after {
@@ -1120,6 +1159,27 @@ p { margin: 0 0 var(--space-sm); }
   height: 100%;
   object-fit: cover;
   filter: saturate(0.84) contrast(1.02) brightness(1.02) sepia(0.06);
+  transform: scale(1);
+  transform-origin: center;
+  /* Slow, deliberate zoom on hover — a long transition (rather than the
+     usual quick 0.2-0.3s) is what reads as "editorial" rather than
+     "UI feedback". Frame stays fixed via the parent's overflow:hidden;
+     only the photo itself moves. */
+  transition: transform 6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* Continuous, near-imperceptible ambient zoom on hero images only —
+   a "cinemagraph" effect so full-bleed openers never sit perfectly
+   still. Kept off card/act thumbnails so scrolling through several at
+   once doesn't feel busy. */
+@keyframes salt-kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
+.hero-media .scene-photo {
+  animation: salt-kenburns 26s ease-in-out infinite alternate;
 }
 
 /* Real photography gets a much heavier, more visible grain than the
@@ -1144,8 +1204,12 @@ p { margin: 0 0 var(--space-sm); }
 
 .scene-panel.tall { aspect-ratio: 3 / 4; }
 
-.scene-panel:hover {
-  transform: scale(1.015);
+/* Photo-level zoom, not panel-level — the frame/border stays put and
+   only the image drifts inward, which reads as considered rather than
+   a whole card "bumping". Hero images are excluded since they already
+   carry their own continuous ambient zoom above. */
+.scene-panel:not(.hero-media):hover .scene-photo {
+  transform: scale(1.06);
 }
 
 /* One gradient per section, drawn from that section's own accent —
@@ -1256,13 +1320,18 @@ p { margin: 0 0 var(--space-sm); }
   }
 
   .scene-panel,
+  .scene-photo,
   .cta,
   .primary-nav a::after,
   .menu-toggle-line {
     transition: none;
   }
 
-  .scene-panel:hover {
+  .hero-media .scene-photo {
+    animation: none;
+  }
+
+  .scene-panel:not(.hero-media):hover .scene-photo {
     transform: none;
   }
 }
