@@ -5,58 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ============================================================
-     SALT: An Editorial Hospitality House in Saint Vincent & the Grenadines
-     Single-page static site. No build tools, no frameworks, no backend.
-     Replace all bracketed placeholder content before public launch.
+     SALT PRIVATE: an in-depth experience page within the SALT site.
+     Shares styles.css and script.js with the master site. Wrapped in
+     class="accent-private" on <body> so shared components pick up
+     the aged-brass accent automatically.
      ============================================================ -->
 
-<title>SALT | An Editorial Hospitality House in Saint Vincent & the Grenadines</title>
-<meta name="description" content="SALT curates personal, beautifully considered ways to experience Saint Vincent & the Grenadines through food, landscapes, culture, craftsmanship and story.">
+<title>SALT Private | Bespoke Experiences for Villas, Yachts &amp; Groups</title>
+<meta name="description" content="SALT Private designs bespoke experiences for villas, yachts, couples, families and private groups, drawing on the full SALT collection, shaped around the setting and the guest.">
 
-<!-- Open Graph / social sharing metadata -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="SALT | An Editorial Hospitality House in Saint Vincent & the Grenadines">
-<meta property="og:description" content="SALT curates personal, beautifully considered ways to experience Saint Vincent & the Grenadines through food, landscapes, culture, craftsmanship and story.">
-<!-- REPLACE: og:image should point to a real 1200x630px image once photography exists -->
-<meta property="og:image" content="images/social/salt-og-image.jpg">
-<meta property="og:url" content="https://saltsvg.com/">
+<meta property="og:title" content="SALT Private | Bespoke Experiences for Villas, Yachts & Groups">
+<meta property="og:description" content="Bespoke SALT experiences shaped entirely around a villa, a yacht or a private group.">
+<meta property="og:image" content="https://saltsvg.com/images/social/salt-og-image.jpg">
+<meta property="og:url" content="https://saltsvg.com/private/">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicon placeholder: replace /images/favicon/ files with the real SALT mark -->
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
 
-<!-- Google Fonts: Bodoni Moda for the wordmark only (a variable font,
-     opsz + wght axes, loaded across its full range for display-size
-     contrast), Cormorant Garamond for headings and all editorial copy,
-     and Instrument Sans for everything functional — navigation, buttons, captions,
-     card copy, footer. All free, web-hosted, no paid licence required. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=49">
+<link rel="stylesheet" href="/styles.css?v=52">
 </head>
 
-<body>
+<body class="accent-private">
 
-<!-- Skip link for keyboard and screen-reader users -->
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a href="#top" class="wordmark" aria-label="SALT home">SALT</a>
+    <a href="/" class="wordmark" aria-label="SALT home">SALT</a>
 
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
       <ul>
-        <li><a href="#philosophy">Philosophy</a></li>
-        <li><a href="#experiences">Collection</a></li>
-        <li><a href="#partners">Partnerships</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/#philosophy">Philosophy</a></li>
+        <li><a href="/#experiences">Collection</a></li>
+        <li><a href="/#partners">Partnerships</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -68,13 +57,12 @@
     </button>
   </div>
 
-  <!-- Mobile navigation panel -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <ul>
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#experiences">Collection</a></li>
-      <li><a href="#partners">Partnerships</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/#philosophy">Philosophy</a></li>
+      <li><a href="/#experiences">Collection</a></li>
+      <li><a href="/#partners">Partnerships</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
@@ -85,178 +73,113 @@
        HERO
        ============================================================ -->
   <section class="hero" id="top">
-    <!-- IMAGE: images/hero/salt-hero-grenadines-aerial.jpg
-         Suggested shot: wide aerial view of the Grenadines archipelago,
-         sea meeting volcanic coastline, soft early or late light. -->
-    <div class="hero-media scene-panel scene-hero" role="img" aria-label="Aerial view of the Grenadines archipelago at golden hour, islands and yachts set in deep blue sea">
-      <img class="scene-photo" src="images/hero/salt-hero-grenadines-aerial.jpg" alt="Aerial view of the Grenadines archipelago at golden hour, islands and yachts set in deep blue sea">
+    <!-- Stand-in only: no true villa/yacht-terrace shot exists yet in the
+         current batch (flagged in salt-photography-plan.md). This sailboat
+         image is the closest fit for the mood until a genuine Private shot
+         is sourced. -->
+    <div class="hero-media scene-panel scene-private" role="img" aria-label="A private sailboat bow at golden hour, sails up, islands ahead">
+      <img class="scene-photo" src="/images/experiences/private/salt-private-hero-sailing.jpg" alt="A private sailboat bow at golden hour, sails up, islands ahead">
     </div>
 
     <div class="hero-content">
-      <p class="eyebrow reveal">Saint Vincent &amp; the Grenadines</p>
       <h1 class="hero-title reveal">SALT</h1>
-      <a class="cta cta-light reveal" href="#philosophy">Discover</a>
+      <p class="eyebrow reveal">Private</p>
+      <a class="cta cta-light reveal" href="#vision">Explore the Experience</a>
     </div>
   </section>
 
-  <!-- ============================================================
-       BREATHING IMAGE: full-bleed, no text — a pause between the hero
-       and Philosophy. Removed for now since it was just a placeholder
-       gradient with no real photo behind it yet — bring back by
-       uncommenting the div below once images/hero/salt-breathing-image.jpg
-       (or similar) exists.
-       <div class="section-bleed reveal" role="img" aria-label="A quiet landscape moment from Saint Vincent and the Grenadines"></div>
-       ============================================================ -->
+  <div class="container">
+    <p class="exp-breadcrumb reveal"><a href="/#experiences">&larr; Back to the Collection</a></p>
+  </div>
 
   <!-- ============================================================
-       BRAND PHILOSOPHY
+       OVERTURE
        ============================================================ -->
-  <section class="section philosophy" id="philosophy">
+  <section class="section exp-overture">
     <div class="container narrow">
-      <p class="eyebrow reveal">Philosophy</p>
+      <p class="chapter-line reveal">The best things are often made simply because someone asked.</p>
+      <p class="overture-text reveal">Some journeys are best left unwritten. Not because they are secret, but because they belong entirely to the people experiencing them. SALT Private begins with a conversation rather than an itinerary. Every experience is shaped around the pace, curiosities and preferences of the guest. Nothing begins with a menu. Everything begins with a conversation.</p>
+    </div>
+  </section>
 
-      <blockquote class="statement reveal">
-        <p>Some places are visited. Others are gradually understood.</p>
-      </blockquote>
+  <!-- ============================================================
+       VISION
+       ============================================================ -->
+  <section class="section" id="vision">
+    <div class="container narrow">
+      <p class="eyebrow reveal">The Vision</p>
+      <h2 class="reveal">Every element, chosen for you</h2>
+      <p class="section-intro reveal">SALT Private designs bespoke experiences for guests who would rather begin with a conversation than a catalogue. Every itinerary is composed around the guest, the setting and the occasion, drawing on the full SALT collection where appropriate, and ignoring it entirely when something better exists.</p>
+      <p class="section-intro reveal">A SALT Private day might combine a scenic flight, a tasting table, a craft encounter and a quiet evening under the stars, or none of these, built instead around whatever the guest actually wants.</p>
+      <p class="section-intro reveal">SALT Private isn't about offering more choices. It's about making thoughtful ones.</p>
+    </div>
+  </section>
 
-      <div class="philosophy-copy reveal">
-        <p>We believe travel is richer when it feels personal.</p>
-        <p>Saint Vincent &amp; the Grenadines is celebrated for its sea. We are drawn to everything beyond it: around the table, in the kitchen, beneath the stars, in workshops, gardens and conversations that reveal the islands more quietly.</p>
-        <p>Every SALT experience begins with the same question: what allows a place to feel remembered, rather than simply visited?</p>
+  <div class="quote-interlude on-accent reveal">
+    <p>Luxury isn't having everything arranged. It's feeling as though it was arranged only for you.</p>
+  </div>
+
+  <!-- ============================================================
+       LISTEN · DESIGN · DELIVER: how a private day is built
+       ============================================================ -->
+  <section id="journey" style="padding: 0;">
+    <div class="container" style="padding-top: var(--space-lg); padding-bottom: var(--space-md);">
+      <p class="eyebrow reveal">How It Begins</p>
+      <h2 class="reveal">Listen. Design. Deliver.</h2>
+    </div>
+
+    <div class="acts">
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/private/salt-private-act-listen.jpg -->
+        <div class="scene-panel scene-private" role="img" aria-label="Three people in conversation at a table, notebook and laptop open, discussing a private day">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/private/salt-private-act-listen.jpg?v=2" alt="Three people in conversation at a table, notebook and laptop open, discussing a private day">
+        </div>
+        <div class="act-copy">
+          <span class="act-label">Listen</span>
+          <h3>Understanding the guest first</h3>
+          <p>Every SALT Private day begins with a conversation: about the setting, the occasion, and what the guest actually wants from their time in the islands.</p>
+        </div>
+      </div>
+
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/private/salt-private-act-design.jpg -->
+        <div class="scene-panel scene-private" role="img" aria-label="A handwritten SALT Private itinerary on a map, surrounded by polaroids of pottery, food and sailing">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/private/salt-private-act-design.jpg?v=2" alt="A handwritten SALT Private itinerary on a map, surrounded by polaroids of pottery, food and sailing">
+        </div>
+        <div class="act-copy">
+          <span class="act-label">Design</span>
+          <h3>Drawing on the full SALT collection</h3>
+          <p>Elements from across SALT Air, Salt &amp; Sorrel, SALT Studio and SALT After Dark are combined, adapted or set aside entirely to fit the setting and the guest.</p>
+        </div>
+      </div>
+
+      <div class="act reveal">
+        <!-- IMAGE: images/experiences/private/salt-private-act-deliver.jpg -->
+        <div class="scene-panel scene-private" role="img" aria-label="A host welcoming guests and opening a car door at golden hour, sea and islands beyond">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/private/salt-private-act-deliver.jpg?v=2" alt="A host welcoming guests and opening a car door at golden hour, sea and islands beyond">
+        </div>
+        <div class="act-copy">
+          <span class="act-label">Deliver</span>
+          <h3>Hosted with the same care throughout</h3>
+          <p>Once agreed, the day is delivered with a single point of contact, so the guest experiences one considered arc rather than several disconnected bookings.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       THE SALT WORLD
+       GUEST JOURNEY
        ============================================================ -->
-  <section class="section world" id="world">
+  <section class="section" id="guest-journey">
     <div class="container">
-      <div class="world-grid">
-        <div class="world-text reveal">
-          <p class="eyebrow">The SALT World</p>
-          <h2>A house of original experiences.</h2>
-          <p>Every SALT experience is shaped around its own setting, rhythm and point of view.</p>
-          <p>Some begin with a flight. Others around a shared table, beneath a night sky or alongside the hands of a local maker. Each is conceived independently, with its own identity and atmosphere, while belonging unmistakably to the same house.</p>
-          <p>Together, they reflect a shared philosophy of thoughtful curation, generous hosting and quiet attention to detail.</p>
-        </div>
-        <div class="world-media">
-          <div class="scene-panel scene-world reveal" role="img" aria-label="Still life of cacao pods, island citrus, hibiscus and garden herbs on a sunlit stone counter">
-            <img class="scene-photo" src="images/world/salt-world-detail-textures.jpg" alt="Still life of cacao pods, island citrus, hibiscus and garden herbs on a sunlit stone counter">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SIGNATURE EXPERIENCES
-       ============================================================ -->
-  <section class="section experiences" id="experiences">
-    <div class="container">
-      <p class="eyebrow reveal">The Collection</p>
-      <h2 class="section-title reveal">Six ways into the islands.</h2>
-      <p class="section-intro reveal">Six experiences, each developed around a different way of encountering Saint Vincent &amp; the Grenadines.</p>
-      <p class="section-intro reveal">Distinct in character. United by the same philosophy.</p>
-
-      <p class="section-question reveal">How do you want to experience Saint Vincent today?</p>
-
-      <div class="experience-list">
-
-        <!-- SALT After Dark -->
-        <article class="experience-card accent-afterdark reveal">
-          <div class="experience-media">
-            <div class="scene-panel scene-afterdark" role="img" aria-label="Telescopes and a picnic set for stargazing at dusk, overlooking the sea">
-              <img class="scene-photo" src="images/experiences/afterdark/salt-afterdark-hero-stargazing.jpg" alt="Telescopes and a picnic set for stargazing at dusk, overlooking the sea">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">01 · Stargazing &amp; Evening</p>
-            <h3>SALT After Dark</h3>
-            <p>As the islands grow quiet and the heat begins to lift, the evening unfolds slowly beneath some of the Caribbean's darkest skies.</p>
-            <a class="experience-more" href="salt-afterdark.html">Explore SALT After Dark &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Salt & Sorrel -->
-        <article class="experience-card accent-sorrel reveal">
-          <div class="experience-media">
-            <div class="scene-panel scene-sorrel" role="img" aria-label="Sorrel wine poured into ceramic cups on a sunlit table, palm shadows behind">
-              <img class="scene-photo" src="images/experiences/sorrel/salt-sorrel-hero-table.jpg" alt="Sorrel wine poured into ceramic cups on a sunlit table, palm shadows behind">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">02 · Vincentian Tasting</p>
-            <h3>Salt &amp; Sorrel</h3>
-            <p>A Vincentian tasting experience shaped by season, place and memory.</p>
-            <a class="experience-more" href="salt-sorrel.html">Explore Salt &amp; Sorrel &rarr;</a>
-          </div>
-        </article>
-
-        <!-- SALT Kitchen -->
-        <article class="experience-card accent-kitchen reveal">
-          <div class="experience-media">
-            <div class="scene-panel scene-kitchen" role="img" aria-label="A chef and two guests cooking together at an open villa kitchen counter overlooking the sea">
-              <img class="scene-photo" src="images/experiences/kitchen/salt-kitchen-hero.jpg" alt="A chef and two guests cooking together at an open villa kitchen counter overlooking the sea">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">03 · Vincentian Cooking</p>
-            <h3>SALT Kitchen</h3>
-            <p>A Vincentian cooking experience where the kitchen becomes the gathering place.</p>
-            <a class="experience-more" href="salt-kitchen.html">Explore SALT Kitchen &rarr;</a>
-          </div>
-        </article>
-
-        <!-- SALT Air -->
-        <article class="experience-card accent-air reveal">
-          <div class="experience-media">
-            <div class="scene-panel scene-air" role="img" aria-label="View from a small aircraft window over turquoise reefs and islands of the Grenadines">
-              <img class="scene-photo" src="images/experiences/air/salt-air-hero-flight-window.jpg" alt="View from a small aircraft window over turquoise reefs and islands of the Grenadines">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">04 · Aerial Safari</p>
-            <h3>SALT Air</h3>
-            <p>A scenic journey through Saint Vincent &amp; the Grenadines, experienced from the air.</p>
-            <a class="experience-more" href="salt-air.html">Explore SALT Air &rarr;</a>
-          </div>
-        </article>
-
-        <!-- SALT Studio -->
-        <article class="experience-card accent-studio reveal">
-          <div class="experience-media">
-            <div class="scene-panel scene-studio" role="img" aria-label="Plein-air painters at their easels in a misty tropical garden at golden hour">
-              <img class="scene-photo" src="images/experiences/studio/salt-studio-hero-craft.jpg" alt="Plein-air painters at their easels in a misty tropical garden at golden hour">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">05 · Craft &amp; Botanical</p>
-            <h3>SALT Studio</h3>
-            <p>Creative encounters rooted in craft, conversation and the quiet pleasure of making something by hand.</p>
-            <a class="experience-more" href="salt-studio.html">Explore SALT Studio &rarr;</a>
-          </div>
-        </article>
-
-        <!-- SALT Private -->
-        <article class="experience-card accent-private reveal">
-          <div class="experience-media">
-            <!-- Stand-in only: no true villa/yacht-terrace shot exists yet in the
-                 current batch (flagged in salt-photography-plan.md). This sailboat
-                 image is the closest fit for the mood until a genuine Private shot
-                 is sourced. -->
-            <div class="scene-panel scene-private" role="img" aria-label="A private sailboat bow at golden hour, sails up, islands ahead">
-              <img class="scene-photo" src="images/experiences/private/salt-private-hero-sailing.jpg" alt="A private sailboat bow at golden hour, sails up, islands ahead">
-            </div>
-          </div>
-          <div class="experience-copy">
-            <p class="experience-eyebrow">06 · Bespoke &amp; Private</p>
-            <h3>SALT Private</h3>
-            <p>A bespoke planning and hosting service drawing from the full SALT collection to create experiences that feel as though they could only happen here.</p>
-            <a class="experience-more" href="salt-private.html">Explore SALT Private &rarr;</a>
-          </div>
-        </article>
-
+      <p class="eyebrow reveal">The Guest Experience</p>
+      <h2 class="reveal">The guest journey</h2>
+      <div class="exp-timeline">
+        <div class="t-item reveal"><h4>Initial Conversation</h4><p>A discussion of the setting, occasion and guest preferences, directly or through a villa manager, yacht crew or advisor.</p></div>
+        <div class="t-item reveal"><h4>Proposal</h4><p>A short, considered outline of what the day or stay could include.</p></div>
+        <div class="t-item reveal"><h4>Confirmation</h4><p>Details, timings and logistics are finalised ahead of arrival.</p></div>
+        <div class="t-item reveal"><h4>Delivery</h4><p>The experience is hosted on-site, with a single SALT point of contact throughout.</p></div>
+        <div class="t-item reveal"><h4>Follow-Up</h4><p>A brief note afterward, and the option to arrange a future SALT day.</p></div>
       </div>
     </div>
   </section>
@@ -264,133 +187,56 @@
   <!-- ============================================================
        FOR HOSPITALITY PARTNERS
        ============================================================ -->
-  <section class="section partners" id="partners">
+  <section class="section exp-partnership" id="partnership">
     <div class="container">
-      <div class="partners-grid">
-        <div class="partners-text reveal">
-          <p class="eyebrow">For Hospitality Partners</p>
-          <h2>An extension of your guest experience.</h2>
-          <p class="section-intro">The finest hospitality doesn't end at the hotel door.</p>
-          <p>SALT reveals everything beyond the coastline through a collection of experiences designed exclusively for these islands.</p>
-          <p>Every collaboration is developed around your guests, your standards and your sense of place, allowing the experience to feel like a natural extension of your property rather than an external excursion.</p>
-          <p>We partner with hotels, resorts, villas, yacht managers and travel advisors who believe a destination is measured not only by where guests stay, but by how they experience it.</p>
+      <p class="eyebrow reveal">For Hospitality Partners</p>
+      <h2 class="reveal">Designed around your guests, not our packages.</h2>
+      <p class="section-intro reveal" style="max-width: 42rem;">SALT Private works alongside villa managers, yacht crews, concierge teams and travel advisors to create bespoke experiences that reflect each guest rather than a predefined itinerary. SALT acts as one point of coordination across every experience.</p>
 
-          <h3 class="partners-subhead">Ways we collaborate</h3>
-          <ul class="partners-list">
-            <li>Signature guest experiences</li>
-            <li>Seasonal programming</li>
-            <li>Private villa hosting</li>
-            <li>Bespoke itineraries</li>
-            <li>Culinary residencies</li>
-            <li>Creative workshops</li>
-            <li>Concierge partnerships</li>
-            <li>Private celebrations</li>
+      <h3 class="partners-subhead">Ways to offer SALT Private</h3>
+      <ul class="format-list">
+        <li class="reveal"><span class="n">01</span><span class="t">A Single Occasion: one bespoke moment built around a birthday, anniversary or arrival.</span></li>
+        <li class="reveal"><span class="n">02</span><span class="t">A Villa or Yacht Itinerary: several SALT experiences combined across a stay.</span></li>
+        <li class="reveal"><span class="n">03</span><span class="t">An Ongoing Arrangement: a returning guest or repeat charter with a standing SALT relationship.</span></li>
+      </ul>
+
+      <div class="provide-cols reveal" style="margin-top: var(--space-lg);">
+        <div>
+          <h4>What SALT Private May Provide</h4>
+          <ul>
+            <li>Bespoke itinerary design</li>
+            <li>Coordination across every SALT experience</li>
+            <li>A single point of contact throughout</li>
+            <li>Discreet, considered hosting</li>
           </ul>
-
-          <!-- REPLACE mailto address below with the real partnerships inbox -->
-          <a class="cta cta-dark" href="mailto:partnerships@saltsvg.com?subject=Hospitality%20Partnership%20Enquiry">Discuss a hospitality partnership</a>
         </div>
-
-        <div class="partners-media">
-          <div class="scene-panel scene-partners reveal" role="img" aria-label="A plate of food being passed hand to hand across a candlelit table, sea visible beyond">
-            <img class="scene-photo" src="images/partners/salt-partners-villa-hosting.jpg" alt="A plate of food being passed hand to hand across a candlelit table, sea visible beyond">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SALT PASSPORT
-       ============================================================ -->
-  <section class="section passport" id="passport">
-    <div class="container">
-      <div class="passport-grid">
-        <div class="passport-media">
-          <!-- IMAGE: images/passport/salt-passport-journal.jpg
-               Suggested shot: a bound passport-style journal on textured paper
-               or timber, perhaps beside a fountain pen and an old map. -->
-          <div class="scene-panel scene-passport reveal" role="img" aria-label="A bound passport-style travel journal resting on textured paper, beside a fountain pen">
-            <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(23,20,15,0.42)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-              <path d="M180 140 L 180 360 C 180 360, 240 340, 300 360 C 360 340, 420 360, 420 360 L 420 140 C 420 140, 360 120, 300 140 C 240 120, 180 140, 180 140 Z"/>
-              <path d="M300 140 L 300 360" opacity="0.4"/>
-              <circle cx="300" cy="250" r="34" opacity="0.35"/>
-              <path d="M300 226 L 300 274 M276 250 L 324 250" opacity="0.3"/>
-            </svg>
-          </div>
-        </div>
-        <div class="passport-text reveal">
-          <p class="eyebrow">A Keepsake for the Collection</p>
-          <h2>The SALT Passport</h2>
-          <p class="section-intro">The most meaningful souvenirs are rarely purchased.</p>
-          <p>The SALT Passport accompanies guests throughout the collection, gathering stamps, notes and memories as each experience unfolds. Over time it becomes a personal record of Saint Vincent &amp; the Grenadines, shaped not by distance travelled, but by moments remembered.</p>
+        <div>
+          <h4>What a Partner May Provide</h4>
+          <ul>
+            <li>Guest brief and preferences</li>
+            <li>Venue, villa or vessel access</li>
+            <li>Local logistics support</li>
+            <li>Ongoing guest relationship context</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       FOUNDER'S NOTE
+       CLOSING
        ============================================================ -->
-  <section class="section founder" id="founder">
+  <section class="section closing-cta">
     <div class="container narrow">
-      <p class="eyebrow reveal">Founder's Note</p>
-      <div class="founder-copy reveal">
-        <p>SALT began with the belief that Saint Vincent &amp; the Grenadines is rarely experienced in full.</p>
-        <p>Visitors arrive for the sea, and understandably so. Few places in the Caribbean hold such a remarkable meeting of volcanic peaks, coral reefs, and thirty-two islands and cays. Yet beyond the coastline, the islands rise into a misty rainforest where species found nowhere else on Earth still thrive. The islands' character extends far beyond any single view from a boat or a beach, revealing itself instead in gardens, quiet coves, kitchens, workshops and conversations that linger long after the day was meant to end.</p>
-        <p>Over time, we came to believe that the most meaningful way to experience the islands was not simply by seeing them, but by spending time with the people, flavours, traditions and stories that continue to shape everyday life here.</p>
-        <p>The isles have always rewarded those willing to look a little more closely: at a meal prepared from memory, a coastline reached slowly, a piece of craft shaped by practiced hands, or a conversation that unfolds without hurry. These are rarely the moments that appear on an itinerary, yet they are often the ones that remain long after a journey has ended.</p>
-        <p>SALT exists to create space for those encounters. Whether the introduction lasts an afternoon or an entire stay, every experience is designed with care, curiosity and deep respect for the people and places that make these islands what they are.</p>
-        <p>We are building slowly, in partnership with the people and places that already know these islands best.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       BUILDING THE COLLECTION
-       ============================================================ -->
-  <section class="section" id="building">
-    <div class="container narrow">
-      <p class="eyebrow reveal">Building the Collection</p>
-      <p class="section-intro reveal">SALT is being built gradually, in partnership with local makers, hospitality partners, aviation operators and producers. Some experiences are already available by enquiry; others are being introduced thoughtfully over time. We believe a collection worth experiencing deserves to be built carefully.</p>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT
-       ============================================================ -->
-  <section class="section contact" id="contact">
-    <div class="container narrow">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 class="section-title reveal">Begin a conversation.</h2>
-      <p class="section-intro reveal">Whether you're planning a journey, exploring a partnership or simply curious about the collection, we'd be delighted to hear from you.</p>
-
-      <div class="contact-grid reveal">
-        <a class="contact-card" href="mailto:partnerships@saltsvg.com?subject=Hospitality%20Partnership">
-          <span class="contact-label">Hospitality partnerships</span>
-          <span class="contact-value">partnerships@saltsvg.com</span>
-        </a>
-        <a class="contact-card" href="mailto:hello@saltsvg.com?subject=Guest%20Enquiry">
-          <span class="contact-label">Guest enquiries</span>
-          <span class="contact-value">hello@saltsvg.com</span>
-        </a>
-        <a class="contact-card" href="mailto:concierge@saltsvg.com?subject=Concierge%20%26%20Travel%20Advisor%20Enquiry">
-          <span class="contact-label">Concierge &amp; travel advisors</span>
-          <span class="contact-value">concierge@saltsvg.com</span>
-        </a>
-        <a class="contact-card" href="mailto:press@saltsvg.com?subject=Press%20and%20Editorial">
-          <span class="contact-label">Press &amp; editorial</span>
-          <span class="contact-value">press@saltsvg.com</span>
-        </a>
-      </div>
+      <p class="eyebrow reveal">Closing Vision</p>
+      <h2 class="reveal">A day built around one guest, not many</h2>
+      <p class="reveal">SALT Private is available by enquiry now, and continues to develop alongside SALT's other experiences. We welcome conversations with villa managers, yacht crews and travel advisors.</p>
+      <a class="cta reveal" href="mailto:hello@saltsvg.com?subject=SALT%20Private%20Enquiry">Discuss a Private Experience</a>
     </div>
   </section>
 
 </main>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -402,15 +248,14 @@
 
       <nav class="footer-nav" aria-label="Footer">
         <ul>
-          <li><a href="#philosophy">Philosophy</a></li>
-          <li><a href="#experiences">Collection</a></li>
-          <li><a href="#partners">Partnerships</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#philosophy">Philosophy</a></li>
+          <li><a href="/#experiences">Collection</a></li>
+          <li><a href="/#partners">Partnerships</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="footer-contact">
-        <!-- REPLACE with the real general enquiries address -->
         <a href="mailto:hello@saltsvg.com">hello@saltsvg.com</a>
       </div>
     </div>
@@ -422,11 +267,6 @@
   </div>
 </footer>
 
-<!-- Analytics placeholder: if adding privacy-respecting analytics later
-     (e.g. a self-hosted or cookie-free provider), insert the script tag
-     here, just before the closing body tag. No analytics are included
-     by default. -->
-
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
