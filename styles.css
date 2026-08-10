@@ -116,6 +116,15 @@
   --kitchen-gold-light: #F0C878;
   --kitchen-olive:      #4B5320;
 
+  /* SALT Marine — deliberately deeper and greyer than SALT Air's bright
+     shallow-water turquoise: open ocean rather than a reef, so the family
+     moves near-black abyss blue into a slate steel current, fading to a
+     muted sea-foam rather than a vivid tropical aqua. */
+  --marine-abyss:   #0B1E2C;
+  --marine-steel:   #245069; /* text/underline use — passes AA on limestone */
+  --marine-current: #3E7C93;
+  --marine-foam:    #C4D9DC;
+
   /* Body-text colour variants — the master site now varies reading-copy
      colour by section (basalt, chocolate or deep blue) instead of one flat
      ink everywhere. Still dark enough for comfortable reading contrast on
@@ -882,6 +891,7 @@ p { margin: 0 0 var(--space-sm); }
 .accent-studio     { --accent-strong: var(--studio-indigo); }
 .accent-kitchen    { --accent-strong: var(--kitchen-olive); }
 .accent-private    { --accent-strong: var(--aged-brass); }
+.accent-marine     { --accent-strong: var(--marine-steel); }
 
 /* ----------------------------------------------------------------
    11. HOSPITALITY PARTNERS
@@ -1220,6 +1230,9 @@ p { margin: 0 0 var(--space-sm); }
 /* Rich deep sea blue into a genuinely light, bright turquoise — no black,
    no muddy dark teal. */
 .scene-air       { background: linear-gradient(155deg, var(--deep-sea-blue) 0%, var(--bright-turquoise) 55%, var(--pale-aqua) 120%); }
+/* Open, deep offshore water — near-black abyss into a slate current,
+   fading to a muted foam rather than Air's bright tropical aqua. */
+.scene-marine    { background: linear-gradient(155deg, var(--marine-abyss) 0%, var(--marine-current) 60%, var(--marine-foam) 125%); }
 /* Obviously brown cocoa into true hibiscus red — no near-black, no
    orange/mango. */
 .scene-sorrel    { background: linear-gradient(155deg, var(--sorrel-brown) 0%, var(--hibiscus-red) 60%, var(--hibiscus-pink) 120%); }
@@ -1632,6 +1645,17 @@ p { margin: 0 0 var(--space-sm); }
   border-bottom: var(--border-hairline);
 }
 
+/* Three-column variant — SALT Marine splits "what we provide" across
+   three parties (SALT itself, the marine operator, the hospitality
+   partner) instead of the usual two. */
+.provide-cols.three-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .provide-cols.three-col { grid-template-columns: 1fr; gap: var(--space-md); }
+}
+
 @media (max-width: 760px) {
   .provide-cols { grid-template-columns: 1fr; gap: var(--space-md); }
 }
@@ -1653,7 +1677,8 @@ p { margin: 0 0 var(--space-sm); }
 .accent-sorrel .closing-cta .cta:hover,
 .accent-afterdark .closing-cta .cta:hover,
 .accent-studio .closing-cta .cta:hover,
-.accent-kitchen .closing-cta .cta:hover {
+.accent-kitchen .closing-cta .cta:hover,
+.accent-marine .closing-cta .cta:hover {
   /* Ink fails against these four accents at this size — ivory instead.
      Aged-brass (Private) keeps ink, which reads better against it. */
   color: var(--warm-ivory);
