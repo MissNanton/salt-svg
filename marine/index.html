@@ -9,13 +9,6 @@
      Shares styles.css and script.js with the master site. Wrapped in
      class="accent-marine" on <body> so shared components pick up the
      marine-steel accent automatically.
-
-     No real photography exists yet for this experience — every
-     scene-panel below uses the same simple line-art SVG placeholder
-     pattern the rest of the site used before its own photography
-     arrived. Replace each <svg class="scene-art"> with a real
-     <img class="scene-photo"> once shots exist, following the exact
-     pattern used on every other experience page (see air/index.html).
      ============================================================ -->
 
 <title>SALT Marine | An Offshore Wildlife Expedition in the Grenadines</title>
@@ -24,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="SALT Marine | An Offshore Wildlife Expedition in the Grenadines">
 <meta property="og:description" content="An offshore wildlife expedition in search of the whales, dolphins, turtles, rays and seabirds of Vincentian waters.">
-<meta property="og:image" content="https://saltsvg.com/images/social/salt-og-image.jpg">
+<meta property="og:image" content="https://saltsvg.com/images/experiences/marine/salt-marine-og.jpg">
 <meta property="og:url" content="https://saltsvg.com/marine/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -80,19 +73,8 @@
        HERO
        ============================================================ -->
   <section class="hero" id="top">
-    <!-- IMAGE: images/experiences/marine/salt-marine-hero-offshore.jpg
-         Suggested shot: a high-performance powerboat running fast
-         across open, deep-blue water, coastline falling away behind,
-         salt spray catching the light. -->
-    <div class="hero-media scene-panel scene-marine" role="img" aria-label="A powerboat running across open water, coastline falling away behind">
-      <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.55)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-        <path d="M0 300 L600 300"/>
-        <path d="M180 340 L 420 340 L 460 360 L 150 360 Z"/>
-        <path d="M260 340 L 270 300 L 330 300 L 340 340"/>
-        <path d="M460 360 C 500 358, 530 366, 555 362" opacity="0.6"/>
-        <path d="M0 400 C 60 392, 120 408, 180 400 C 240 392, 300 408, 360 400 C 420 392, 480 408, 540 400 C 560 398, 580 402, 600 400" opacity="0.4"/>
-        <path d="M0 440 C 80 432, 160 448, 240 440 C 320 432, 400 448, 480 440 C 520 436, 560 444, 600 440" opacity="0.3"/>
-      </svg>
+    <div class="hero-media scene-panel scene-marine" role="img" aria-label="A powerboat running along the Saint Vincent coastline, mountains rising behind, guests aboard">
+      <img class="scene-photo" src="/images/experiences/marine/salt-marine-hero-offshore.jpg" alt="A powerboat running along the Saint Vincent coastline, mountains rising behind, guests aboard">
     </div>
 
     <div class="hero-content">
@@ -144,17 +126,8 @@
 
     <div class="acts">
       <div class="act reveal">
-        <!-- IMAGE: images/experiences/marine/salt-marine-act-run.jpg
-             Suggested shot: the boat at speed, wake fanning out behind,
-             coastline receding, guests braced against the open air. -->
-        <div class="scene-panel scene-marine" role="img" aria-label="A powerboat at speed leaving a wake, coastline receding behind">
-          <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.55)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-            <path d="M340 230 L 500 230 L 530 248 L 320 248 Z"/>
-            <path d="M390 230 L 398 200 L 440 200 L 448 230"/>
-            <path d="M320 248 C 260 256, 200 244, 140 252 C 90 258, 50 250, 20 256" opacity="0.55"/>
-            <path d="M320 258 C 250 270, 180 256, 110 268 C 70 275, 30 268, 0 274" opacity="0.4"/>
-            <path d="M530 248 C 545 246, 555 250, 565 248" opacity="0.6"/>
-          </svg>
+        <div class="scene-panel scene-marine" role="img" aria-label="A guest braced against the frame as the boat cuts fast through open water, spray flying">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/marine/salt-marine-act-run.jpg" alt="A guest braced against the frame as the boat cuts fast through open water, spray flying">
         </div>
         <div class="act-copy">
           <span class="act-label">Run</span>
@@ -164,18 +137,8 @@
       </div>
 
       <div class="act reveal">
-        <!-- IMAGE: images/experiences/marine/salt-marine-act-search.jpg
-             Suggested shot: guests scanning the horizon with binoculars,
-             open sea in every direction, crew watching the water. -->
-        <div class="scene-panel scene-marine" role="img" aria-label="Guests scanning the open horizon with binoculars, sea in every direction">
-          <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.55)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-            <path d="M0 260 L600 260" opacity="0.5"/>
-            <circle cx="270" cy="220" r="30" opacity="0.6"/>
-            <circle cx="330" cy="220" r="30" opacity="0.6"/>
-            <path d="M300 220 L 300 250" opacity="0.4"/>
-            <path d="M245 200 C 220 180, 210 150, 215 120" opacity="0.3"/>
-            <path d="M355 200 C 380 180, 390 150, 385 120" opacity="0.3"/>
-          </svg>
+        <div class="scene-panel scene-marine" role="img" aria-label="Guests and crew scanning the horizon, one with binoculars raised, seabirds gathering in the distance">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/marine/salt-marine-act-search.jpg" alt="Guests and crew scanning the horizon, one with binoculars raised, seabirds gathering in the distance">
         </div>
         <div class="act-copy">
           <span class="act-label">Search</span>
@@ -185,17 +148,8 @@
       </div>
 
       <div class="act reveal">
-        <!-- IMAGE: images/experiences/marine/salt-marine-act-encounter.jpg
-             Suggested shot: a respectful distance from marine life at
-             the surface — a fin, a spout, a shape moving through open
-             water, guests watching quietly. -->
-        <div class="scene-panel scene-marine" role="img" aria-label="A fin breaking the surface of open water, seen from a respectful distance">
-          <svg class="scene-art" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="rgba(250,248,244,0.55)" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
-            <path d="M0 280 C 100 270, 200 290, 300 280 C 400 270, 500 290, 600 280" opacity="0.5"/>
-            <path d="M300 280 C 305 240, 320 210, 340 200 C 345 225, 340 255, 320 280 Z"/>
-            <path d="M250 300 C 300 310, 350 310, 400 300" opacity="0.35"/>
-            <path d="M230 320 C 300 332, 370 332, 440 320" opacity="0.25"/>
-          </svg>
+        <div class="scene-panel scene-marine" role="img" aria-label="Guests at the rail watching a pod of dolphins surface alongside the boat">
+          <img loading="lazy" decoding="async" class="scene-photo" src="/images/experiences/marine/salt-marine-act-encounter.jpg" alt="Guests at the rail watching a pod of dolphins surface alongside the boat">
         </div>
         <div class="act-copy">
           <span class="act-label">Encounter</span>
