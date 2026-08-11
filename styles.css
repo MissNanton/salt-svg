@@ -435,6 +435,12 @@ p { margin: 0 0 var(--space-sm); }
 }
 
 .cta {
+  /* Outline-only, on purpose — a solid colour fill on hover read as a
+     branded "banner" rather than an editorial button, especially on the
+     experience pages where the fill colour was each page's saturated
+     accent (e.g. purple on After Dark). Hover state now animates instead
+     of filling: a slight lift and a small increase in letter-spacing,
+     with the border/text easing toward the page accent colour. */
   display: inline-block;
   padding: 0.9rem 1.9rem;
   font-family: var(--font-sans);
@@ -442,7 +448,12 @@ p { margin: 0 0 var(--space-sm); }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid currentColor;
-  transition: background-color var(--transition-standard), color var(--transition-standard);
+  transition: color var(--transition-standard), border-color var(--transition-standard),
+    letter-spacing var(--transition-standard), transform var(--transition-standard);
+}
+.cta:hover {
+  letter-spacing: 0.12em;
+  transform: translateY(-2px);
 }
 
 .cta-light {
@@ -450,8 +461,8 @@ p { margin: 0 0 var(--space-sm); }
   border-color: rgba(250, 248, 244, 0.7);
 }
 .cta-light:hover {
-  background-color: var(--salt-white);
-  color: var(--deep-ink);
+  color: var(--salt-white);
+  border-color: var(--salt-white);
 }
 
 .cta-dark {
@@ -460,8 +471,8 @@ p { margin: 0 0 var(--space-sm); }
   margin-top: var(--space-sm);
 }
 .cta-dark:hover {
-  background-color: var(--deep-ink);
-  color: var(--salt-white);
+  color: var(--accent-strong, var(--deep-ink));
+  border-color: var(--accent-strong, var(--deep-ink));
 }
 
 /* ----------------------------------------------------------------
@@ -1061,7 +1072,9 @@ p { margin: 0 0 var(--space-sm); }
 
 .contact-value {
   font-family: var(--font-sans);
-  font-size: 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
   color: var(--deep-ink);
 }
 
@@ -1477,8 +1490,6 @@ p { margin: 0 0 var(--space-sm); }
 .quote-interlude.on-accent {
   background-color: var(--limestone);
   color: var(--chocolate);
-  border-top: 2px solid var(--accent-strong, var(--aged-brass));
-  border-bottom: 2px solid var(--accent-strong, var(--aged-brass));
 }
 
 /* After Dark used to be a deliberate exception here — a full-bleed purple
@@ -1694,14 +1705,4 @@ p { margin: 0 0 var(--space-sm); }
 .closing-cta h2 { color: var(--chocolate); -webkit-text-stroke: 0.3px var(--accent-strong); }
 .closing-cta p { color: rgba(23, 20, 15, 0.75); max-width: 34rem; margin: 0 auto var(--space-sm); font-weight: 300; font-size: 0.8rem; }
 .closing-cta .cta { margin-top: var(--space-sm); color: var(--chocolate); border-color: var(--accent-strong); }
-.closing-cta .cta:hover { background-color: var(--accent-strong); color: var(--deep-ink); }
-.accent-air .closing-cta .cta:hover,
-.accent-sorrel .closing-cta .cta:hover,
-.accent-afterdark .closing-cta .cta:hover,
-.accent-studio .closing-cta .cta:hover,
-.accent-kitchen .closing-cta .cta:hover,
-.accent-marine .closing-cta .cta:hover {
-  /* Ink fails against these four accents at this size — ivory instead.
-     Aged-brass (Private) keeps ink, which reads better against it. */
-  color: var(--warm-ivory);
-}
+.closing-cta .cta:hover { color: var(--accent-strong); border-color: var(--accent-strong); }
