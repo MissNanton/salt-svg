@@ -590,12 +590,26 @@ p { margin: 0 0 var(--space-sm); }
    Swap the background-image out for real photography; the gradient below
    is a placeholder only. */
 .section-bleed {
+  position: relative;
+  overflow: hidden;
   height: 62vh;
   min-height: 380px;
   max-height: 640px;
   background: linear-gradient(150deg, #12160D 0%, #33401C 55%, #8A7A3F 130%);
   background-size: cover;
   background-position: center;
+}
+
+/* Lets .section-bleed carry a real photo (e.g. the SALT Private break)
+   instead of the placeholder gradient — img fills the frame, gradient
+   stays as a fallback behind it if the image is slow to load. */
+.section-bleed img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero .hero-media::after {
