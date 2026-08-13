@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SALT JOURNAL: "What Sorrel Actually Is". Shares styles.css and
+     script.js with the master site so header, footer and mobile
+     nav behave identically to every other page. Journal-specific
+     typography lives in the <style> block below, matching the
+     .journal-article treatment established on the stargazing piece
+     (/journal/best-stargazing-caribbean.html).
+
+     NOTE: the source brief specified the slug /journal/what-is-sorrel
+     (no .html). Kept as a flat what-is-sorrel.html file instead, to
+     match the sibling stargazing article and avoid a deeper folder
+     nesting that GitHub's web uploader handles less gracefully.
+     Canonical/JSON-LD below reflect the .html URL actually being
+     published.
+     ============================================================ -->
+
+<title>What Is Sorrel? The Caribbean Hibiscus Drink, Explained | SALT Journal</title>
+<meta name="description" content="Sorrel appears on nearly every Caribbean Christmas table and is rarely explained properly. Here's what it actually is, where it came from, what it tastes like, and why Saint Vincent serves it as wine.">
+<link rel="canonical" href="https://saltsvg.com/journal/what-is-sorrel.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Sorrel Actually Is">
+<meta property="og:description" content="Sorrel appears on nearly every Caribbean Christmas table and is rarely explained properly. Here's what it actually is, where it came from, what it tastes like, and why Saint Vincent serves it as wine.">
+<meta property="og:image" content="https://saltsvg.com/images/journal/what-is-sorrel/hero-sorrel-glass-sunset.jpg">
+<meta property="og:url" content="https://saltsvg.com/journal/what-is-sorrel.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Sorrel Actually Is">
+<meta name="twitter:description" content="The African roots, Christmas ritual and Vincentian tradition behind one of the Caribbean's most distinctive drinks.">
+<meta name="twitter:image" content="https://saltsvg.com/images/journal/what-is-sorrel/hero-sorrel-glass-sunset.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles.css?v=58">
+
+<!-- Journal-article typography: identical block to the stargazing
+     journal page, scoped to .journal-article. -->
+<style>
+  .journal-article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--space-lg, 3rem) 1.5rem 6rem;
+  }
+  .journal-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-strong, var(--aged-brass));
+    margin-bottom: 1.1rem;
+  }
+  .journal-article h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.12;
+    font-weight: 500;
+    color: var(--basalt-charcoal);
+    margin: 0 0 1.25rem;
+  }
+  .journal-dek {
+    font-family: var(--font-statement);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--chocolate);
+    margin: 0 0 1.25rem;
+  }
+  .journal-byline {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--chocolate);
+    opacity: 0.75;
+    border-top: 1px solid rgba(23, 20, 15, 0.15);
+    border-bottom: 1px solid rgba(23, 20, 15, 0.15);
+    padding: 0.9rem 0;
+    margin-bottom: 2.25rem;
+  }
+  .journal-article figure {
+    margin: 2.5rem -1.5rem;
+  }
+  .journal-article figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .journal-article figure.inline {
+    margin: 2.5rem 0;
+  }
+  .journal-article figcaption {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--chocolate);
+    opacity: 0.75;
+    padding: 0.6rem 1.5rem 0;
+    text-align: center;
+  }
+  .journal-article h2 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--basalt-charcoal);
+    margin: 3.5rem 0 1.25rem;
+  }
+  .journal-article p {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--basalt-charcoal);
+    margin: 0 0 1.4rem;
+  }
+  .journal-article blockquote {
+    margin: 2rem 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid var(--accent-strong, var(--aged-brass));
+    font-family: var(--font-statement);
+    font-style: italic;
+    color: var(--chocolate);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .journal-article blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .journal-faq-item {
+    margin-bottom: 1.6rem;
+  }
+  .journal-faq-item h3 {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--basalt-charcoal);
+    margin: 0 0 0.4rem;
+  }
+  .journal-faq-item p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  .journal-internal-link {
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--basalt-charcoal);
+  }
+  .journal-rule {
+    border: none;
+    border-top: 1px solid rgba(23, 20, 15, 0.15);
+    margin: 3.5rem 0;
+  }
+  .journal-sources {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--basalt-charcoal);
+  }
+  .journal-sources li {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+<!-- JSON-LD: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Sorrel Actually Is",
+  "description": "Sorrel appears on nearly every Caribbean Christmas table and is rarely explained properly. Here's what it actually is, where it came from, what it tastes like, and why Saint Vincent serves it as wine.",
+  "author": {
+    "@type": "Organization",
+    "name": "SALT",
+    "url": "https://saltsvg.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SALT",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://saltsvg.com/images/social/salt-og-image.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://saltsvg.com/journal/what-is-sorrel.html"
+  },
+  "image": "https://saltsvg.com/images/journal/what-is-sorrel/hero-sorrel-glass-sunset.jpg",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "mentions": [
+    { "@type": "Thing", "name": "Hibiscus sabdariffa" },
+    { "@type": "Event", "name": "Nine Mornings Festival" }
+  ]
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is sorrel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the Caribbean, sorrel is a deep red drink made by steeping the calyx, the flower casing, of Hibiscus sabdariffa with warm spices like ginger and cinnamon, then sweetening it. It's unrelated to the leafy green also called sorrel in European cooking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does sorrel taste like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tart and floral to start, closer to cranberry than fruit punch, with whatever the kitchen adds next: ginger for sharpness, cinnamon and clove for warmth, sugar to round it out. Rum or a longer ferment adds weight and complexity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is sorrel alcoholic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. The everyday steeped version has no alcohol. Many households add rum or red wine for the holidays, and a properly fermented sorrel wine develops alcohol naturally through fermentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Caribbean sorrel the same plant as the leafy herb also called sorrel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. They share an English name and nothing else. Culinary sorrel is a tart, spinach-like leaf in the buckwheat family. Caribbean sorrel comes from the flower of a hibiscus plant and is used exclusively as a beverage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Caribbean sorrel come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The hibiscus plant used to make it traces its deepest roots to Africa, where related drinks are known as bissap, sobolo or zobo. Historians trace its arrival in the Caribbean to the transatlantic slave trade, and it was being cultivated in Jamaica as early as the 1700s."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do Vincentians drink sorrel at Christmas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sorrel is closely tied to Nine Mornings, Saint Vincent's early-morning countdown to Christmas, and to Christmas Day itself, when families traditionally return from church to ham, black cake and a jug of sorrel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is sorrel wine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A version of sorrel rested longer, often with raisins, until it ferments into something with its own natural alcohol content, rather than the everyday steeped-and-sweetened version. Preparations vary widely by household and island."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does sorrel have any health benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hibiscus has been studied for potential antioxidant and blood-pressure effects, a genuine area of scientific interest, but traditional Caribbean sorrel is also heavily sweetened and should be understood first as a cultural drink, not a health product."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark" aria-label="SALT home">SALT</a>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/#philosophy">Philosophy</a></li>
+        <li><a href="/#collection">Collection</a></li>
+        <li><a href="/journal/">Journal</a></li>
+        <li><a href="/#partners">Partnerships</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="menu-toggle-line"></span>
+      <span class="menu-toggle-line"></span>
+      <span class="menu-toggle-line"></span>
+      <span class="visually-hidden">Open menu</span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul>
+      <li><a href="/#philosophy">Philosophy</a></li>
+      <li><a href="/#collection">Collection</a></li>
+      <li><a href="/journal/">Journal</a></li>
+      <li><a href="/#partners">Partnerships</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <article class="journal-article">
+    <p class="journal-eyebrow reveal">SALT Journal &middot; Food &amp; Culture</p>
+    <h1 class="reveal">What Sorrel Actually Is</h1>
+    <p class="journal-dek reveal">The African roots, Christmas ritual and Vincentian tradition behind one of the Caribbean's most distinctive drinks.</p>
+    <p class="journal-byline">By SALT &middot; Updated August 2026 &middot; 7 minute read</p>
+
+    <figure>
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/hero-sorrel-glass-sunset.jpg" alt="A hand holding up a glass of deep red sorrel against the evening sun on a Vincentian veranda">
+    </figure>
+
+    <p>Ask someone unfamiliar with the Caribbean what sorrel is, and there's a real chance they picture the wrong plant. In Europe and parts of the United States, sorrel usually means a sharp, lemony leaf, closer to spinach, used in soups and sauces. In Saint Vincent &amp; the Grenadines, and across the Caribbean, it means something else entirely: a deep crimson infusion that turns water the color of stained glass, and quietly shapes what a Vincentian Christmas tastes like.</p>
+
+    <h2>The Plant, Not the Leaf</h2>
+    <p>The two have nothing to do with each other beyond a shared English name. Culinary sorrel, the leafy kind, is a member of the buckwheat family, prized in French and European kitchens for a tartness closer to citrus than herb. Caribbean sorrel comes from a hibiscus flower, specifically the calyx, the deep red casing left behind once the petals of Hibiscus sabdariffa drop away, dried or steeped fresh into a tea. One is a leaf. The other comes from a flower. Both happen to be called sorrel, and only one of them belongs on a Vincentian Christmas table.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/fresh-hibiscus-calyces-lime.jpg" alt="A wooden bowl of fresh crimson hibiscus calyces beside a halved lime, ginger, cinnamon sticks and cloves">
+      <figcaption>Fresh Hibiscus sabdariffa calyces, the part of the plant sorrel is actually made from.</figcaption>
+    </figure>
+
+    <h2>A Drink With African Roots</h2>
+    <p>Hibiscus sabdariffa isn't native to the Caribbean. Its deepest roots trace to Africa, where hibiscus drinks remain part of everyday food culture today, bissap in Senegal, sobolo in Ghana, zobo in Nigeria, each a version of the same tart, ruby-red infusion. Historians trace the plant's arrival in the Caribbean to the transatlantic slave trade, carried, along with the knowledge of how to prepare it, by enslaved Africans forced to make the crossing. Enslaved communities are believed to have been cultivating it in Jamaica as early as the 1700s. In its earliest years in the region, it wasn't a celebration drink at all, it was a folk remedy, used to cool the body and treat fevers, closer to medicine cabinet than Christmas table.</p>
+    <p>Adrian Miller, the food historian who has traced the drink's lineage through plantation-era records and Federal Writers' Project narratives, places it within a much larger family of what he calls "red drink" across the African diaspora. "It's essentially a nod to ancestral traditional red drinks that crossed the Atlantic during the Atlantic slave trade," he has said of the connection. "Then it became sorrel in Jamaica." The same plant, carried by the same history, now goes by different names depending on which side of an old trade route you were born on.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/hands-sorting-dried-hibiscus.jpg" alt="Weathered hands sorting dried hibiscus calyces in a woven basket">
+    </figure>
+
+    <h2>Nine Mornings and the Vincentian Christmas Table</h2>
+    <p>Somewhere along the way, the remedy became the ritual, though the ritual most associated with Vincentian Christmas is its own, separate story, and a more recent one. Nine Mornings, Saint Vincent's early-morning countdown to Christmas, is where sorrel is most visible today. Even the Government of Saint Vincent and the Grenadines describes its origins as "clouded in some mystery," generally traced to the Catholic novena observed in the nine days before Christmas, when early services sent worshippers out into the streets and down to the sea for a swim before dawn. Despite the popular belief that the tradition dates to the era of slavery, the government's own account suggests it more likely began after emancipation, closer to the early twentieth century, a Vincentian invention in its own right, not a holdover from sorrel's much older arrival on the island.</p>
+    <p>By the time Nine Mornings became what it is today, sorrel had settled firmly into the season around it. Kingstown's Saturday market fills with sorrel concentrate alongside rum-soaked black cake through December, and on Christmas Day itself, families still come home from church to the same three things waiting on the table: ham, black cake, and a jug of sorrel, dark enough to look almost black in low light.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/market-stall-sorrel-concentrate.jpg" alt="Bottles of homemade sorrel concentrate for sale at a Vincentian market stall, alongside black cake, dasheen and bananas">
+      <figcaption>Sorrel concentrate at Kingstown's Saturday market, sold alongside black cake through December.</figcaption>
+    </figure>
+
+    <h2>What Sorrel Actually Tastes Like</h2>
+    <p>Sorrel starts tart, closer to cranberry than fruit punch, with a floral edge from the hibiscus and whatever warmth the kitchen adds next. Ginger pushes it sharp. Cinnamon and clove pull it toward Christmas itself. Sugar rounds off the acidity, and rum, or a longer ferment, gives it more weight. There's no single correct glass. Vincentian families make it differently, and most would insist theirs is the right way.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/spices-ginger-cinnamon-clove.jpg" alt="Ginger, cinnamon sticks, cloves, allspice, dried hibiscus and brown sugar laid out on a dark wooden table">
+    </figure>
+
+    <h2>Is Sorrel Alcoholic?</h2>
+    <p>Not necessarily. The everyday version, steeped, strained, sweetened, has none. Many households add a measure of rum or red wine for the holidays, and a properly fermented sorrel wine develops its own alcohol content naturally through the ferment itself. Worth asking before pouring a glass for a guest, or a child.</p>
+
+    <h2>From Sorrel Drink to Sorrel Wine</h2>
+    <p>There's no single, agreed taxonomy here. Sorrel varies household to household and island to island, some versions simply steeped and sweetened, others fortified with a splash of rum, others rested longer with raisins until they ferment properly into what's called sorrel wine. What ties every version together is the base: hibiscus, spice, sugar, time.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/straining-hibiscus-into-jug.jpg" alt="Steeped hibiscus being strained through cloth into a glass jug in a Vincentian kitchen">
+    </figure>
+
+    <p>At Salt &amp; Sorrel, it's served as sorrel wine specifically, poured into ceramic cups rather than mixed into a punch bowl, treated as a considered pour rather than a seasonal obligation. It's also why SALT serves it well outside December. A drink this tied to one specific week of the year rarely gets the attention it deserves the other fifty-one, and there's no real reason a flavor this good should only exist at Christmas. "It has notes of family, warmth, Christmas and of being around people that you love," says Jamaican chef Suzanne Rousseau, co-author of Provisions: The Roots of Caribbean Cooking, of what a good sorrel actually tastes like. Those notes don't expire on December 26th.</p>
+
+    <h2>Tasting Sorrel in Saint Vincent</h2>
+    <p>Visitors who encounter sorrel at a hotel breakfast may meet it first as a bottled concentrate, sweet, one-note, a long way from what's actually poured at a Vincentian table in December. <a class="journal-internal-link" href="/sorrel/">Salt &amp; Sorrel</a> exists to close that gap: a Vincentian tasting table built around ingredients like this one, served with the season and the story attached, rather than reduced to a syrup. For guests who'd rather cook it themselves than simply taste it, <a class="journal-internal-link" href="/kitchen/">SALT Kitchen</a> occasionally works sorrel into its seasonal menu alongside other Vincentian staples, hands-on rather than observed.</p>
+
+    <figure class="inline">
+      <img loading="lazy" decoding="async" src="/images/journal/what-is-sorrel/pouring-sorrel-wine-ceramic-cups.jpg" alt="Sorrel wine being poured from a glass carafe into handmade ceramic cups at an outdoor table">
+    </figure>
+
+    <hr class="journal-rule">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="journal-faq-item">
+      <h3>What is sorrel?</h3>
+      <p>In the Caribbean, sorrel is a deep red drink made by steeping the calyx, the flower casing, of Hibiscus sabdariffa with warm spices like ginger and cinnamon, then sweetening it. It's unrelated to the leafy green also called sorrel in European cooking.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>What does sorrel taste like?</h3>
+      <p>Tart and floral to start, closer to cranberry than fruit punch, with whatever the kitchen adds next: ginger for sharpness, cinnamon and clove for warmth, sugar to round it out. Rum or a longer ferment adds weight and complexity.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>Is sorrel alcoholic?</h3>
+      <p>Not necessarily. The everyday steeped version has no alcohol. Many households add rum or red wine for the holidays, and a properly fermented sorrel wine develops alcohol naturally through fermentation.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>Is Caribbean sorrel the same plant as the leafy herb also called sorrel?</h3>
+      <p>No. They share an English name and nothing else. Culinary sorrel is a tart, spinach-like leaf in the buckwheat family. Caribbean sorrel comes from the flower of a hibiscus plant and is used exclusively as a beverage.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>Where does Caribbean sorrel come from?</h3>
+      <p>The hibiscus plant used to make it traces its deepest roots to Africa, where related drinks are known as bissap, sobolo or zobo. Historians trace its arrival in the Caribbean to the transatlantic slave trade, and it was being cultivated in Jamaica as early as the 1700s.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>Why do Vincentians drink sorrel at Christmas?</h3>
+      <p>Sorrel is closely tied to Nine Mornings, Saint Vincent's early-morning countdown to Christmas, and to Christmas Day itself, when families traditionally return from church to ham, black cake and a jug of sorrel. Nine Mornings itself is a separate, later Vincentian tradition, most likely originating after emancipation rather than during slavery.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>What is sorrel wine?</h3>
+      <p>A version of sorrel rested longer, often with raisins, until it ferments into something with its own natural alcohol content, rather than the everyday steeped-and-sweetened version. Preparations vary widely by household and island. Salt &amp; Sorrel serves the wine version specifically.</p>
+    </div>
+
+    <div class="journal-faq-item">
+      <h3>Does sorrel have any health benefits?</h3>
+      <p>Hibiscus has been studied for potential antioxidant and blood-pressure effects, a genuine area of scientific interest, but traditional Caribbean sorrel is also heavily sweetened and should be understood first as a cultural drink, not a health product.</p>
+    </div>
+
+    <hr class="journal-rule">
+
+    <h2>Sources</h2>
+    <ul class="journal-sources">
+      <li><a href="https://www.gov.vc/index.php/nine-mornings" target="_blank" rel="noopener">Government of Saint Vincent and the Grenadines, Nine Mornings (official)</a></li>
+      <li><a href="https://www.npr.org/sections/thesalt/2018/12/23/678201636/sorrel-the-ruby-red-caribbean-christmas-drink-flavored-with-black-history" target="_blank" rel="noopener">NPR, Sorrel: The Ruby-Red Caribbean Christmas Drink Flavored With Black History</a></li>
+      <li><a href="https://face2faceafrica.com/article/sorrel-drink-the-popular-caribbean-festive-beverage-that-originated-from-africa" target="_blank" rel="noopener">Face2Face Africa, Sorrel Drink: The Popular Caribbean Festive Beverage That Originated From Africa</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11426887/" target="_blank" rel="noopener">Effectiveness of Aqueous Hibiscus Sabdariffa Extract on Blood Pressure and Serum Lipids, PMC</a></li>
+    </ul>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="wordmark footer-wordmark">SALT</p>
+        <p>Saint Vincent &amp; the Grenadines</p>
+        <p>Experiences shaped by the islands.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="/#philosophy">Philosophy</a></li>
+          <li><a href="/#collection">Collection</a></li>
+          <li><a href="/journal/">Journal</a></li>
+          <li><a href="/#partners">Partnerships</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <a href="mailto:hello@saltsvg.com">hello@saltsvg.com</a>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <p>&copy; <span id="year"></span> SALT. All rights reserved.</p>
+      <p class="footer-note">Private experiences and hospitality partnerships by enquiry.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
